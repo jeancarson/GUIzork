@@ -23,10 +23,10 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(zork3
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
-        front_door.cpp front_door.h front_door.ui inside_front_door.cpp inside_front_door.h inside_front_door.ui inside_lift.cpp inside_lift.h inside_lift.ui landing_first_floor.cpp landing_first_floor.h landing_first_floor.ui
-        up_first_stairs.cpp up_first_stairs.h up_first_stairs.ui
-        kitchen.h kitchen.cpp kitchen.ui
-        studio.h studio.cpp studio.ui
+
+
+
+
         Inventory.h
         Inventory.cpp
         map.h map.cpp map.ui

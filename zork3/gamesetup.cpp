@@ -1,5 +1,5 @@
 #include "gamesetup.h"
-
+#include <iostream>
 GameSetUp::GameSetUp() {}
 // void ZorkUL::createRooms()  {
 //     Room *a, *b, *c, *d, *e, *f, *g, *h, *i, *j;
@@ -44,34 +44,39 @@ void GameSetUp::createRooms()  {
     Room *frontDoor, *foyer, *insideLift;
 
     frontDoor = new Room("You are at the front door, you must swipe your card");
-    frontDoor->setPathToImage("frontDoorGeneric.jpg");
+    frontDoor->setPathToImage(":/frontDoorGeneric.jpg");
         // a->addItem(new Item("keycard", 1, 11));
     foyer = new Room("You go through the front door. \nYou see a set of stairs and a lift");
-    foyer->setPathToImage("insideFrontDoorGeneric");
+    foyer->setPathToImage(":/insideFrontDoorGeneric.jpg");
         // b->addItem(new Item("xx", 3, 33));
         // b->addItem(new Item("yy", 4, 44));
     insideLift = new Room("You have entered the lift. North is first floor, west is second floor");
-    insideLift->setPathToImage("insideLiftGeneric");
+    insideLift->setPathToImage(":/insideLiftGeneric.jpg");
         // c->addItem(new Item("Massive item", 2, 6));
         // c->addItem(new Item("small item",4, 6 ));
         // j->addItem(new Item("jjJ", 1, 4));
 
 //             (N, E, S, W)
     frontDoor->setExits(foyer, NULL, NULL, NULL);
-    foyer->setExits(NULL, NULL, insideLift, frontDoor);
+    foyer->setExits(NULL, NULL, frontDoor, insideLift);
     insideLift->setExits(NULL, foyer, NULL, NULL);
 
 
-        currentRoom = frontDoor;
+    this->currentRoom = frontDoor;
+    cout<<currentRoom->getDescription();
 
 }
 
 //need a set up UI function which assigns the background image to the next room
-
+Room GameSetUp:: getCurrentRoom(){
+    return *currentRoom;
+}
 
 void GameSetUp::move(string direction){
-    Room& nextRoom = currentRoom->getNextRoom(direction);
-    currentRoom = &nextRoom;
-    //next_room = currentroom.getExit(direction)
-    //current room = next_room
+    Room nextRoom = currentRoom->getNextRoom(direction);
+    currentRoom = new Room(nextRoom); // Allocate memory for new room
+    cout << "moved" << endl;
+    cout << currentRoom->getDescription() << endl;
 }
+
+

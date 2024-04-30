@@ -10,15 +10,17 @@ class GameSetUp
 {
 private:
     Room *currentRoom;
-    void createRooms();
     void printWelcome();
     void showMap();
     void createItems();
     void displayItems();
 public:
+    void createRooms();
+
     GameSetUp();
     void play();
     void move(string direction);
+    Room getCurrentRoom();
 };
 
 #endif // GAMESETUP_H

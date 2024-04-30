@@ -33,5 +33,6 @@ string Room::exitString() {
 }
 
 Room& Room::getNextRoom(string direction){
-    return exits[direction][0];
+    return *exits[direction];
 }
+

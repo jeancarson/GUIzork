@@ -2,6 +2,7 @@
 #define MAINGAMEWINDOW_H
 
 #include <QMainWindow>
+#include "room.h"
 #include "gamesetup.h"
 namespace Ui {
 class mainGameWindow;
@@ -16,10 +17,6 @@ public:
     ~mainGameWindow();
 
 private slots:
-    void on_widget_customContextMenuRequested(const QPoint &pos);
-
-    void on_pushButton_3_clicked();
-
     void on_inventoryToggle_clicked();
 
     void on_NORTH_clicked();

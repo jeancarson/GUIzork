@@ -1,6 +1,8 @@
 #include "maingamewindow.h"
 #include "ui_maingamewindow.h"
 #include "gamesetup.h"
+#include "room.h"
+#include <iostream>
 #include <QWidget>
 
 mainGameWindow::mainGameWindow(QWidget *parent)
@@ -11,7 +13,13 @@ mainGameWindow::mainGameWindow(QWidget *parent)
     InventoryWidget = new QWidget(this); // Initialize InventoryWidget
     connect(ui->inventoryToggle, &QPushButton::clicked, this, &mainGameWindow::on_inventoryToggle_clicked);
     gameSetup = new GameSetUp(); // Initialize GameSetUp instance
+    gameSetup->createRooms();
+    cout<<"got to here2" <<endl;
+    QString imagePath = ":frontDoorGeneric.jpg";
 
+    // QString imagePath = QString::fromStdString(gameSetup->getCurrentRoom().getPathToImage());
+    QString styleSheet = QString("background-image: url(%1);").arg(imagePath);
+    this->setStyleSheet(styleSheet);
 }
 
 mainGameWindow::~mainGameWindow()
@@ -63,6 +71,8 @@ void mainGameWindow::on_SOUTH_clicked()
     gameSetup -> move ("south");
 
 }
+//set checks here to make sure that direction is not null - if it is, dont let that button do anything
+
 
 
 void mainGameWindow::on_EAST_clicked()
