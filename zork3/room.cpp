@@ -4,6 +4,13 @@ Room::Room(string description) {
     this->description = description;
 }
 
+void Room::setPathToImage(string path){
+    this->pathToImage = path;
+}
+string Room::getPathToImage(){
+    return pathToImage;
+}
+
 void Room::setExits(Room *north, Room *east, Room *south, Room *west) {
     if (north != NULL)
         exits["north"] = north;
@@ -23,9 +30,6 @@ string Room::exitString() {
         // Loop through map
         returnString += "  " + i->first;	// access the "first" element of the pair (direction as a string)
     return returnString;
-}
-string Room::getPathToImage(){
-    return pathToImage;
 }
 
 Room& Room::getNextRoom(string direction){

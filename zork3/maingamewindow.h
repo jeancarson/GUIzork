@@ -2,7 +2,7 @@
 #define MAINGAMEWINDOW_H
 
 #include <QMainWindow>
-
+#include "gamesetup.h"
 namespace Ui {
 class mainGameWindow;
 }
@@ -24,10 +24,16 @@ private slots:
 
     void on_NORTH_clicked();
 
+    void on_WEST_clicked();
+
+    void on_SOUTH_clicked();
+
+    void on_EAST_clicked();
+
 private:
     Ui::mainGameWindow *ui;
     QWidget *InventoryWidget;
-
+    GameSetUp *gameSetup;
 
 };
 

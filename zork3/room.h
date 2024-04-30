@@ -22,6 +22,8 @@ public:
     string getDescription();
     string getPathToImage();
     Room& getNextRoom(string direction);
+    void setPathToImage(string path);
+    void setCoordinates();
 
     //image
     //items
