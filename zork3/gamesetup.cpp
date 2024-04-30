@@ -33,3 +33,31 @@ GameSetUp::GameSetUp() {}
 
 //         currentRoom = a;
 // }
+
+
+//-------------------------------------------------------------------------------
+
+
+
+
+void GameSetUp::createRooms()  {
+    Room *frontDoor, *foyer, *insideLift;
+
+    frontDoor = new Room("You are at the front door, you must swipe your card");
+        // a->addItem(new Item("keycard", 1, 11));
+    foyer = new Room("You go through the front door. \nYou see a set of stairs and a lift");
+        // b->addItem(new Item("xx", 3, 33));
+        // b->addItem(new Item("yy", 4, 44));
+    insideLift = new Room("You have entered the lift. North is first floor, west is second floor");
+        // c->addItem(new Item("Massive item", 2, 6));
+        // c->addItem(new Item("small item",4, 6 ));
+        // j->addItem(new Item("jjJ", 1, 4));
+
+//             (N, E, S, W)
+    frontDoor->setExits(foyer, NULL, NULL, NULL);
+    foyer->setExits(NULL, NULL, insideLift, frontDoor);
+    insideLift->setExits(NULL, foyer, NULL, NULL);
+
+
+        currentRoom = frontDoor;
+}

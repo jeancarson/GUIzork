@@ -11,6 +11,7 @@ private:
     string description;
     map<string, Room*> exits;
     string exitString();
+    string pathToImage;
     // vector <Item> itemsInRoom;
 
 
@@ -18,7 +19,9 @@ public:
     // int numberOfItems();
     Room(string description);
     void setExits(Room *north, Room *east, Room *south, Room *west);
-    string Description();
+    string getDescription();
+    string getPathToImage();
+
     //image
     //items
 

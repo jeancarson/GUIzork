@@ -34,3 +34,31 @@ void mainGameWindow::on_inventoryToggle_clicked()
         InventoryWidget->show();
     }
 }
+
+void mainGameWindow::on_NORTH_clicked()
+{
+    //call go() function with parameter "NORTH"
+    //this might be currentroom.go("NORTH")
+}
+
+
+void mainGameWindow::on_WEST_clicked()
+{
+    //call go() function with parameter "WEST"
+
+}
+
+
+void mainGameWindow::on_SOUTH_clicked()
+{
+    //call go() function with parameter "SOUTH"
+
+}
+
+
+void mainGameWindow::on_EAST_clicked()
+{
+    //call go() function with parameter "EAST"
+
+}
+

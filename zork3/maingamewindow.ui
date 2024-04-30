@@ -18,7 +18,7 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>279</y>
+      <y>490</y>
       <width>581</width>
       <height>61</height>
      </rect>
@@ -84,14 +84,66 @@
    <widget class="QPushButton" name="inventoryToggle">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>260</y>
+      <x>10</x>
+      <y>470</y>
       <width>80</width>
       <height>18</height>
      </rect>
     </property>
     <property name="text">
      <string>Inventory</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="NORTH">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>210</y>
+      <width>80</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>NORTH</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="WEST">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>250</y>
+      <width>80</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>WEST</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="EAST">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>250</y>
+      <width>80</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>EAST</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="SOUTH">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>300</y>
+      <width>80</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>SOUTH</string>
     </property>
    </widget>
   </widget>

@@ -22,6 +22,8 @@ private slots:
 
     void on_inventoryToggle_clicked();
 
+    void on_NORTH_clicked();
+
 private:
     Ui::mainGameWindow *ui;
     QWidget *InventoryWidget;
