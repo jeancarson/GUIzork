@@ -21,6 +21,7 @@ public:
     void setExits(Room *north, Room *east, Room *south, Room *west);
     string getDescription();
     string getPathToImage();
+    Room& getNextRoom(string direction);
 
     //image
     //items

@@ -18,7 +18,7 @@ private:
 public:
     GameSetUp();
     void play();
-    void move();
+    void move(string direction);
 };
 
 #endif // GAMESETUP_H

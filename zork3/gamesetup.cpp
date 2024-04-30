@@ -61,3 +61,13 @@ void GameSetUp::createRooms()  {
 
         currentRoom = frontDoor;
 }
+
+//need a set up UI function which assigns the background image to the next room
+
+
+void GameSetUp::move(string direction){
+    Room& nextRoom = currentRoom->getNextRoom(direction);
+    currentRoom = &nextRoom;
+    //next_room = currentroom.getExit(direction)
+    //current room = next_room
+}

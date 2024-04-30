@@ -27,3 +27,7 @@ string Room::exitString() {
 string Room::getPathToImage(){
     return pathToImage;
 }
+
+Room& Room::getNextRoom(string direction){
+    return exits[direction][0];
+}
