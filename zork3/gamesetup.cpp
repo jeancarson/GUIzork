@@ -44,14 +44,14 @@ void GameSetUp::createRooms()  {
     Room *frontDoor, *foyer, *insideLift;
 
     frontDoor = new Room("You are at the front door, you must swipe your card");
-    frontDoor->setPathToImage(":/frontDoorGeneric.jpg");
+    frontDoor->setPathToImage("C:/Users/jeanl/College/Blocks/Block 4/C++/GUIzork/zork3/conor.jpg");
         // a->addItem(new Item("keycard", 1, 11));
     foyer = new Room("You go through the front door. \nYou see a set of stairs and a lift");
-    foyer->setPathToImage(":/insideFrontDoorGeneric.jpg");
+    foyer->setPathToImage("C:/Users/jeanl/College/Blocks/Block 4/C++/GUIzork/zork3/frontDoorGeneric.jpg");
         // b->addItem(new Item("xx", 3, 33));
         // b->addItem(new Item("yy", 4, 44));
     insideLift = new Room("You have entered the lift. North is first floor, west is second floor");
-    insideLift->setPathToImage(":/insideLiftGeneric.jpg");
+    insideLift->setPathToImage("C:/Users/jeanl/College/Blocks/Block 4/C++/GUIzork/zork3/taylor.jpg");
         // c->addItem(new Item("Massive item", 2, 6));
         // c->addItem(new Item("small item",4, 6 ));
         // j->addItem(new Item("jjJ", 1, 4));
