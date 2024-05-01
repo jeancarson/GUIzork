@@ -68,15 +68,21 @@ void GameSetUp::createRooms()  {
 }
 
 //need a set up UI function which assigns the background image to the next room
-Room GameSetUp:: getCurrentRoom(){
-    return *currentRoom;
+Room* GameSetUp::getCurrentRoom() {
+    return currentRoom;
+}
+void GameSetUp::move(string direction) {
+    Room* nextRoomPtr = currentRoom->getNextRoom(direction);
+    if (nextRoomPtr != nullptr) {
+        currentRoom = nextRoomPtr; // Update current room to the next room
+        cout << "Moved" << endl;
+        cout << currentRoom->getDescription() << endl;
+    } else {
+        cout << "You cannot move in that direction." << endl;
+    }
 }
 
-void GameSetUp::move(string direction){
-    Room nextRoom = currentRoom->getNextRoom(direction);
-    currentRoom = new Room(nextRoom); // Allocate memory for new room
-    cout << "moved" << endl;
-    cout << currentRoom->getDescription() << endl;
-}
+
+
 
 

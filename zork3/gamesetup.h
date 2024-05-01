@@ -24,7 +24,7 @@ public:
     GameSetUp();
     void play();
     void move(string direction);
-    Room getCurrentRoom();
+    Room* getCurrentRoom();
 };
 
 #endif // GAMESETUP_H

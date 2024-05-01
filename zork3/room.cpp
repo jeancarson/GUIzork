@@ -32,7 +32,15 @@ string Room::exitString() {
     return returnString;
 }
 
-Room& Room::getNextRoom(string direction){
-    return *exits[direction];
+Room* Room::getNextRoom(string direction) {
+    if (exits.find(direction) != exits.end()) {
+        // Direction exists in exits map, return the pointer to the corresponding room
+        return exits[direction];
+    } else {
+        // Direction does not exist, handle accordingly
+        return nullptr;
+    }
 }
+
+
 

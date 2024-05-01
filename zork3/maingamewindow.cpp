@@ -25,7 +25,7 @@ mainGameWindow::~mainGameWindow()
 
 void mainGameWindow::updateBackgroundImage() {
     // Get the path to the image from the current room
-    string path = gameSetup->getCurrentRoom().getPathToImage();
+    string path = gameSetup->getCurrentRoom()->getPathToImage();
     QPixmap backgroundImage(QString::fromStdString(path)); // Load image into QPixmap
 
     // Set the QPixmap as the label's pixmap
