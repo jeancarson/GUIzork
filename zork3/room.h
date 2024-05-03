@@ -12,6 +12,8 @@ private:
     map<string, Room*> exits;
     string exitString();
     string pathToImage;
+    //not sure if this is right idk how to do arrays in c++
+    int* coordinates;
     // vector <Item> itemsInRoom;
 
 
@@ -24,6 +26,7 @@ public:
     Room* getNextRoom(string direction); // Corrected return type to Room*
     void setPathToImage(string path);
     void setCoordinates();
+    int* getCoordinates();
 
     //image
     //items

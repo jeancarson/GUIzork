@@ -4,6 +4,8 @@
 #include <QMainWindow>
 #include "gamesetup.h"
 #include <QLabel>
+#include <QPushButton>
+
 
 namespace Ui {
 class mainGameWindow;
@@ -25,7 +27,7 @@ private slots:
     void on_SOUTH_clicked();
     void on_EAST_clicked();
     void updateBackgroundImage();
-
+    void setButtonColor(QPushButton *button, Room *exitRoom);
 
 
 

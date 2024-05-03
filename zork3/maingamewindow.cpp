@@ -24,14 +24,33 @@ mainGameWindow::~mainGameWindow()
 
 
 void mainGameWindow::updateBackgroundImage() {
-    // Get the path to the image from the current room
     string path = gameSetup->getCurrentRoom()->getPathToImage();
     QPixmap backgroundImage(QString::fromStdString(path)); // Load image into QPixmap
 
-    // Set the QPixmap as the label's pixmap
     ui->label->setPixmap(backgroundImage);
-    ui->label->setScaledContents(true); // Optional: Scale the image to fit the label
+    ui->label->setScaledContents(true);
+    setButtonColor(ui->NORTH, gameSetup->getCurrentRoom()->getNextRoom("north"));
+    setButtonColor(ui->WEST, gameSetup->getCurrentRoom()->getNextRoom("west"));
+    setButtonColor(ui->EAST, gameSetup->getCurrentRoom()->getNextRoom("east"));
+    setButtonColor(ui->SOUTH, gameSetup->getCurrentRoom()->getNextRoom("south"));
+
+
+
 }
+void mainGameWindow ::setButtonColor(QPushButton *button, Room *exitRoom) {
+    if (exitRoom == nullptr) {
+        // Set button color to grey
+        button->setStyleSheet("background-color: grey;");
+    } else {
+        // Set button color to red
+        button->setStyleSheet("background-color: red;");
+    }
+}
+
+
+
+
+
 
 
 void mainGameWindow::on_inventoryToggle_clicked()
@@ -50,10 +69,7 @@ void mainGameWindow::on_inventoryToggle_clicked()
 
 void mainGameWindow::on_NORTH_clicked()
 {
-    //call go() function with parameter "NORTH"
-    //this might be currentroom.go("NORTH")
-    //or move
-    //idk
+
     gameSetup->move("north");
     updateBackgroundImage();
 
@@ -72,19 +88,16 @@ void mainGameWindow::on_WEST_clicked()
 
 void mainGameWindow::on_SOUTH_clicked()
 {
-    //call go() function with parameter "SOUTH"
     gameSetup -> move ("south");
     updateBackgroundImage();
 
 
 }
-//set checks here to make sure that direction is not null - if it is, dont let that button do anything
 
 
 
 void mainGameWindow::on_EAST_clicked()
 {
-    //call go() function with parameter "EAST"
     gameSetup -> move ("east");
     updateBackgroundImage();
 
