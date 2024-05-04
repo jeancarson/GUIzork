@@ -1,5 +1,5 @@
 #include "room.h"
-//sorry chris i stole your code here but no point doing it twice
+//sorry chris i stole a lot of your code here but no point doing it twice
 Room::Room(string description) {
     this->description = description;
 }
@@ -41,6 +41,19 @@ Room* Room::getNextRoom(string direction) {
         return nullptr;
     }
 }
+
+void Room:: setCoordinates(int x, int y, int z){
+    //AHHHHHHHHHHHH why can't c++ do arrays like normal things silly silly language
+    coordinates[0] = x;
+    coordinates[1] = y;
+    coordinates[2] = z;
+}
+
+
+std::array<int, 3> Room::getCoordinates() {
+    return {coordinates[0], coordinates[1], coordinates[2]};
+}
+
 
 
 

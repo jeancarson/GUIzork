@@ -5,6 +5,7 @@
 #include "gamesetup.h"
 #include <QLabel>
 #include <QPushButton>
+#include "guide.h"
 
 
 namespace Ui {
@@ -37,6 +38,7 @@ private:
     Ui::mainGameWindow *ui;
     QWidget *InventoryWidget;
     GameSetUp *gameSetup;
+    Guide *guide; // Declare guide variable as a member variable
 
 };
 

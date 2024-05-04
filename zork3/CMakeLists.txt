@@ -29,7 +29,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
 
         Inventory.h
         Inventory.cpp
-        map.h map.cpp map.ui
+
         maingamewindow.h maingamewindow.cpp maingamewindow.ui
         room.h room.cpp
         gamesetup.h gamesetup.cpp
@@ -38,6 +38,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
 
         conor.jpg
         taylor.jpg
+        guide.h guide.cpp guide.ui
 
     )
 # Define target properties for Android with Qt 6 as:

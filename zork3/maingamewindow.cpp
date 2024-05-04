@@ -2,6 +2,7 @@
 #include "ui_maingamewindow.h"
 #include "gamesetup.h"
 #include <QWidget>
+#include "guide.h"
 
 mainGameWindow::mainGameWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -13,7 +14,12 @@ mainGameWindow::mainGameWindow(QWidget *parent)
     gameSetup = new GameSetUp(); // Initialize GameSetUp instance
     gameSetup->createRooms();
 
-    updateBackgroundImage();}
+    updateBackgroundImage();
+
+    // Pass gameSetup instance to Guide constructor
+    guide = new Guide(gameSetup, this);
+    updateBackgroundImage();
+}
 
 mainGameWindow::~mainGameWindow()
 {

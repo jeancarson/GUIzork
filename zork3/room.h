@@ -5,6 +5,11 @@
 #include <vector>
 // #include "item.h"
 using namespace std;
+struct Coordinates {
+    int x;
+    int y;
+    int z;
+};
 using std::vector;class Room {
 
 private:
@@ -25,8 +30,9 @@ public:
     string getPathToImage();
     Room* getNextRoom(string direction); // Corrected return type to Room*
     void setPathToImage(string path);
-    void setCoordinates();
-    int* getCoordinates();
+    void setCoordinates(int x, int y, int z);
+    std::array<int, 3>  getCoordinates();
+
 
     //image
     //items
