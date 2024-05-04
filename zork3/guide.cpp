@@ -51,7 +51,28 @@ void Guide::updateBackgroundImage(){
 
 
 void Guide :: setLocationYOUareHERE(){
+    int xCoordinate = m_gameSetup->getCurrentRoom()->getCoordinates()[0];
+    int yCoordinate = m_gameSetup ->getCurrentRoom()->getCoordinates()[1];
+    ui->DOT->setGeometry(xCoordinate, yCoordinate, 30, 30);
     /*
+     *
+     *Apparently this way would be better - will do later TODO
+     *
+     *
+     *void Guide::setLocationYOUareHERE() {
+    int xCoordinate = m_gameSetup->getCurrentRoom()->getCoordinates()[0];
+    int yCoordinate = m_gameSetup->getCurrentRoom()->getCoordinates()[1];
+
+    // Adjust the position of DOT relative to ui
+    int dotWidth = ui->DOT->width();
+    int dotHeight = ui->DOT->height();
+    int dotX = xCoordinate - (dotWidth / 2); // Adjust to center DOT horizontally
+    int dotY = yCoordinate - (dotHeight / 2); // Adjust to center DOT vertically
+
+    ui->DOT->setGeometry(dotX, dotY, dotWidth, dotHeight);
+}
+
+     *
      *
      * Coordinates = currentRoom.getCoordinates();
      * DOT.location = (coordinates[0], coordinates[1];
