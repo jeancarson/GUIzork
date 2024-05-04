@@ -15,13 +15,20 @@ class Guide : public QMainWindow
 public:
     explicit Guide(GameSetUp *gameSetup, QWidget *parent = nullptr);
     ~Guide();
-
-private:
-    GameSetUp *m_gameSetup; // Use the correct variable name here
-
-    Ui::Guide *ui;
     void setLocationYOUareHERE();
     void updateBackgroundImage();
+
+private slots:
+    void on_CloseGuide_clicked();
+
+private:
+    GameSetUp *m_gameSetup;
+    QWidget *parent; // Declare parent member variable
+
+
+    Ui::Guide *ui;
+
+
 
 };
 

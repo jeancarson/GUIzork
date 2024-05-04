@@ -8,7 +8,7 @@ void Room::setPathToImage(string path){
     this->pathToImage = path;
 }
 string Room::getPathToImage(){
-    return pathToImage;
+    return this->pathToImage;
 }
 
 void Room::setExits(Room *north, Room *east, Room *south, Room *west) {
@@ -50,10 +50,9 @@ void Room:: setCoordinates(int x, int y, int z){
 }
 
 
-std::array<int, 3> Room::getCoordinates() {
-    return {coordinates[0], coordinates[1], coordinates[2]};
+const std::array<int, 3>& Room::getCoordinates() {
+    return coordinates;
 }
-
 
 
 

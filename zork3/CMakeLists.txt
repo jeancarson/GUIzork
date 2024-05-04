@@ -39,6 +39,8 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         conor.jpg
         taylor.jpg
         guide.h guide.cpp guide.ui
+        guideLevel1.jpg
+        guideLevel2.png
 
     )
 # Define target properties for Android with Qt 6 as:

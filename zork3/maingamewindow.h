@@ -17,7 +17,7 @@ class mainGameWindow : public QMainWindow {
 private:
 
 public:
-    explicit mainGameWindow(QWidget *parent = nullptr);
+    explicit mainGameWindow(QWidget *parent, GameSetUp *preGameSetup);
     ~mainGameWindow();
 
 
@@ -34,11 +34,15 @@ private slots:
 
 
 
+    void on_OpenGuide_clicked();
+
 private:
     Ui::mainGameWindow *ui;
     QWidget *InventoryWidget;
+    Guide *guide;
     GameSetUp *gameSetup;
-    Guide *guide; // Declare guide variable as a member variable
+    GameSetUp *preGameSetup;
+
 
 };
 

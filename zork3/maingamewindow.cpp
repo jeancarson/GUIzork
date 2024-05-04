@@ -3,28 +3,35 @@
 #include "gamesetup.h"
 #include <QWidget>
 #include "guide.h"
-
-mainGameWindow::mainGameWindow(QWidget *parent)
+#include <iostream>
+using namespace std;
+mainGameWindow::mainGameWindow(QWidget *parent, GameSetUp *preGameSetup)
     : QMainWindow(parent)
     , ui(new Ui::mainGameWindow)
 {
     ui->setupUi(this);
+    // Ensure preGameSetup is not null before assigning it to gameSetup
+    if (preGameSetup == nullptr) {
+        cout <<"GAMESET UP IS NULL";
+    }
+    cout<<"BEFORE INITIALISNG SETUP"<<endl;
+    gameSetup = preGameSetup; // Initialize GameSetUp instance
+    cout<<gameSetup->getCurrentRoom()->getPathToImage()<<endl;
 
-
-    gameSetup = new GameSetUp(); // Initialize GameSetUp instance
-    gameSetup->createRooms();
-
-    updateBackgroundImage();
-
-    // Pass gameSetup instance to Guide constructor
-    guide = new Guide(gameSetup, this);
+    cout<<"AFTER INITIALISING SETUP"<<endl;
+    //Problem 1 - getting path to image
+    //Problem 2 -> getting exits//something in move method
+    cout<<gameSetup->getCurrentRoom()->getPathToImage()<<endl;
+//     gameSetup->createRooms();
     updateBackgroundImage();
 }
+
 
 mainGameWindow::~mainGameWindow()
 {
     delete ui;
-    delete gameSetup;
+    //commenting this out for debugging
+    // delete gameSetup;
 }
 
 
@@ -39,6 +46,7 @@ void mainGameWindow::updateBackgroundImage() {
     setButtonColor(ui->WEST, gameSetup->getCurrentRoom()->getNextRoom("west"));
     setButtonColor(ui->EAST, gameSetup->getCurrentRoom()->getNextRoom("east"));
     setButtonColor(ui->SOUTH, gameSetup->getCurrentRoom()->getNextRoom("south"));
+    // cout<<"BACKGROUND SUPPOSEDLY UPDATED"<<endl;
 
 
 
@@ -71,7 +79,6 @@ void mainGameWindow::on_inventoryToggle_clicked()
         InventoryWidget->show();
     }
 }
-// Function to update background image
 
 void mainGameWindow::on_NORTH_clicked()
 {
@@ -110,4 +117,16 @@ void mainGameWindow::on_EAST_clicked()
 }
 
 
+
+
+
+void mainGameWindow::on_OpenGuide_clicked()
+{
+    guide = new Guide(gameSetup, this);
+
+    guide->show();
+    guide->updateBackgroundImage();
+
+    this -> hide();
+}
 

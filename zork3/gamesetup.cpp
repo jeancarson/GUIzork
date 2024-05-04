@@ -1,69 +1,41 @@
 #include "gamesetup.h"
 #include <iostream>
-GameSetUp::GameSetUp() {}
-// void ZorkUL::createRooms()  {
-//     Room *a, *b, *c, *d, *e, *f, *g, *h, *i, *j;
+GameSetUp::GameSetUp() {
+    cout<<"SETTING UP"<<endl;
+}
 
-//     a = new Room("You are at the front door, you must swipe your card");
-//         a->addItem(new Item("keycard", 1, 11));
-//     b = new Room("You go through the front door. \nYou see a set of stairs and a lift");
-//         // b->addItem(new Item("xx", 3, 33));
-//         // b->addItem(new Item("yy", 4, 44));
-//     c = new Room("You have entered the lift. North is first floor, west is second floor");
-//         // c->addItem(new Item("Massive item", 2, 6));
-//         // c->addItem(new Item("small item",4, 6 ));
-//     d = new Room("You have climbed the first flight of stairs. You can go up th esecond flight if you like");
-//     e = new Room("You have climbed the second flight of stairs");
-//     f = new Room("You are at the top of the landing, east or west?");
-//     g = new Room("You are in the kitchen");
-//     h = new Room("You are in the studio");
-// 	i = new Room("i");
-//     j = new Room("j");
-//         j->addItem(new Item("jjJ", 1, 4));
-
-// //             (N, E, S, W)
-//     a->setExits(b, NULL, NULL, NULL);
-//     b->setExits(NULL, d, a, c);
-//     c->setExits(f, b, NULL, NULL);
-//     d->setExits(e, NULL, f, b);
-//     e->setExits(NULL, NULL, d, b);
-//     f->setExits(NULL, h, c, g);
-//     g->setExits(NULL, f, NULL, NULL);
-//     h->setExits(NULL, NULL, f, NULL);
-
-//         currentRoom = a;
-// }
-
-
-//-------------------------------------------------------------------------------
-
-
-
+//TODO I think these paths will have to not be absolute eventually for portability
 
 void GameSetUp::createRooms()  {
     Room *frontDoor, *foyer, *insideLift;
-
-    frontDoor = new Room("You are at the front door, you must swipe your card");
+    cout<<"START OF CREAT ROOMS METHOD" <<endl;
+    frontDoor = (new Room("You are at the front door, you must swipe your card"));
+    cout <<"ROOM 1 MADE"<<endl;
     frontDoor->setPathToImage("C:/Users/jeanl/College/Blocks/Block 4/C++/GUIzork/zork3/conor.jpg");
-        // a->addItem(new Item("keycard", 1, 11));
-    foyer = new Room("You go through the front door. \nYou see a set of stairs and a lift");
+    cout<<"PATH TO IMAGE 1 SET"<<endl;
+    foyer = (new Room("You go through the front door. \nYou see a set of stairs and a lift"));
     foyer->setPathToImage("C:/Users/jeanl/College/Blocks/Block 4/C++/GUIzork/zork3/frontDoorGeneric.jpg");
-        // b->addItem(new Item("xx", 3, 33));
-        // b->addItem(new Item("yy", 4, 44));
-    insideLift = new Room("You have entered the lift. North is first floor, west is second floor");
+    cout << "PATH TO IMAGE 2 SET" <<endl;
+    insideLift = (new Room("You have entered the lift. North is first floor, west is second floor"));
     insideLift->setPathToImage("C:/Users/jeanl/College/Blocks/Block 4/C++/GUIzork/zork3/taylor.jpg");
-        // c->addItem(new Item("Massive item", 2, 6));
-        // c->addItem(new Item("small item",4, 6 ));
-        // j->addItem(new Item("jjJ", 1, 4));
+    cout << "PATH TO IMAGE 3 SET" <<endl;
+
 
 //             (N, E, S, W)
     frontDoor->setExits(foyer, NULL, NULL, NULL);
     foyer->setExits(NULL, NULL, frontDoor, insideLift);
     insideLift->setExits(NULL, foyer, NULL, NULL);
+    cout<< "EXITS SET" << endl;
 
+    //problem 3 something with coordinates
+    frontDoor->setCoordinates(100, 100, 0);
+    foyer -> setCoordinates(150, 150, 0);
+    insideLift -> setCoordinates(150, 150, 1);
+    cout << "COORDINATES SET" <<endl;
 
     this->currentRoom = frontDoor;
     cout<<currentRoom->getDescription();
+    cout<<"INSIDE SETUP";
 
 }
 

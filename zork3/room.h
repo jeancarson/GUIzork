@@ -5,11 +5,11 @@
 #include <vector>
 // #include "item.h"
 using namespace std;
-struct Coordinates {
-    int x;
-    int y;
-    int z;
-};
+// struct Coordinates {
+//     int x;
+//     int y;
+//     int z;
+// };
 using std::vector;class Room {
 
 private:
@@ -18,7 +18,7 @@ private:
     string exitString();
     string pathToImage;
     //not sure if this is right idk how to do arrays in c++
-    int* coordinates;
+    std::array<int, 3> coordinates;
     // vector <Item> itemsInRoom;
 
 
@@ -31,7 +31,7 @@ public:
     Room* getNextRoom(string direction); // Corrected return type to Room*
     void setPathToImage(string path);
     void setCoordinates(int x, int y, int z);
-    std::array<int, 3>  getCoordinates();
+    const std::array<int, 3>& getCoordinates();
 
 
     //image

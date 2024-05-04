@@ -10,10 +10,13 @@
 Guide::Guide(GameSetUp *gameSetup, QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::Guide)
-    , m_gameSetup(gameSetup) // Initialize m_gameSetup member variable
+    , m_gameSetup(gameSetup)
+    , parent(parent) // Initialize parent member variable
 {
     ui->setupUi(this);
+    setLocationYOUareHERE();
 }
+
 
 
 
@@ -28,10 +31,10 @@ void Guide::updateBackgroundImage(){
 
     switch (floor[2]){
     case 0:
-        backgroundImage = QPixmap(QString::fromStdString("path to floor 0")); // Load image into QPixmap
+        backgroundImage = QPixmap(QString::fromStdString("C:/Users/jeanl/College/Blocks/Block 4/C++/GUIzork/zork3/guideLevel1.jpg")); // Load image into QPixmap
         break;
     case 1:
-        backgroundImage = QPixmap(QString::fromStdString("path to floor 1")); // Load image into QPixmap
+        backgroundImage = QPixmap(QString::fromStdString("C:/Users/jeanl/College/Blocks/Block 4/C++/GUIzork/zork3/guideLevel2.png")); // Load image into QPixmap
         break;
     case 2:
         backgroundImage = QPixmap(QString::fromStdString("path to floor 2")); // Load image into QPixmap
@@ -45,28 +48,25 @@ void Guide::updateBackgroundImage(){
     ui->BackgroundImage->setScaledContents(true);
 
 }
-void Guide :: setLocationYOUareHERE(){
 
+
+void Guide :: setLocationYOUareHERE(){
+    /*
+     *
+     * Coordinates = currentRoom.getCoordinates();
+     * DOT.location = (coordinates[0], coordinates[1];
+     *
+     * */
 }
 
-// void mapa:: setLocationYOUareHERE(){
-//     //there is a label called DOT - we want to set the location of the dot
-//     int xCoordinate = currentRoom->getCoordinates[0];
-//     int yCoordinate = currentRoom->getCoordinates[1];
-//     DOT set location (xCoordinate, YCoordinate);
-// }
 
-// void mapa::updateBackgroundImage() {
-//     int floor = gameSetUp->getCurrentRoom()->getCordinates[2];
-//     switch (floor){
-//     case 0:
-//         QPixmap backgroundImage(QString::fromStdString("path to floor 0")); // Load image into QPixmap
-//     case 1:
-//         QPixmap backgroundImage(QString::fromStdString("path to floor 1")); // Load image into QPixmap
-//     case 2:
-//         QPixmap backgroundImage(QString::fromStdString("path to floor 2")); // Load image into QPixmap
 
-//     }
-//     ui->label->setPixmap(backgroundImage);
-//     ui->label->setScaledContents(true);
-// }
+
+
+
+void Guide::on_CloseGuide_clicked()
+{
+    parent->show();
+    this->hide();
+}
+
