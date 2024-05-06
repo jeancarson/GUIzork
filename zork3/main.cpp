@@ -2,7 +2,7 @@
 
 #include <QApplication>
 #include <iostream>
-#include "inventory.h"
+#include "timer.h"
 using namespace std;
 
 int main(int argc, char *argv[])
@@ -11,7 +11,8 @@ int main(int argc, char *argv[])
     cout<<"MAIN IS RUNNING"<< endl;
 
     // MainWindow w;
-    Inventory w;
+    Timer w;
     w.show();
+    cout<<"W should be showing rn"<<endl;
     return a.exec();
 }
