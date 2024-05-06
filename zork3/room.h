@@ -5,14 +5,11 @@
 #include <vector>
 // #include "item.h"
 using namespace std;
-// struct Coordinates {
-//     int x;
-//     int y;
-//     int z;
-// };
+
 using std::vector;class Room {
 
 private:
+
     string description;
     map<string, Room*> exits;
     string exitString();
@@ -25,6 +22,7 @@ private:
 public:
     // int numberOfItems();
     Room(string description);
+
     void setExits(Room *north, Room *east, Room *south, Room *west);
     string getDescription();
     string getPathToImage();

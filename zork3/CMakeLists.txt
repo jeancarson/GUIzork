@@ -27,8 +27,8 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
 
 
 
-        Inventory.h
-        Inventory.cpp
+
+
 
         maingamewindow.h maingamewindow.cpp maingamewindow.ui
         room.h room.cpp
@@ -41,6 +41,13 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         guide.h guide.cpp guide.ui
         guideLevel1.jpg
         guideLevel2.png
+        item.h item.cpp
+        task.h task.cpp
+        inventory.h inventory.cpp
+        inventory.h inventory.cpp inventory.ui
+        Keycard.png
+        inventorybackend.h inventorybackend.cpp
+        timer.h timer.cpp timer.ui
 
     )
 # Define target properties for Android with Qt 6 as:

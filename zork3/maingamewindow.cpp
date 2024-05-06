@@ -67,18 +67,18 @@ void mainGameWindow ::setButtonColor(QPushButton *button, Room *exitRoom) {
 
 
 
-void mainGameWindow::on_inventoryToggle_clicked()
-{
-    qDebug() << "Toggle button clicked";
-    if (InventoryWidget->isVisible()){
-        qDebug() << "InventoryWidget is visible, hiding...";
-        InventoryWidget->hide();
-    }
-    else{
-        qDebug() << "InventoryWidget is not visible, showing...";
-        InventoryWidget->show();
-    }
-}
+// void mainGameWindow::on_inventoryToggle_clicked()
+// {
+//     qDebug() << "Toggle button clicked";
+//     if (InventoryWidget->isVisible()){
+//         cout<< "InventoryWidget is visible, hiding..."<<endl;
+//         // InventoryWidget->hide();
+//     }
+//     else{
+//         cout<< "InventoryWidget is not visible, showing..."<<endl;
+//         // InventoryWidget->show();
+//     }
+// }
 
 void mainGameWindow::on_NORTH_clicked()
 {
