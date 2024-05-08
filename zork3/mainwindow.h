@@ -3,6 +3,9 @@
 
 #include <QMainWindow>
 #include "gamesetup.h"
+#include "guide.h"
+#include "maingamewindow.h"
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -17,13 +20,16 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-
+    Timer *getTimer() const { return timer; }
 private slots:
     void on_pushButton_clicked();
 
 private:
     Ui::MainWindow *ui;
     GameSetUp *gameSetup;
+    Timer *timer;
+    Guide *guide;
+    mainGameWindow *game;
 
 };
 #endif // MAINWINDOW_H

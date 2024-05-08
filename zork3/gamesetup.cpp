@@ -1,7 +1,11 @@
 #include "gamesetup.h"
 #include <iostream>
+
+
 GameSetUp::GameSetUp() {
     cout<<"SETTING UP"<<endl;
+    timerWidget = new Timer();
+
 }
 
 //TODO I think these paths will have to not be absolute eventually for portability
@@ -25,17 +29,14 @@ void GameSetUp::createRooms()  {
     frontDoor->setExits(foyer, NULL, NULL, NULL);
     foyer->setExits(NULL, NULL, frontDoor, insideLift);
     insideLift->setExits(NULL, foyer, NULL, NULL);
-    cout<< "EXITS SET" << endl;
 
     //problem 3 something with coordinates
     frontDoor->setCoordinates(100, 100, 0);
     foyer -> setCoordinates(150, 150, 0);
     insideLift -> setCoordinates(150, 150, 1);
-    cout << "COORDINATES SET" <<endl;
 
     this->currentRoom = frontDoor;
     cout<<currentRoom->getDescription();
-    cout<<"INSIDE SETUP";
 
 }
 
@@ -54,6 +55,15 @@ void GameSetUp::move(string direction) {
     }
 }
 
+// void GameSetUp::initialiseTimerWidget() {
+//     timerWidget = new Timer();
+//     timerWidget->show();
+// }
+
+
+Timer* GameSetUp::getTimer(){
+    return timerWidget;
+}
 
 
 

@@ -92,6 +92,22 @@
      <string>Open Guide</string>
     </property>
    </widget>
+   <widget class="QFrame" name="forTheTIMER">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>30</y>
+      <width>120</width>
+      <height>80</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -102,12 +118,12 @@
      <height>17</height>
     </rect>
    </property>
-   <widget class="QMenu" name="menuThis_is_the_gameplay_window_we_will_have_a_timer_and_inventory_always_and_different_arrows_in_each_case">
+   <widget class="QMenu" name="U">
     <property name="title">
      <string>This is the gameplay window, we will have a timer and inventory always and different arrows in each case</string>
     </property>
    </widget>
-   <addaction name="menuThis_is_the_gameplay_window_we_will_have_a_timer_and_inventory_always_and_different_arrows_in_each_case"/>
+   <addaction name="U"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>

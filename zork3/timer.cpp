@@ -36,7 +36,8 @@ void Timer::updateTimer() {
     remainingTime--; // Decrease remaining time
     updateDisplay(remainingTime); // Update display
     if (remainingTime <= 0) {
-        timer->stop(); // Stop the timer when time is up
+        timer->stop();
+        //TODO this will go to lose screen
     }
 }
 

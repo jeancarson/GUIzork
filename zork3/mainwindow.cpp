@@ -3,6 +3,7 @@
 #include "maingamewindow.h"
 #include "gamesetup.h"
 #include <iostream>
+
 using namespace std;
 
 MainWindow::MainWindow(QWidget *parent)
@@ -12,10 +13,12 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
 
     gameSetup = new GameSetUp();
-    // cout<<"JUST before creating rooms in mainwindow"<<endl;
     gameSetup->createRooms();
-    //the below appears to not be null anyways
-    // cout << gameSetup ->getCurrentRoom()<<endl;
+    cout<<"game set up complete"<<endl;
+    // Pass the Timer object to the constructors of both windows
+    timer = gameSetup->getTimer();
+    game = new mainGameWindow(nullptr, gameSetup, timer);
+    guide = new Guide(gameSetup, nullptr, timer);
 }
 
 
@@ -25,9 +28,7 @@ MainWindow::~MainWindow()
 }
 
 void MainWindow::on_pushButton_clicked()
-{
-
-    mainGameWindow *game = new mainGameWindow(nullptr, gameSetup);
+{    // mainGameWindow *game = new mainGameWindow(nullptr, gameSetup, getTimer());
     game->show();
     this->hide();
 }

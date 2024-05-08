@@ -7,14 +7,16 @@
 
 //In time will probably make maingamewindow do the same, and game set up is instansiated form mainwindow
 
-Guide::Guide(GameSetUp *gameSetup, QWidget *parent)
+Guide::Guide(GameSetUp *gameSetup, QWidget *parent, Timer* timer)
     : QMainWindow(parent)
     , ui(new Ui::Guide)
     , m_gameSetup(gameSetup)
-    , parent(parent) // Initialize parent member variable
+    , timerWidget(timer)
+    , parent(parent)
 {
     ui->setupUi(this);
     setLocationYOUareHERE();
+
 }
 
 
@@ -79,11 +81,6 @@ void Guide :: setLocationYOUareHERE(){
      *
      * */
 }
-
-
-
-
-
 
 void Guide::on_CloseGuide_clicked()
 {

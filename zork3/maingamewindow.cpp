@@ -4,10 +4,14 @@
 #include <QWidget>
 #include "guide.h"
 #include <iostream>
+#include "Timer.h"
+#include <QLayout>
 using namespace std;
-mainGameWindow::mainGameWindow(QWidget *parent, GameSetUp *preGameSetup)
+mainGameWindow::mainGameWindow(QWidget *parent, GameSetUp *preGameSetup, Timer* timer)
     : QMainWindow(parent)
     , ui(new Ui::mainGameWindow)
+    , gameSetup(preGameSetup)
+    , timerWidget(timer)
 {
     ui->setupUi(this);
     // Ensure preGameSetup is not null before assigning it to gameSetup
@@ -24,6 +28,14 @@ mainGameWindow::mainGameWindow(QWidget *parent, GameSetUp *preGameSetup)
     cout<<gameSetup->getCurrentRoom()->getPathToImage()<<endl;
 //     gameSetup->createRooms();
     updateBackgroundImage();
+    timerWidget = timer;
+    // timerWidget->show();
+    auto layout= new QVBoxLayout();
+    layout->addWidget(timerWidget);
+    ui->forTheTIMER->setLayout(layout);
+
+
+
 }
 
 
@@ -47,8 +59,6 @@ void mainGameWindow::updateBackgroundImage() {
     setButtonColor(ui->EAST, gameSetup->getCurrentRoom()->getNextRoom("east"));
     setButtonColor(ui->SOUTH, gameSetup->getCurrentRoom()->getNextRoom("south"));
     // cout<<"BACKGROUND SUPPOSEDLY UPDATED"<<endl;
-
-
 
 }
 void mainGameWindow ::setButtonColor(QPushButton *button, Room *exitRoom) {
@@ -129,4 +139,8 @@ void mainGameWindow::on_OpenGuide_clicked()
 
     this -> hide();
 }
+// void mainGameWindow::initializeTimerWidget() {
+//     timerWidget = new Timer(this); // Create an instance of the Timer widget
+//     timerWidget->show(); // Show the timer widget
+// }
 
