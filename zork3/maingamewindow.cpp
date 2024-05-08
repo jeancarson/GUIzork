@@ -33,6 +33,7 @@ mainGameWindow::mainGameWindow(QWidget *parent, GameSetUp *preGameSetup, Timer* 
     auto layout= new QVBoxLayout();
     layout->addWidget(timerWidget);
     ui->forTheTIMER->setLayout(layout);
+    cout<<"main timer set apparently"<<endl;
 
 
 
@@ -132,15 +133,11 @@ void mainGameWindow::on_EAST_clicked()
 
 void mainGameWindow::on_OpenGuide_clicked()
 {
-    guide = new Guide(gameSetup, this);
+    guide = new Guide(gameSetup, this, timerWidget);
 
     guide->show();
     guide->updateBackgroundImage();
 
     this -> hide();
 }
-// void mainGameWindow::initializeTimerWidget() {
-//     timerWidget = new Timer(this); // Create an instance of the Timer widget
-//     timerWidget->show(); // Show the timer widget
-// }
 

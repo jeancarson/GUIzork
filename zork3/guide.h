@@ -24,7 +24,7 @@ private slots:
 
 private:
     GameSetUp* m_gameSetup;
-    Timer* timerWidget;
+    Timer* timerGuide;
     QWidget *parent;
     Ui::Guide *ui;
 

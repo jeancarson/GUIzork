@@ -36,7 +36,7 @@ private:
     Ui::mainGameWindow *ui;
     QWidget *InventoryWidget;
     Guide *guide;
-    GameSetUp *preGameSetup;
+    // GameSetUp *preGameSetup;
 
 
 };

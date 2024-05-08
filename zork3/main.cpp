@@ -13,8 +13,6 @@ int main(int argc, char *argv[])
 
     MainWindow w;
     // Timer w;
-    cout<<"mainwindow is created"<<endl;
     w.show();
-    cout<<"W should be showing rn"<<endl;
     return a.exec();
 }

@@ -1,7 +1,7 @@
 #include "guide.h"
 #include "ui_guide.h"
 #include "gamesetup.h"
-
+#include <QLayout>
 //this is done like this so the map is using the same Gamesetup object as the main game window, ie, it has access to current room
 
 
@@ -11,12 +11,19 @@ Guide::Guide(GameSetUp *gameSetup, QWidget *parent, Timer* timer)
     : QMainWindow(parent)
     , ui(new Ui::Guide)
     , m_gameSetup(gameSetup)
-    , timerWidget(timer)
+    , timerGuide(timer)
     , parent(parent)
 {
     ui->setupUi(this);
     setLocationYOUareHERE();
 
+    timerGuide = timer;
+
+    auto layout2= new QVBoxLayout();
+    layout2->addWidget(timerGuide);
+
+    //TODO friendship function here to make a time class and a time widget
+    // ui->forTimerGuide->setLayout(layout2);
 }
 
 
