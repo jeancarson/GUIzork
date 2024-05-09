@@ -56,3 +56,22 @@ const std::array<int, 3>& Room::getCoordinates() {
 
 
 
+vector<Item> Room:: getItemsInRoom(){
+    return itemsInRoom;
+}
+
+void Room:: addItemToRoom(Item item){
+    itemsInRoom.push_back(item);
+}
+
+void Room::removeItemFromRoom(Item item){
+    auto it = std::find(itemsInRoom.begin(), itemsInRoom.end(), item);
+    if (it != itemsInRoom.end()) {
+        itemsInRoom.erase(it);
+    }
+    // inventoryFron
+}
+// vector<Item> getItemsInRoom;
+// void addItemToRoom(Item item, int xLoc, int yLoc);
+// void removeItemFromRoom(Item item);
+

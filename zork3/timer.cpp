@@ -9,8 +9,8 @@ Timer::Timer(QWidget *parent)
     , ui(new Ui::Timer)
 {
     ui->setupUi(this);
-    int noMinutes = 6;
-    start(noMinutes);
+    // int noMinutes = 6;
+    // start(noMinutes);
 }
 
 Timer::~Timer()

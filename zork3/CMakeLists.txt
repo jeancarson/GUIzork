@@ -43,8 +43,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         guideLevel2.png
         item.h item.cpp
         task.h task.cpp
-        inventory.h inventory.cpp
-        inventory.h inventory.cpp inventory.ui
+
         Keycard.png
         inventorybackend.h inventorybackend.cpp
         timer.h timer.cpp timer.ui

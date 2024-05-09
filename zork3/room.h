@@ -3,7 +3,7 @@
 #include <map>
 #include <string>
 #include <vector>
-// #include "item.h"
+#include "item.h"
 using namespace std;
 
 using std::vector;class Room {
@@ -16,7 +16,7 @@ private:
     string pathToImage;
     //not sure if this is right idk how to do arrays in c++
     std::array<int, 3> coordinates;
-    // vector <Item> itemsInRoom;
+    vector <Item> itemsInRoom;
 
 
 public:
@@ -30,6 +30,10 @@ public:
     void setPathToImage(string path);
     void setCoordinates(int x, int y, int z);
     const std::array<int, 3>& getCoordinates();
+
+    vector<Item> getItemsInRoom();
+    void addItemToRoom(Item item);
+    void removeItemFromRoom(Item item);
 
 
     //image

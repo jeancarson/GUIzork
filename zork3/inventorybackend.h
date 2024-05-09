@@ -1,25 +1,27 @@
 #ifndef INVENTORYBACKEND_H
 #define INVENTORYBACKEND_H
 
-#include "inventory.h"
 
 #include "item.h"
 #include <vector>
 
+using namespace std;
+
 class inventoryBackEnd
 {
 public:
-    inventoryBackEnd(Inventory* inventory);
-    std::vector<Item> items;
+    inventoryBackEnd();
+    Item getItem(Item item);
+    void addToInventory(Item item);
+    void removeFromInventory(const Item& item);
+    vector<Item> getInventory();
 
 
 private:
     static constexpr int MAX_ITEMS = 2; // Example maximum number of items
     Item currentItem;
-    Item getItem(Item item);
-    void addToInventory(Item item);
-    void removeFromInventory(const Item& item);
-    Inventory* inventoryFrontEnd;
+
+    vector<Item> items;
 
 };
 

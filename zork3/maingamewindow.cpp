@@ -6,12 +6,13 @@
 #include <iostream>
 #include "Timer.h"
 #include <QLayout>
+#include <QPixmap>
 using namespace std;
-mainGameWindow::mainGameWindow(QWidget *parent, GameSetUp *preGameSetup, Timer* timer)
+mainGameWindow::mainGameWindow(QWidget *parent, GameSetUp *preGameSetup)
     : QMainWindow(parent)
     , ui(new Ui::mainGameWindow)
     , gameSetup(preGameSetup)
-    , timerWidget(timer)
+    //, timerWidget(timer)
 {
     ui->setupUi(this);
     // Ensure preGameSetup is not null before assigning it to gameSetup
@@ -28,13 +29,17 @@ mainGameWindow::mainGameWindow(QWidget *parent, GameSetUp *preGameSetup, Timer* 
     cout<<gameSetup->getCurrentRoom()->getPathToImage()<<endl;
 //     gameSetup->createRooms();
     updateBackgroundImage();
-    timerWidget = timer;
+    timerWidget = gameSetup->getTimer();
     // timerWidget->show();
     auto layout= new QVBoxLayout();
     layout->addWidget(timerWidget);
     ui->forTheTIMER->setLayout(layout);
-    cout<<"main timer set apparently"<<endl;
 
+
+
+    QPixmap slot1Image("C:/Users/jeanl/College/Blocks/Block 4/C++/GUIzork/zork3/Keycard.png");
+    ui->slot1->setIcon(slot1Image);
+    ui->slot1->setIconSize(ui->slot1->size());
 
 
 }
@@ -139,5 +144,64 @@ void mainGameWindow::on_OpenGuide_clicked()
     guide->updateBackgroundImage();
 
     this -> hide();
+}
+
+bool isSlot1Yellow = false;
+bool isSlot2Yellow = false;
+
+
+void mainGameWindow::on_slot1_clicked()
+{
+    if(!isSlot1Yellow){
+        ui->backgroundSlot1->setStyleSheet("background-color:yellow;");
+        ui->backgroundSlot2->setStyleSheet("");
+        isSlot1Yellow =true;
+        isSlot2Yellow = false;
+        // this->selectedItem = first item in backend inventory
+
+    }
+    else{
+        ui->backgroundSlot1->setStyleSheet("");
+        isSlot1Yellow = false;
+        //this->selectedItem = null
+    }
+}
+
+
+void mainGameWindow::on_slot2_clicked()
+{
+    if(!isSlot2Yellow){
+        ui->backgroundSlot2->setStyleSheet("background-color:yellow;");
+        ui->backgroundSlot1->setStyleSheet("");
+        isSlot2Yellow =true;
+        isSlot1Yellow = false;
+
+    }
+    else{
+        ui->backgroundSlot2->setStyleSheet("");
+        isSlot2Yellow = false;
+
+    }
+}
+
+
+void mainGameWindow::updateInventory() {
+    vector<Item> inventory = gameSetup->getItemsBackEnd();
+
+    if (!inventory.empty()) {
+        QPixmap slot1Image(inventory[0].getPathToImage());
+        ui->slot1->setIcon(slot1Image);
+        ui->slot1->setIconSize(ui->slot1->size());
+        if (inventory.size() > 1) {
+            QPixmap slot2Image(inventory[1].getPathToImage());
+            ui->slot2->setIcon(slot2Image);
+            ui->slot2->setIconSize(ui->slot2->size());
+        }
+        else{ui->slot2->setIcon(QIcon());}
+    }
+    else{
+        ui->slot1->setIcon(QIcon());
+        ui->slot2->setIcon(QIcon());
+    }
 }
 

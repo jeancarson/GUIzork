@@ -17,7 +17,7 @@ MainWindow::MainWindow(QWidget *parent)
     cout<<"game set up complete"<<endl;
     // Pass the Timer object to the constructors of both windows
     timer = gameSetup->getTimer();
-    game = new mainGameWindow(nullptr, gameSetup, timer);
+    game = new mainGameWindow(nullptr, gameSetup);
     guide = new Guide(gameSetup, nullptr, timer);
 }
 
@@ -29,6 +29,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_clicked()
 {    // mainGameWindow *game = new mainGameWindow(nullptr, gameSetup, getTimer());
+    timer->start(1);
     game->show();
     this->hide();
 }

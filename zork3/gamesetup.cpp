@@ -5,6 +5,7 @@
 GameSetUp::GameSetUp() {
     cout<<"SETTING UP"<<endl;
     timerWidget = new Timer();
+    inventory = new inventoryBackEnd();
 
 }
 
@@ -65,6 +66,9 @@ Timer* GameSetUp::getTimer(){
     return timerWidget;
 }
 
+vector<Item> GameSetUp:: getItemsBackEnd(){
+    return inventory->getInventory();
+}
 
 
 

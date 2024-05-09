@@ -66,8 +66,8 @@
    <widget class="QFrame" name="forTimerGuide">
     <property name="geometry">
      <rect>
-      <x>300</x>
-      <y>40</y>
+      <x>350</x>
+      <y>450</y>
       <width>120</width>
       <height>80</height>
      </rect>

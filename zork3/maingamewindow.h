@@ -6,6 +6,8 @@
 #include <QLabel>
 #include <QPushButton>
 #include "guide.h"
+#include "item.h"
+#include "inventorybackend.h"
 
 
 namespace Ui {
@@ -19,8 +21,9 @@ private:
     GameSetUp* gameSetup;
 
 public:
-    explicit mainGameWindow(QWidget *parent, GameSetUp *preGameSetup, Timer* timer);
+    explicit mainGameWindow(QWidget *parent, GameSetUp *preGameSetup);
     ~mainGameWindow();
+    void updateInventory();
 
 
 private slots:
@@ -32,10 +35,18 @@ private slots:
     void setButtonColor(QPushButton *button, Room *exitRoom);
     void on_OpenGuide_clicked();
 
+    void on_slot1_clicked();
+
+    void on_slot2_clicked();
+
 private:
     Ui::mainGameWindow *ui;
     QWidget *InventoryWidget;
     Guide *guide;
+    void addToSlot(Item item);
+    void removeFromSlot(Item item);
+    Item selectedItem;
+
     // GameSetUp *preGameSetup;
 
 
