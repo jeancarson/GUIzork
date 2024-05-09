@@ -13,7 +13,6 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
 
     gameSetup = new GameSetUp();
-    gameSetup->createRooms();
     cout<<"game set up complete"<<endl;
     // Pass the Timer object to the constructors of both windows
     timer = gameSetup->getTimer();

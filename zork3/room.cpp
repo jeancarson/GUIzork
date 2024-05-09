@@ -69,9 +69,5 @@ void Room::removeItemFromRoom(Item item){
     if (it != itemsInRoom.end()) {
         itemsInRoom.erase(it);
     }
-    // inventoryFron
 }
-// vector<Item> getItemsInRoom;
-// void addItemToRoom(Item item, int xLoc, int yLoc);
-// void removeItemFromRoom(Item item);
 

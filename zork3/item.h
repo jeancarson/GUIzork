@@ -7,14 +7,14 @@ using namespace std;
 class Item
 {
 public:
-    Item();
+
+    Item(string name, string pathToImage);
     QString getPathToImage();
     bool operator==(const Item& other) const {
         return this->name == other.name;
     }
 
 private:
-    string description;
     string pathToImage;
     bool collected;
     bool inUse;

@@ -6,25 +6,34 @@ GameSetUp::GameSetUp() {
     cout<<"SETTING UP"<<endl;
     timerWidget = new Timer();
     inventory = new inventoryBackEnd();
+    createRoomsAndItems();
 
 }
 
 //TODO I think these paths will have to not be absolute eventually for portability
 
-void GameSetUp::createRooms()  {
+void GameSetUp::createRoomsAndItems()  {
     Room *frontDoor, *foyer, *insideLift;
-    cout<<"START OF CREAT ROOMS METHOD" <<endl;
     frontDoor = (new Room("You are at the front door, you must swipe your card"));
-    cout <<"ROOM 1 MADE"<<endl;
     frontDoor->setPathToImage("C:/Users/jeanl/College/Blocks/Block 4/C++/GUIzork/zork3/conor.jpg");
-    cout<<"PATH TO IMAGE 1 SET"<<endl;
+
     foyer = (new Room("You go through the front door. \nYou see a set of stairs and a lift"));
     foyer->setPathToImage("C:/Users/jeanl/College/Blocks/Block 4/C++/GUIzork/zork3/frontDoorGeneric.jpg");
-    cout << "PATH TO IMAGE 2 SET" <<endl;
+
     insideLift = (new Room("You have entered the lift. North is first floor, west is second floor"));
     insideLift->setPathToImage("C:/Users/jeanl/College/Blocks/Block 4/C++/GUIzork/zork3/taylor.jpg");
-    cout << "PATH TO IMAGE 3 SET" <<endl;
 
+
+    Item *keycard, *umbrella, *lunchbox;
+
+    keycard = new Item("keycard", "C:/Users/jeanl/College/Blocks/Block 4/C++/GUIzork/zork3/Keycard.png");
+    // umbrella = new Item("umbrella","C:/Users/jeanl/College/Blocks/Block 4/C++/GUIzork/zork3/umbrella.png" );
+    lunchbox = new Item("lunchbox","C:/Users/jeanl/College/Blocks/Block 4/C++/GUIzork/zork3/lunchbox.png" );
+
+
+    frontDoor->addItemToRoom(*keycard);
+    // foyer->addItemToRoom(*umbrella);
+    insideLift->addItemToRoom(*lunchbox);
 
 //             (N, E, S, W)
     frontDoor->setExits(foyer, NULL, NULL, NULL);
@@ -56,10 +65,18 @@ void GameSetUp::move(string direction) {
     }
 }
 
-// void GameSetUp::initialiseTimerWidget() {
-//     timerWidget = new Timer();
-//     timerWidget->show();
-// }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 Timer* GameSetUp::getTimer(){

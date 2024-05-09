@@ -39,13 +39,15 @@ private slots:
 
     void on_slot2_clicked();
 
+    void on_itemInRoom_clicked();
+
 private:
     Ui::mainGameWindow *ui;
     QWidget *InventoryWidget;
     Guide *guide;
     void addToSlot(Item item);
     void removeFromSlot(Item item);
-    Item selectedItem;
+    Item* selectedItem;
 
     // GameSetUp *preGameSetup;
 

@@ -12,17 +12,16 @@ class GameSetUp
 {
 private:
     Room *currentRoom;
+    // Item *currentItem;
     void printWelcome();
     void showMap();
-    void createItems();
-    void displayItems();
     Timer* timerWidget;
     inventoryBackEnd *inventory;
 signals:
     void backgroundImageChanged();
 
 public:
-    void createRooms();
+    void createRoomsAndItems();
     Timer* getTimer();
     GameSetUp();
     void play();
@@ -30,6 +29,7 @@ public:
     Room* getCurrentRoom();
     void initialiseTimerWidget();
     vector<Item> getItemsBackEnd();
+
 
 
 };

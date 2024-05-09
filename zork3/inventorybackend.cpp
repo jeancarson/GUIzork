@@ -7,7 +7,7 @@ inventoryBackEnd::inventoryBackEnd() {
 }
 
 
-Item inventoryBackEnd:: getItem(Item item){
+Item* inventoryBackEnd:: getItem(Item* item){
     currentItem = item;
     return currentItem;
 }

@@ -64,7 +64,21 @@ void mainGameWindow::updateBackgroundImage() {
     setButtonColor(ui->WEST, gameSetup->getCurrentRoom()->getNextRoom("west"));
     setButtonColor(ui->EAST, gameSetup->getCurrentRoom()->getNextRoom("east"));
     setButtonColor(ui->SOUTH, gameSetup->getCurrentRoom()->getNextRoom("south"));
-    // cout<<"BACKGROUND SUPPOSEDLY UPDATED"<<endl;
+
+
+    if(gameSetup->getCurrentRoom()->getItemsInRoom().size()>0){
+        QPixmap item(gameSetup->getCurrentRoom()->getItemsInRoom()[0].getPathToImage());
+        // string sss = "C:Users/jeanl/College/Blocks/Block/4/C++/GUIzork/zork3/Keycard.png";
+        // QPixmap item ("C:/Users/jeanl/College/Blocks/Block 4/C++/GUIzork/zork3/Keycard.png");
+        ui->itemInRoom->setIcon(item);
+        ui->itemInRoom->setIconSize(ui->itemInRoom->size());
+    }
+    else{
+        QPixmap item("");
+        ui->itemInRoom->setIcon(item);
+        ui->itemInRoom->setIconSize(ui->itemInRoom->size());
+    }
+
 
 }
 void mainGameWindow ::setButtonColor(QPushButton *button, Room *exitRoom) {
@@ -203,5 +217,21 @@ void mainGameWindow::updateInventory() {
         ui->slot1->setIcon(QIcon());
         ui->slot2->setIcon(QIcon());
     }
+}
+
+
+void mainGameWindow::on_itemInRoom_clicked()
+{
+    /*
+     * in update background function: set the button icon to current room item.
+     *
+     *
+     *
+     * if currenticon != null:
+     *
+     *
+     * /
+     * */
+
 }
 

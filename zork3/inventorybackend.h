@@ -11,7 +11,7 @@ class inventoryBackEnd
 {
 public:
     inventoryBackEnd();
-    Item getItem(Item item);
+    Item* getItem(Item* item);
     void addToInventory(Item item);
     void removeFromInventory(const Item& item);
     vector<Item> getInventory();
@@ -19,7 +19,7 @@ public:
 
 private:
     static constexpr int MAX_ITEMS = 2; // Example maximum number of items
-    Item currentItem;
+    Item* currentItem;
 
     vector<Item> items;
 

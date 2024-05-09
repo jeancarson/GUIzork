@@ -17,7 +17,9 @@ set(PROJECT_SOURCES
         mainwindow.cpp
         mainwindow.h
         mainwindow.ui
+        Keycard.png
 )
+# qt5_add_resources(RESOURCE_FILES resources.qrc)
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(zork3
@@ -47,6 +49,8 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         Keycard.png
         inventorybackend.h inventorybackend.cpp
         timer.h timer.cpp timer.ui
+        umbrella.png
+        lunchbox.png
 
     )
 # Define target properties for Android with Qt 6 as:
