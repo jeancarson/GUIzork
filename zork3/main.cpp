@@ -8,6 +8,9 @@ using namespace std;
 
 int main(int argc, char *argv[])
 {
+
+    std::srand(std::time(nullptr));
+
     QApplication a(argc, argv);
     cout<<"MAIN IS RUNNING"<< endl;
 

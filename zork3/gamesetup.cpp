@@ -5,7 +5,7 @@
 GameSetUp::GameSetUp() {
     cout<<"SETTING UP"<<endl;
     timerWidget = new Timer();
-    inventory = new inventoryBackEnd();
+    this-> inventory = new inventoryBackEnd();
     createRoomsAndItems();
 
 }
@@ -27,12 +27,12 @@ void GameSetUp::createRoomsAndItems()  {
     Item *keycard, *umbrella, *lunchbox;
 
     keycard = new Item("keycard", "C:/Users/jeanl/College/Blocks/Block 4/C++/GUIzork/zork3/Keycard.png");
-    // umbrella = new Item("umbrella","C:/Users/jeanl/College/Blocks/Block 4/C++/GUIzork/zork3/umbrella.png" );
+    umbrella = new Item("umbrella","C:/Users/jeanl/College/Blocks/Block 4/C++/GUIzork/zork3/umbrella.png" );
     lunchbox = new Item("lunchbox","C:/Users/jeanl/College/Blocks/Block 4/C++/GUIzork/zork3/lunchbox.png" );
 
 
     frontDoor->addItemToRoom(*keycard);
-    // foyer->addItemToRoom(*umbrella);
+    foyer->addItemToRoom(*umbrella);
     insideLift->addItemToRoom(*lunchbox);
 
 //             (N, E, S, W)
@@ -54,6 +54,17 @@ void GameSetUp::createRoomsAndItems()  {
 Room* GameSetUp::getCurrentRoom() {
     return currentRoom;
 }
+
+Item* GameSetUp::getCurrentItem(){
+    return currentItem;
+}
+
+void GameSetUp::setCurrentItem(Item item){
+    *currentItem = item;
+    cout<< "Current item is : " + getCurrentItem()->getName() <<endl;
+}
+
+
 void GameSetUp::move(string direction) {
     Room* nextRoomPtr = currentRoom->getNextRoom(direction);
     if (nextRoomPtr != nullptr) {
@@ -87,5 +98,8 @@ vector<Item> GameSetUp:: getItemsBackEnd(){
     return inventory->getInventory();
 }
 
+inventoryBackEnd* GameSetUp:: getInventory(){
+    return this->inventory;
+}
 
 

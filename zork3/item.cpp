@@ -15,3 +15,8 @@ QString Item::getPathToImage(){
     return QString::fromStdString(pathToImage);
 
 }
+
+
+string Item:: getName(){
+    return name;
+}

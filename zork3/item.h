@@ -14,6 +14,8 @@ public:
         return this->name == other.name;
     }
 
+    string getName();
+
 private:
     string pathToImage;
     bool collected;

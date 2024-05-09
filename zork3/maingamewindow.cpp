@@ -4,9 +4,11 @@
 #include <QWidget>
 #include "guide.h"
 #include <iostream>
-#include "Timer.h"
 #include <QLayout>
 #include <QPixmap>
+
+#include <cstdlib>
+
 using namespace std;
 mainGameWindow::mainGameWindow(QWidget *parent, GameSetUp *preGameSetup)
     : QMainWindow(parent)
@@ -24,22 +26,19 @@ mainGameWindow::mainGameWindow(QWidget *parent, GameSetUp *preGameSetup)
     cout<<gameSetup->getCurrentRoom()->getPathToImage()<<endl;
 
     cout<<"AFTER INITIALISING SETUP"<<endl;
-    //Problem 1 - getting path to image
-    //Problem 2 -> getting exits//something in move method
+
     cout<<gameSetup->getCurrentRoom()->getPathToImage()<<endl;
-//     gameSetup->createRooms();
     updateBackgroundImage();
     timerWidget = gameSetup->getTimer();
-    // timerWidget->show();
     auto layout= new QVBoxLayout();
     layout->addWidget(timerWidget);
     ui->forTheTIMER->setLayout(layout);
 
 
 
-    QPixmap slot1Image("C:/Users/jeanl/College/Blocks/Block 4/C++/GUIzork/zork3/Keycard.png");
-    ui->slot1->setIcon(slot1Image);
-    ui->slot1->setIconSize(ui->slot1->size());
+    // QPixmap slot1Image("C:/Users/jeanl/College/Blocks/Block 4/C++/GUIzork/zork3/Keycard.png");
+    // ui->slot1->setIcon(slot1Image);
+    // ui->slot1->setIconSize(ui->slot1->size());
 
 
 }
@@ -171,12 +170,15 @@ void mainGameWindow::on_slot1_clicked()
         ui->backgroundSlot2->setStyleSheet("");
         isSlot1Yellow =true;
         isSlot2Yellow = false;
+        gameSetup->setCurrentItem(gameSetup->getItemsBackEnd()[0]);
         // this->selectedItem = first item in backend inventory
 
     }
     else{
         ui->backgroundSlot1->setStyleSheet("");
         isSlot1Yellow = false;
+        gameSetup->setCurrentItem(null);
+
         //this->selectedItem = null
     }
 }
@@ -189,6 +191,7 @@ void mainGameWindow::on_slot2_clicked()
         ui->backgroundSlot1->setStyleSheet("");
         isSlot2Yellow =true;
         isSlot1Yellow = false;
+        gameSetup->setCurrentItem(gameSetup->getItemsBackEnd()[1]);
 
     }
     else{
@@ -222,16 +225,22 @@ void mainGameWindow::updateInventory() {
 
 void mainGameWindow::on_itemInRoom_clicked()
 {
-    /*
-     * in update background function: set the button icon to current room item.
-     *
-     *
-     *
-     * if currenticon != null:
-     *
-     *
-     * /
-     * */
+
+    if(!ui->itemInRoom->icon().isNull() && gameSetup->getItemsBackEnd().size() <2){
+        Item theItem = gameSetup->getCurrentRoom()->getItemsInRoom()[0];
+        gameSetup->getInventory()->addToInventory(theItem);
+        gameSetup->getCurrentRoom()->removeItemFromRoom(theItem);
+        updateBackgroundImage();
+        updateInventory();
+
+        //change location of next object
+        int lowerBound = 50;
+        int upperBound = 500;
+
+        int randomNumber1 = lowerBound + std::rand() % (upperBound - lowerBound + 1);
+        int randomNumber2 = lowerBound + std::rand() % (upperBound - lowerBound + 1);
+        ui->itemInRoom->setGeometry(randomNumber1, randomNumber2, 50, 50);
+    }
 
 }
 
