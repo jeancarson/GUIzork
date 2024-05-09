@@ -3,7 +3,6 @@
 #include "maingamewindow.h"
 #include "gamesetup.h"
 #include <iostream>
-
 using namespace std;
 
 MainWindow::MainWindow(QWidget *parent)
@@ -18,6 +17,10 @@ MainWindow::MainWindow(QWidget *parent)
     timer = gameSetup->getTimer();
     game = new mainGameWindow(nullptr, gameSetup);
     guide = new Guide(gameSetup, nullptr, timer);
+
+
+
+
 }
 
 

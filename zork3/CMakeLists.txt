@@ -51,6 +51,9 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         timer.h timer.cpp timer.ui
         umbrella.png
         lunchbox.png
+        endgamescreen.h endgamescreen.cpp endgamescreen.ui
+        gameWon.jpg
+        gameLost.jpg
 
     )
 # Define target properties for Android with Qt 6 as:

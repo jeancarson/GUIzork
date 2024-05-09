@@ -3,6 +3,7 @@
 #include <QTimer>
 #include <QLCDNumber>
 #include <iostream>
+#include "mainwindow.h"
 using namespace std;
 Timer::Timer(QWidget *parent)
     : QWidget(parent)
@@ -37,6 +38,7 @@ void Timer::updateTimer() {
     updateDisplay(remainingTime); // Update display
     if (remainingTime <= 0) {
         timer->stop();
+        kickPlayer();
         //TODO this will go to lose screen
     }
 }
@@ -62,4 +64,10 @@ void Timer::updateDisplay(int seconds){
     QString newTime = stringMinutes + ":" + stringSeconds;
 
     ui->TimerDisplay->display(newTime);
+}
+
+
+void Timer::kickPlayer(){
+    endGameScreen end;
+    end.setScreen("C:/Users/jeanl/College/Blocks/Block 4/C++/GUIzork/zork3/gameLost.jpg") ;
 }

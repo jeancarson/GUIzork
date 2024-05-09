@@ -7,10 +7,7 @@ inventoryBackEnd::inventoryBackEnd() {
 }
 
 
-Item* inventoryBackEnd:: getItem(Item* item){
-    currentItem = item;
-    return currentItem;
-}
+
 
 void inventoryBackEnd:: addToInventory(Item item){
     if (items.size() < MAX_ITEMS) {

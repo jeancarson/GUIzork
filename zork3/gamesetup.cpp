@@ -7,8 +7,13 @@ GameSetUp::GameSetUp() {
     timerWidget = new Timer();
     this-> inventory = new inventoryBackEnd();
     createRoomsAndItems();
-
+    currentItem = new Item("", "");
 }
+
+// }
+// GameSetUp::~GameSetUp() {
+//     delete currentItem;
+// }
 
 //TODO I think these paths will have to not be absolute eventually for portability
 

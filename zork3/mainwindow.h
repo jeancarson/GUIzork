@@ -5,6 +5,7 @@
 #include "gamesetup.h"
 #include "guide.h"
 #include "maingamewindow.h"
+#include "endgamescreen.h"
 
 
 QT_BEGIN_NAMESPACE
@@ -21,6 +22,7 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
     Timer *getTimer() const { return timer; }
+
 private slots:
     void on_pushButton_clicked();
 

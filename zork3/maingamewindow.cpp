@@ -78,6 +78,11 @@ void mainGameWindow::updateBackgroundImage() {
         ui->itemInRoom->setIconSize(ui->itemInRoom->size());
     }
 
+    //if room = frontDoor && lunchbox is in inventory: win screen
+    //will also do the time
+    //make a condition class or some shit
+
+
 
 }
 void mainGameWindow ::setButtonColor(QPushButton *button, Room *exitRoom) {
@@ -165,28 +170,27 @@ bool isSlot2Yellow = false;
 
 void mainGameWindow::on_slot1_clicked()
 {
-    if(!isSlot1Yellow){
+    if(!isSlot1Yellow && !ui->slot1->icon().isNull()){
         ui->backgroundSlot1->setStyleSheet("background-color:yellow;");
         ui->backgroundSlot2->setStyleSheet("");
         isSlot1Yellow =true;
         isSlot2Yellow = false;
         gameSetup->setCurrentItem(gameSetup->getItemsBackEnd()[0]);
-        // this->selectedItem = first item in backend inventory
 
     }
     else{
         ui->backgroundSlot1->setStyleSheet("");
         isSlot1Yellow = false;
-        gameSetup->setCurrentItem(null);
 
-        //this->selectedItem = null
+        gameSetup->setCurrentItem(Item ("", ""));
+
     }
 }
 
 
 void mainGameWindow::on_slot2_clicked()
 {
-    if(!isSlot2Yellow){
+    if((!isSlot2Yellow) && !(ui->slot2->icon().isNull())){
         ui->backgroundSlot2->setStyleSheet("background-color:yellow;");
         ui->backgroundSlot1->setStyleSheet("");
         isSlot2Yellow =true;
@@ -195,6 +199,8 @@ void mainGameWindow::on_slot2_clicked()
 
     }
     else{
+        gameSetup->setCurrentItem(Item ("", ""));
+
         ui->backgroundSlot2->setStyleSheet("");
         isSlot2Yellow = false;
 
