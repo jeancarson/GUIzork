@@ -34,7 +34,6 @@ public:
     void initialiseTimerWidget();
     vector<Item> getItemsBackEnd();
     inventoryBackEnd* getInventory();
-
     bool isTheGameWon();
 
 

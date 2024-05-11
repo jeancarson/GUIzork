@@ -20,6 +20,7 @@ public:
 
 signals:
     void timeEnded();
+    void hurryUp();
 private:
     Ui::Timer *ui;
     int noMinutes;

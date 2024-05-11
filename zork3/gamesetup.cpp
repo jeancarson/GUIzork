@@ -72,6 +72,8 @@ void GameSetUp::createRoomsAndItems()  {
 
 }
 
+
+
 //need a set up UI function which assigns the background image to the next room
 Room* GameSetUp::getCurrentRoom() {
     return currentRoom;

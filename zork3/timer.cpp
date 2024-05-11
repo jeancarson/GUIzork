@@ -42,6 +42,9 @@ void Timer::updateTimer() {
         timer->stop();
         emit timeEnded();        //TODO this will go to lose screen
     }
+    if (remainingTime<=50){
+        emit hurryUp();
+    }
 }
 
 

@@ -12,11 +12,12 @@ mainGameWindow::mainGameWindow(QWidget *parent, GameSetUp *preGameSetup)
     : QMainWindow(parent)
     , ui(new Ui::mainGameWindow)
     , gameSetup(preGameSetup)
-    , parentWindow(parentWindow)
     ,end(new endGameScreen(this))
 {
     ui->setupUi(this);
     connect(gameSetup->getTimer(), &Timer::timeEnded, this, &mainGameWindow::handleTimerEnded);
+    connect(gameSetup->getTimer(), &Timer::hurryUp, this, &mainGameWindow::handleHurryUp);
+
 
     if (preGameSetup == nullptr) {
         cout <<"GAMESET UP IS NULL";
@@ -50,6 +51,11 @@ void mainGameWindow::handleTimerEnded() {
     // Show the end game screen
     end->setScreen(false);
     end->show();
+}
+void mainGameWindow::handleHurryUp(){
+    QPixmap backgroundImage("C:/Users/jeanl/College/Blocks/Block 4/C++/GUIzork/zork3/gameWon.jpg");
+    ui->AlisonGoesHere->setPixmap(backgroundImage);
+    ui->AlisonGoesHere->setScaledContents(true);
 }
 
 mainGameWindow::~mainGameWindow()

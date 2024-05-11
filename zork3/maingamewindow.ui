@@ -235,6 +235,19 @@ background-color: rgba(255, 255, 255, 0); border: none;
      <string>Enemy</string>
     </property>
    </widget>
+   <widget class="QLabel" name="AlisonGoesHere">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>40</y>
+      <width>81</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Alison</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
