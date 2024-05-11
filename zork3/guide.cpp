@@ -1,6 +1,5 @@
 #include "guide.h"
 #include "ui_guide.h"
-#include "gamesetup.h"
 #include <QLayout>
 //this is done like this so the map is using the same Gamesetup object as the main game window, ie, it has access to current room
 

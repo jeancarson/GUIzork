@@ -89,7 +89,7 @@
      <rect>
       <x>170</x>
       <y>60</y>
-      <width>521</width>
+      <width>351</width>
       <height>291</height>
      </rect>
     </property>
@@ -220,6 +220,19 @@ background-color: rgba(255, 255, 255, 0); border: none;
     </property>
     <property name="text">
      <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="EnemyPlace">
+    <property name="geometry">
+     <rect>
+      <x>640</x>
+      <y>120</y>
+      <width>121</width>
+      <height>231</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Enemy</string>
     </property>
    </widget>
   </widget>

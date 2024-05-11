@@ -1,24 +1,29 @@
-#ifndef ENDGAMESCREEN_H
-#define ENDGAMESCREEN_H
+// #ifndef ENDGAMESCREEN_H
+// #define ENDGAMESCREEN_H
 
-#include <QMainWindow>
-#include <string>
-using namespace std;
-namespace Ui {
-class endGameScreen;
-}
+// #include <QMainWindow>
+// #include <QWidget> // Include QWidget if you're using it in the header
 
-class endGameScreen : public QMainWindow
-{
-    Q_OBJECT
+// // Remove "using namespace std;" as it's not necessary and can lead to namespace clashes
 
-public:
-    explicit endGameScreen(QWidget *parent = nullptr);
-    ~endGameScreen();
-    void setScreen(string path);
+// namespace Ui {
+// class endGameScreen;
+// }
 
-private:
-    Ui::endGameScreen *ui;
-};
+// class endGameScreen : public QMainWindow // Inherit from QMainWindow
+// {
+//     Q_OBJECT
 
-#endif // ENDGAMESCREEN_H
+// public:
+//     explicit endGameScreen(QWidget *parent = nullptr); // Remove unnecessary qualifier "endGameScreen::"
+//     ~endGameScreen(); // Remove unnecessary qualifier "endGameScreen::"
+//     void setScreen(bool won);
+
+// private:
+//     Ui::endGameScreen *ui;
+
+// private slots:
+//     void handleTimerUp();
+// };
+
+// #endif // ENDGAMESCREEN_H

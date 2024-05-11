@@ -1,8 +1,6 @@
 #include "maingamewindow.h"
 #include "ui_maingamewindow.h"
-#include "gamesetup.h"
 #include <QWidget>
-#include "guide.h"
 #include <iostream>
 #include <QLayout>
 #include <QPixmap>
@@ -76,7 +74,18 @@ void mainGameWindow::updateBackgroundImage() {
         QPixmap item("");
         ui->itemInRoom->setIcon(item);
         ui->itemInRoom->setIconSize(ui->itemInRoom->size());
+
+
+        //TODO set up image for enemy
     }
+    Enemy* enemyPtr = gameSetup->getCurrentRoom()->getEnemyInRoom();
+    if (enemyPtr != nullptr) {
+        QString imagePath = QString::fromStdString(enemyPtr->getPathToImage());
+        QPixmap enemy(imagePath);
+        ui->EnemyPlace->setIcon(enemy);
+        ui->EnemyPlace->setIconSize(ui->EnemyPlace->size());
+    }
+
 
     //if room = frontDoor && lunchbox is in inventory: win screen
     //will also do the time
@@ -182,7 +191,7 @@ void mainGameWindow::on_slot1_clicked()
         ui->backgroundSlot1->setStyleSheet("");
         isSlot1Yellow = false;
 
-        gameSetup->setCurrentItem(Item ("", ""));
+        gameSetup->setCurrentItem(Item ());
 
     }
 }
@@ -199,7 +208,7 @@ void mainGameWindow::on_slot2_clicked()
 
     }
     else{
-        gameSetup->setCurrentItem(Item ("", ""));
+        gameSetup->setCurrentItem(Item ());
 
         ui->backgroundSlot2->setStyleSheet("");
         isSlot2Yellow = false;
@@ -247,6 +256,31 @@ void mainGameWindow::on_itemInRoom_clicked()
         int randomNumber2 = lowerBound + std::rand() % (upperBound - lowerBound + 1);
         ui->itemInRoom->setGeometry(randomNumber1, randomNumber2, 50, 50);
     }
+
+}
+
+
+void mainGameWindow::on_EnemyPlace_clicked()
+{
+//TODO this should probabl be a method in the gamesetup class and just be called here??
+    if(gameSetup->getCurrentRoom()->isEnemyInRoom){
+        Enemy* enemy = gameSetup->getCurrentRoom()->getEnemyInRoom();
+        if(enemy->getItemToOvercome().getName() == gameSetup->getCurrentItem()->getName()){
+            gameSetup->getCurrentRoom()->removeEnemyFromRoom();
+            gameSetup->getInventory()->removeFromInventory(*gameSetup->getCurrentItem());
+            updateInventory();
+            updateBackgroundImage();
+
+            gameSetup->setCurrentItem(Item ());
+
+            ui->backgroundSlot2->setStyleSheet("");
+            isSlot2Yellow = false;
+
+            ui->backgroundSlot1->setStyleSheet("");
+            isSlot1Yellow = false;
+        }
+    }
+
 
 }
 

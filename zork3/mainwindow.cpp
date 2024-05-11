@@ -1,7 +1,7 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
-#include "maingamewindow.h"
-#include "gamesetup.h"
+// #include "gamesetup.h"
+// #include "maingamewindow.h"
 #include <iostream>
 using namespace std;
 

@@ -2,6 +2,7 @@
 //sorry chris i stole a lot of your code here but no point doing it twice
 Room::Room(string description) {
     this->description = description;
+    this->isEnemyInRoom = false;
 }
 
 void Room::setPathToImage(string path){
@@ -70,4 +71,18 @@ void Room::removeItemFromRoom(Item item){
         itemsInRoom.erase(it);
     }
 }
+Enemy* Room::getEnemyInRoom() {
+    return &enemyInRoom;
+}
+void Room::setEnemyInRoom(Enemy enemy){
+    enemyInRoom = enemy;
+    this->isEnemyInRoom = true;
+}
+
+void Room:: removeEnemyFromRoom(){
+    enemyInRoom = Enemy();
+    this->isEnemyInRoom = false;
+}
+
+
 

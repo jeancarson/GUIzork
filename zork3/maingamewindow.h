@@ -8,7 +8,8 @@
 #include "guide.h"
 #include "item.h"
 #include "inventorybackend.h"
-
+#include "timer.h"
+#include "guide.h"
 
 namespace Ui {
 class mainGameWindow;
@@ -34,12 +35,13 @@ private slots:
     void updateBackgroundImage();
     void setButtonColor(QPushButton *button, Room *exitRoom);
     void on_OpenGuide_clicked();
-
     void on_slot1_clicked();
-
     void on_slot2_clicked();
-
     void on_itemInRoom_clicked();
+
+
+
+    void on_EnemyPlace_clicked();
 
 private:
     Ui::mainGameWindow *ui;

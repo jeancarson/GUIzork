@@ -17,6 +17,8 @@ private:
     void showMap();
     Timer* timerWidget;
     inventoryBackEnd *inventory;
+
+
 signals:
     void backgroundImageChanged();
 
@@ -32,6 +34,7 @@ public:
     void initialiseTimerWidget();
     vector<Item> getItemsBackEnd();
     inventoryBackEnd* getInventory();
+
 
 
 };

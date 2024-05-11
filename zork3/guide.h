@@ -2,7 +2,7 @@
 #define GUIDE_H
 #include "gamesetup.h"
 #include <QMainWindow>
-#include "timer.h"
+#include "Timer.h"
 namespace Ui {
 class Guide;
 }

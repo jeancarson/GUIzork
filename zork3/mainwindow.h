@@ -5,8 +5,9 @@
 #include "gamesetup.h"
 #include "guide.h"
 #include "maingamewindow.h"
-#include "endgamescreen.h"
-
+#include "Timer.h"
+// #include "gamesetup.h"
+// #include "maingamewindow.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
