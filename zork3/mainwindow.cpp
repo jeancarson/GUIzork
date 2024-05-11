@@ -31,7 +31,7 @@ void MainWindow::on_pushButton_clicked()
     cout<<"game set up complete"<<endl;
     // Pass the Timer object to the constructors of both windows
     timer = gameSetup->getTimer();
-    game = new mainGameWindow(nullptr, gameSetup, this);
+    game = new mainGameWindow(nullptr, gameSetup);
     guide = new Guide(gameSetup, nullptr, timer);
 
 
@@ -41,4 +41,7 @@ void MainWindow::on_pushButton_clicked()
     this->hide();
 }
 
-
+void MainWindow::setImage(string path){
+    QPixmap backgroundImage;
+    ui->label->setPixmap(QString::fromStdString(path));
+}

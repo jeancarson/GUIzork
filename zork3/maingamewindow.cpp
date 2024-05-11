@@ -8,13 +8,15 @@
 #include <cstdlib>
 
 using namespace std;
-mainGameWindow::mainGameWindow(QWidget *parent, GameSetUp *preGameSetup, QMainWindow* parentWindow)
+mainGameWindow::mainGameWindow(QWidget *parent, GameSetUp *preGameSetup)
     : QMainWindow(parent)
     , ui(new Ui::mainGameWindow)
     , gameSetup(preGameSetup)
-    , parentWindow(parentWindow) // Initialize the parentWindow member variable
+    , parentWindow(parentWindow)
+    ,end(new endGameScreen(this))
 {
     ui->setupUi(this);
+
     if (preGameSetup == nullptr) {
         cout <<"GAMESET UP IS NULL";
     }
@@ -30,6 +32,7 @@ mainGameWindow::mainGameWindow(QWidget *parent, GameSetUp *preGameSetup, QMainWi
     auto layout= new QVBoxLayout();
     layout->addWidget(timerWidget);
     ui->forTheTIMER->setLayout(layout);
+
 
 
 
@@ -53,7 +56,8 @@ mainGameWindow::~mainGameWindow()
 void mainGameWindow::updateBackgroundImage() {
 
     if(gameSetup->isTheGameWon()){
-        parentWindow->show();
+        end->setScreen(true);
+        end->show();
         this->hide();
 
     }

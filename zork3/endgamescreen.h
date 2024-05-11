@@ -1,28 +1,29 @@
-// #ifndef ENDGAMESCREEN_H
-// #define ENDGAMESCREEN_H
+#ifndef ENDGAMESCREEN_H
+#define ENDGAMESCREEN_H
 
-// #include <QMainWindow>
-// #include <QWidget> // Include QWidget if you're using it in the header
+#include <QMainWindow>
+#include <QWidget>
+#include "timer.h"
 
+namespace Ui {
+class endGameScreen;
+}
 
-// namespace Ui {
-// class endGameScreen;
-// }
+class endGameScreen : public QMainWindow // Inherit from QMainWindow
+{
+    Q_OBJECT
 
-// class endGameScreen : public QMainWindow // Inherit from QMainWindow
-// {
-//     Q_OBJECT
+public:
+    endGameScreen(QWidget *parent);
+// Remove unnecessary qualifier "endGameScreen::"
+    ~endGameScreen(); // Remove unnecessary qualifier "endGameScreen::"
+    void setScreen(bool won);
 
-// public:
-//     explicit endGameScreen(QWidget *parent = nullptr); // Remove unnecessary qualifier "endGameScreen::"
-//     ~endGameScreen(); // Remove unnecessary qualifier "endGameScreen::"
-//     void setScreen(bool won);
+private:
+    Ui::endGameScreen *ui;
 
-// private:
-//     Ui::endGameScreen *ui;
+private slots:
+    void handleTimerUp();
+};
 
-// private slots:
-//     void handleTimerUp();
-// };
-
-// #endif // ENDGAMESCREEN_H
+#endif // ENDGAMESCREEN_H

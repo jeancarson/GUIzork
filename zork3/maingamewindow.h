@@ -7,10 +7,8 @@
 #include <QPushButton>
 #include "guide.h"
 #include "item.h"
-#include "inventorybackend.h"
-#include "timer.h"
 #include "guide.h"
-// #include "endgamescreen.h"
+#include "endgamescreen.h"
 
 
 namespace Ui {
@@ -23,10 +21,10 @@ private:
     QMainWindow* parentWindow;
     Timer* timerWidget;
     GameSetUp* gameSetup;
-    // endGameScreen end;
+    endGameScreen *end;
 
 public:
-    explicit mainGameWindow(QWidget *parent, GameSetUp *preGameSetup, QMainWindow* parentWindow);
+    explicit mainGameWindow(QWidget *parent, GameSetUp *preGameSetup);
     ~mainGameWindow();
     void updateInventory();
 
