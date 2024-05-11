@@ -9,7 +9,6 @@ endGameScreen::endGameScreen(QWidget *parent)
     , ui(new Ui::endGameScreen)
 {
     ui->setupUi(this);
-    // connect(timer, &Timer::timeEnded, this, &endGameScreen::handleTimerUp());
 }
 
 endGameScreen::~endGameScreen()

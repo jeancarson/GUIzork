@@ -40,7 +40,7 @@ private slots:
     void on_slot1_clicked();
     void on_slot2_clicked();
     void on_itemInRoom_clicked();
-
+    void handleTimerEnded();
 
 
     void on_EnemyPlace_clicked();

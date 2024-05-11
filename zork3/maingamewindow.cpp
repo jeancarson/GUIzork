@@ -16,6 +16,7 @@ mainGameWindow::mainGameWindow(QWidget *parent, GameSetUp *preGameSetup)
     ,end(new endGameScreen(this))
 {
     ui->setupUi(this);
+    connect(gameSetup->getTimer(), &Timer::timeEnded, this, &mainGameWindow::handleTimerEnded);
 
     if (preGameSetup == nullptr) {
         cout <<"GAMESET UP IS NULL";
@@ -42,7 +43,14 @@ mainGameWindow::mainGameWindow(QWidget *parent, GameSetUp *preGameSetup)
 
 
 }
+void mainGameWindow::handleTimerEnded() {
+    // Hide the main game window
+    this->hide();
 
+    // Show the end game screen
+    end->setScreen(false);
+    end->show();
+}
 
 mainGameWindow::~mainGameWindow()
 {
