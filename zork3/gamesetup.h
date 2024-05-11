@@ -35,6 +35,8 @@ public:
     vector<Item> getItemsBackEnd();
     inventoryBackEnd* getInventory();
 
+    bool isTheGameWon();
+
 
 
 };

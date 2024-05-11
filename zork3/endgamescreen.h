@@ -4,7 +4,6 @@
 // #include <QMainWindow>
 // #include <QWidget> // Include QWidget if you're using it in the header
 
-// // Remove "using namespace std;" as it's not necessary and can lead to namespace clashes
 
 // namespace Ui {
 // class endGameScreen;

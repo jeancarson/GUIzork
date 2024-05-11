@@ -14,6 +14,7 @@ public:
     void addToInventory(Item item);
     void removeFromInventory(const Item& item);
     vector<Item> getInventory();
+    bool isThisInTheInventory(string itemName);
 
 
 private:

@@ -8,19 +8,18 @@
 #include <cstdlib>
 
 using namespace std;
-mainGameWindow::mainGameWindow(QWidget *parent, GameSetUp *preGameSetup)
+mainGameWindow::mainGameWindow(QWidget *parent, GameSetUp *preGameSetup, QMainWindow* parentWindow)
     : QMainWindow(parent)
     , ui(new Ui::mainGameWindow)
     , gameSetup(preGameSetup)
-    //, timerWidget(timer)
+    , parentWindow(parentWindow) // Initialize the parentWindow member variable
 {
     ui->setupUi(this);
-    // Ensure preGameSetup is not null before assigning it to gameSetup
     if (preGameSetup == nullptr) {
         cout <<"GAMESET UP IS NULL";
     }
     cout<<"BEFORE INITIALISNG SETUP"<<endl;
-    gameSetup = preGameSetup; // Initialize GameSetUp instance
+    gameSetup = preGameSetup;
     cout<<gameSetup->getCurrentRoom()->getPathToImage()<<endl;
 
     cout<<"AFTER INITIALISING SETUP"<<endl;
@@ -52,6 +51,13 @@ mainGameWindow::~mainGameWindow()
 
 
 void mainGameWindow::updateBackgroundImage() {
+
+    if(gameSetup->isTheGameWon()){
+        parentWindow->show();
+        this->hide();
+
+    }
+
     string path = gameSetup->getCurrentRoom()->getPathToImage();
     QPixmap backgroundImage(QString::fromStdString(path)); // Load image into QPixmap
 

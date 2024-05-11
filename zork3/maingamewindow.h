@@ -10,6 +10,8 @@
 #include "inventorybackend.h"
 #include "timer.h"
 #include "guide.h"
+// #include "endgamescreen.h"
+
 
 namespace Ui {
 class mainGameWindow;
@@ -18,11 +20,13 @@ class mainGameWindow;
 class mainGameWindow : public QMainWindow {
     Q_OBJECT
 private:
+    QMainWindow* parentWindow;
     Timer* timerWidget;
     GameSetUp* gameSetup;
+    // endGameScreen end;
 
 public:
-    explicit mainGameWindow(QWidget *parent, GameSetUp *preGameSetup);
+    explicit mainGameWindow(QWidget *parent, GameSetUp *preGameSetup, QMainWindow* parentWindow);
     ~mainGameWindow();
     void updateInventory();
 

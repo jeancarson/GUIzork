@@ -19,7 +19,7 @@ GameSetUp::GameSetUp() {
 
 void GameSetUp::createRoomsAndItems()  {
     Room *frontDoor, *foyer, *insideLift;
-    frontDoor = (new Room("You are at the front door, you must swipe your card"));
+    frontDoor = (new Room("Front Door"));
     frontDoor->setPathToImage("C:/Users/jeanl/College/Blocks/Block 4/C++/GUIzork/zork3/conor.jpg");
 
     foyer = (new Room("You go through the front door. \nYou see a set of stairs and a lift"));
@@ -98,7 +98,12 @@ void GameSetUp::move(string direction) {
     }
 }
 
+bool GameSetUp::isTheGameWon(){
+    bool correctItem = inventory->isThisInTheInventory("lunchbox");
+    bool correctRoom = currentRoom->getDescription() == "Front Door";
 
+    return (correctItem && correctRoom);
+}
 
 
 
