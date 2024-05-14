@@ -15,12 +15,12 @@ class endGameScreen : public QMainWindow // Inherit from QMainWindow
 
 public:
     endGameScreen(QWidget *parent);
-// Remove unnecessary qualifier "endGameScreen::"
-    ~endGameScreen(); // Remove unnecessary qualifier "endGameScreen::"
+    ~endGameScreen();
     void setScreen(bool won);
 
 private:
     Ui::endGameScreen *ui;
+    bool isGameOver;
 
 private slots:
     void handleTimerUp();

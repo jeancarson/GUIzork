@@ -46,7 +46,7 @@ void Timer::updateTimer() {
         emit hurryUp();
     }
 }
-
+//TODO make so game over dowsnt show after game already ends - should have a bool attribute of isgameover in endgameclass.
 
 void Timer::updateDisplay(int seconds){
     int properMinutes = (seconds/60);
