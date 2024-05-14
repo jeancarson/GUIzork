@@ -4,6 +4,8 @@
 #include <string>
 #include <vector>
 #include "item.h"
+#include "enemy.h"
+
 using namespace std;
 
 using std::vector;class Room {
@@ -17,7 +19,7 @@ private:
     //not sure if this is right idk how to do arrays in c++
     std::array<int, 3> coordinates;
     vector <Item> itemsInRoom;
-
+    Enemy enemyInRoom;
 
 public:
     // int numberOfItems();
@@ -35,6 +37,12 @@ public:
     void addItemToRoom(Item item);
     void removeItemFromRoom(Item item);
 
+    Enemy* getEnemyInRoom();
+    void setEnemyInRoom(Enemy enemy);
+    void removeEnemyFromRoom();
+    bool isEnemyInRoom;
+};
+
 
     //image
     //items
@@ -49,6 +57,6 @@ public:
     // string displayItem();
     // int isItemInRoom(string inString);
     // void removeItemFromRoom(int location);
-};
+
 
 #endif

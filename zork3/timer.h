@@ -3,7 +3,6 @@
 
 #include <QWidget>
 #include <QTimer>
-#include "endgamescreen.h"
 
 namespace Ui {
 class Timer;
@@ -19,7 +18,9 @@ public:
     void start(int duration);
     void kickPlayer();
 
-
+signals:
+    void timeEnded();
+    void hurryUp();
 private:
     Ui::Timer *ui;
     int noMinutes;
@@ -27,7 +28,7 @@ private:
     void updateTimer();
     int remainingTime;
     QTimer *timer;
-    endGameScreen end;
+    // endGameScreen *endScreen;
 
 };
 

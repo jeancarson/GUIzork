@@ -7,7 +7,8 @@
 #include <QPushButton>
 #include "guide.h"
 #include "item.h"
-#include "inventorybackend.h"
+#include "guide.h"
+#include "endgamescreen.h"
 
 
 namespace Ui {
@@ -17,8 +18,10 @@ class mainGameWindow;
 class mainGameWindow : public QMainWindow {
     Q_OBJECT
 private:
+    QMainWindow* parentWindow;
     Timer* timerWidget;
     GameSetUp* gameSetup;
+    endGameScreen *end;
 
 public:
     explicit mainGameWindow(QWidget *parent, GameSetUp *preGameSetup);
@@ -34,12 +37,13 @@ private slots:
     void updateBackgroundImage();
     void setButtonColor(QPushButton *button, Room *exitRoom);
     void on_OpenGuide_clicked();
-
     void on_slot1_clicked();
-
     void on_slot2_clicked();
-
     void on_itemInRoom_clicked();
+    void handleTimerEnded();
+    void handleHurryUp();
+
+    void on_EnemyPlace_clicked();
 
 private:
     Ui::mainGameWindow *ui;

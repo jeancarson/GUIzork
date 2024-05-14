@@ -5,8 +5,9 @@
 #include "gamesetup.h"
 #include "guide.h"
 #include "maingamewindow.h"
-#include "endgamescreen.h"
-
+#include "Timer.h"
+// #include "gamesetup.h"
+// #include "maingamewindow.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -22,7 +23,7 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
     Timer *getTimer() const { return timer; }
-
+    void setImage(string path);
 private slots:
     void on_pushButton_clicked();
 

@@ -8,13 +8,14 @@ class Item
 {
 public:
 
-    Item(string name, string pathToImage);
+    Item();
     QString getPathToImage();
     bool operator==(const Item& other) const {
         return this->name == other.name;
     }
 
     string getName();
+    void setNameAndPathToImage(string name, string path);
 
 private:
     string pathToImage;

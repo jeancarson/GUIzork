@@ -54,6 +54,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         endgamescreen.h endgamescreen.cpp endgamescreen.ui
         gameWon.jpg
         gameLost.jpg
+        enemy.h enemy.cpp
 
     )
 # Define target properties for Android with Qt 6 as:

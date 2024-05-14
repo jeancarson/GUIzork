@@ -3,9 +3,8 @@
 
 using namespace std;
 
-Item::Item(string name, string pathToImage) {
-    this->pathToImage = pathToImage;
-    this->name = name;
+Item::Item() {
+
 }
 
 
@@ -19,4 +18,13 @@ QString Item::getPathToImage(){
 
 string Item:: getName(){
     return name;
+}
+
+
+void Item::setNameAndPathToImage(string newName, string path){
+
+    this->name = newName;
+    // cout<<"GOT TO HERE"<<endl;
+
+    this->pathToImage = path;
 }

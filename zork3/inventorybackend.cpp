@@ -32,6 +32,15 @@ vector<Item> inventoryBackEnd::getInventory(){
 }
 
 
+bool inventoryBackEnd::isThisInTheInventory(string itemName){
+    for (Item& item : items) {
+    if (item.getName() == itemName) {
+        return true;
+    }}
+    return false;
+}
+
+
 
 
 
