@@ -3,6 +3,8 @@
 
 #include "Room.h"
 #include "Timer.h"
+#include "threateningcharacter.h"
+#include "curiouscharacter.h"
 using namespace std;
 
 #include <QObject> // Include QObject for signal-slot mechanism

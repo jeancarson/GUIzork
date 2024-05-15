@@ -17,6 +17,7 @@ mainGameWindow::mainGameWindow(QWidget *parent, GameSetUp *preGameSetup)
     ui->setupUi(this);
     connect(gameSetup->getTimer(), &Timer::timeEnded, this, &mainGameWindow::handleTimerEnded);
     connect(gameSetup->getTimer(), &Timer::hurryUp, this, &mainGameWindow::handleHurryUp);
+    ui->enemySpeech->setText("COME HERE");
 
 
     if (preGameSetup == nullptr) {
@@ -73,11 +74,10 @@ void mainGameWindow::updateBackgroundImage() {
         end->setScreen(true);
         end->show();
         this->hide();
-
     }
 
     string path = gameSetup->getCurrentRoom()->getPathToImage();
-    QPixmap backgroundImage(QString::fromStdString(path)); // Load image into QPixmap
+    QPixmap backgroundImage(QString::fromStdString(path));
 
     ui->label->setPixmap(backgroundImage);
     ui->label->setScaledContents(true);
@@ -111,9 +111,6 @@ void mainGameWindow::updateBackgroundImage() {
     }
 
 
-    //if room = frontDoor && lunchbox is in inventory: win screen
-    //will also do the time
-    //make a condition class or some shit
 
 
 
@@ -289,6 +286,14 @@ void mainGameWindow::on_EnemyPlace_clicked()
 //TODO this should probabl be a method in the gamesetup class and just be called here??
     if(gameSetup->getCurrentRoom()->isEnemyInRoom){
         Enemy* enemy = gameSetup->getCurrentRoom()->getEnemyInRoom();
+        Character* characterEnemy = dynamic_cast<Character*>(enemy);
+        if (characterEnemy !=nullptr) {
+            cout<<characterEnemy->talk()<<endl;
+            ui->enemySpeech->setText(QString::fromStdString(characterEnemy->talk()));
+        }
+
+
+
         if(enemy->getItemToOvercome().getName() == gameSetup->getCurrentItem()->getName()){
             gameSetup->getCurrentRoom()->removeEnemyFromRoom();
             gameSetup->getInventory()->removeFromInventory(*gameSetup->getCurrentItem());
@@ -302,9 +307,11 @@ void mainGameWindow::on_EnemyPlace_clicked()
 
             ui->backgroundSlot1->setStyleSheet("");
             isSlot1Yellow = false;
+
+            ui->enemySpeech->setText("");
+        }
         }
     }
 
 
-}
 

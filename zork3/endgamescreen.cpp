@@ -17,9 +17,9 @@ endGameScreen::~endGameScreen()
     delete ui;
 }
 
-void endGameScreen::handleTimerUp(){
-    setScreen(false);
-}
+// void endGameScreen::handleTimerUp(){
+//     setScreen(false);
+// }
 
 
 

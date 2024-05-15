@@ -19,7 +19,7 @@ private:
     //not sure if this is right idk how to do arrays in c++
     std::array<int, 3> coordinates;
     vector <Item> itemsInRoom;
-    Enemy enemyInRoom;
+    Enemy* enemyInRoom;
 
 public:
     // int numberOfItems();
@@ -38,7 +38,7 @@ public:
     void removeItemFromRoom(Item item);
 
     Enemy* getEnemyInRoom();
-    void setEnemyInRoom(Enemy enemy);
+    void setEnemyInRoom(Enemy *enemy);
     void removeEnemyFromRoom();
     bool isEnemyInRoom;
 };

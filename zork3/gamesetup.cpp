@@ -20,24 +20,24 @@ GameSetUp::GameSetUp() {
 void GameSetUp::createRoomsAndItems()  {
     Room *frontDoor, *foyer, *insideLift;
     frontDoor = (new Room("Front Door"));
-    frontDoor->setPathToImage("C:/Users/jeanl/College/Blocks/Block 4/C++/GUIzork/zork3/conor.jpg");
+    frontDoor->setPathToImage(":/conor.jpg");
 
     foyer = (new Room("You go through the front door. \nYou see a set of stairs and a lift"));
-    foyer->setPathToImage("C:/Users/jeanl/College/Blocks/Block 4/C++/GUIzork/zork3/frontDoorGeneric.jpg");
+    foyer->setPathToImage(":/frontDoorGeneric.jpg");
 
     insideLift = (new Room("You have entered the lift. North is first floor, west is second floor"));
-    insideLift->setPathToImage("C:/Users/jeanl/College/Blocks/Block 4/C++/GUIzork/zork3/taylor.jpg");
+    insideLift->setPathToImage(":/taylor.jpg");
     cout<<"Rooms are made"<<endl;
 
     Item *keycard = new Item();
     Item *umbrella = new Item();
     Item *lunchbox = new Item();
     Item *bat = new Item();
-    keycard->setNameAndPathToImage("keycard", "C:/Users/jeanl/College/Blocks/Block 4/C++/GUIzork/zork3/Keycard.png");
+    keycard->setNameAndPathToImage("keycard", ":/Keycard.png");
 
-    umbrella->setNameAndPathToImage("umbrella","C:/Users/jeanl/College/Blocks/Block 4/C++/GUIzork/zork3/umbrella.png" );
+    umbrella->setNameAndPathToImage("umbrella",":/umbrella.png" );
 
-    lunchbox->setNameAndPathToImage("lunchbox","C:/Users/jeanl/College/Blocks/Block 4/C++/GUIzork/zork3/lunchbox.png" );
+    lunchbox->setNameAndPathToImage("lunchbox",":/lunchbox.png" );
     bat->setNameAndPathToImage("bat", "");
     cout<<"Items are made"<<endl;
 
@@ -59,12 +59,12 @@ void GameSetUp::createRoomsAndItems()  {
 
 
 
-    Enemy *LockedDoor = new Enemy("Locked Door", *keycard,"C:/Users/jeanl/College/Blocks/Block 4/C++/GUIzork/zork3/Keycard.png", 400, 300);
-    Enemy *Mia = new Enemy("Mia", *umbrella,"C:/Users/jeanl/College/Blocks/Block 4/C++/GUIzork/zork3/Keycard.png", 200, 500);
-    Enemy *Ruan = new Enemy("Ruan", *bat, "C:/Users/jeanl/College/Blocks/Block 4/C++/GUIzork/zork3/Keycard.png",400, 700);
+    threateningCharacter *LockedDoor = new threateningCharacter("Locked Door", *keycard,":/Keycard.png", 400, 300);
+    CuriousCharacter *Mia = new CuriousCharacter("Mia", *umbrella,":Keycard.png", 200, 500);
+    CuriousCharacter *Ruan = new CuriousCharacter("Ruan", *bat, ":/Keycard.png",400, 700);
 
-    frontDoor->setEnemyInRoom(*LockedDoor);
-    insideLift->setEnemyInRoom(*Mia);
+    frontDoor->setEnemyInRoom(LockedDoor);
+    insideLift->setEnemyInRoom(Mia);
 
 
     this->currentRoom = frontDoor;

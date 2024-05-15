@@ -12,6 +12,7 @@ public:
     int getXLoc();
     int getYLoc();
     string getPathToImage();
+    virtual ~Enemy() {}
 
 private:
     string name;

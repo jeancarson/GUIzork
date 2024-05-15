@@ -72,15 +72,16 @@ void Room::removeItemFromRoom(Item item){
     }
 }
 Enemy* Room::getEnemyInRoom() {
-    return &enemyInRoom;
+    return enemyInRoom;
 }
-void Room::setEnemyInRoom(Enemy enemy){
+void Room::setEnemyInRoom(Enemy *enemy){
     enemyInRoom = enemy;
     this->isEnemyInRoom = true;
 }
 
+//TODO make this a null ptr check on all shit
 void Room:: removeEnemyFromRoom(){
-    enemyInRoom = Enemy();
+    enemyInRoom = new Enemy();
     this->isEnemyInRoom = false;
 }
 

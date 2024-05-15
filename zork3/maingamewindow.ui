@@ -248,6 +248,19 @@ background-color: rgba(255, 255, 255, 0); border: none;
      <string>Alison</string>
     </property>
    </widget>
+   <widget class="QLabel" name="enemySpeech">
+    <property name="geometry">
+     <rect>
+      <x>520</x>
+      <y>230</y>
+      <width>121</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>charTalk</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
