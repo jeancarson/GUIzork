@@ -9,6 +9,7 @@
 #include "item.h"
 #include "guide.h"
 #include "endgamescreen.h"
+#include "anxiouscharacter.h"
 
 
 namespace Ui {
@@ -22,6 +23,8 @@ private:
     Timer* timerWidget;
     GameSetUp* gameSetup;
     endGameScreen *end;
+    anxiousCharacter *alison;
+    bool alisonTimeFlag;
 
 public:
     explicit mainGameWindow(QWidget *parent, GameSetUp *preGameSetup);
@@ -44,6 +47,8 @@ private slots:
     void handleHurryUp();
 
     void on_EnemyPlace_clicked();
+
+    void on_AlisonGoesHere_clicked();
 
 private:
     Ui::mainGameWindow *ui;

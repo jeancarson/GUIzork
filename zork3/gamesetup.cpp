@@ -15,7 +15,6 @@ GameSetUp::GameSetUp() {
 //     delete currentItem;
 // }
 
-//TODO I think these paths will have to not be absolute eventually for portability
 
 void GameSetUp::createRoomsAndItems()  {
     Room *frontDoor, *foyer, *insideLift;
@@ -51,7 +50,6 @@ void GameSetUp::createRoomsAndItems()  {
     foyer->setExits(NULL, NULL, frontDoor, insideLift);
     insideLift->setExits(NULL, foyer, NULL, NULL);
 
-    //problem 3 something with coordinates
     frontDoor->setCoordinates(100, 100, 0);
     foyer -> setCoordinates(150, 150, 0);
     insideLift -> setCoordinates(150, 150, 1);
@@ -74,7 +72,6 @@ void GameSetUp::createRoomsAndItems()  {
 
 
 
-//need a set up UI function which assigns the background image to the next room
 Room* GameSetUp::getCurrentRoom() {
     return currentRoom;
 }

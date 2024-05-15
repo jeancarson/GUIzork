@@ -6,8 +6,12 @@
 class anxiousCharacter : public Character
 {
 public:
-    anxiousCharacter();
+    anxiousCharacter(string pathToImage);
     string talk() override;
+    string getPathToImage();
+
+private:
+    string pathToImage;
 };
 
 #endif // ANXIOUSCHARACTER_H

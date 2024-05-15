@@ -13,12 +13,13 @@ mainGameWindow::mainGameWindow(QWidget *parent, GameSetUp *preGameSetup)
     , ui(new Ui::mainGameWindow)
     , gameSetup(preGameSetup)
     ,end(new endGameScreen(this))
+    , alison(new anxiousCharacter(":/gameWon.jpg"))
 {
     ui->setupUi(this);
     connect(gameSetup->getTimer(), &Timer::timeEnded, this, &mainGameWindow::handleTimerEnded);
     connect(gameSetup->getTimer(), &Timer::hurryUp, this, &mainGameWindow::handleHurryUp);
-    ui->enemySpeech->setText("COME HERE");
 
+    alisonTimeFlag = false;
 
     if (preGameSetup == nullptr) {
         cout <<"GAMESET UP IS NULL";
@@ -54,9 +55,11 @@ void mainGameWindow::handleTimerEnded() {
     end->show();
 }
 void mainGameWindow::handleHurryUp(){
-    QPixmap backgroundImage("C:/Users/jeanl/College/Blocks/Block 4/C++/GUIzork/zork3/gameWon.jpg");
-    ui->AlisonGoesHere->setPixmap(backgroundImage);
-    ui->AlisonGoesHere->setScaledContents(true);
+    QString imagePath = QString::fromStdString(alison->getPathToImage());
+    QIcon icon(imagePath);
+    ui->AlisonGoesHere->setIcon(icon);
+    ui->AlisonGoesHere->setIconSize(ui->AlisonGoesHere->size());
+    alisonTimeFlag = true;
 }
 
 mainGameWindow::~mainGameWindow()
@@ -89,8 +92,6 @@ void mainGameWindow::updateBackgroundImage() {
 
     if(gameSetup->getCurrentRoom()->getItemsInRoom().size()>0){
         QPixmap item(gameSetup->getCurrentRoom()->getItemsInRoom()[0].getPathToImage());
-        // string sss = "C:Users/jeanl/College/Blocks/Block/4/C++/GUIzork/zork3/Keycard.png";
-        // QPixmap item ("C:/Users/jeanl/College/Blocks/Block 4/C++/GUIzork/zork3/Keycard.png");
         ui->itemInRoom->setIcon(item);
         ui->itemInRoom->setIconSize(ui->itemInRoom->size());
     }
@@ -100,7 +101,6 @@ void mainGameWindow::updateBackgroundImage() {
         ui->itemInRoom->setIconSize(ui->itemInRoom->size());
 
 
-        //TODO set up image for enemy
     }
     Enemy* enemyPtr = gameSetup->getCurrentRoom()->getEnemyInRoom();
     if (enemyPtr != nullptr) {
@@ -131,18 +131,6 @@ void mainGameWindow ::setButtonColor(QPushButton *button, Room *exitRoom) {
 
 
 
-// void mainGameWindow::on_inventoryToggle_clicked()
-// {
-//     qDebug() << "Toggle button clicked";
-//     if (InventoryWidget->isVisible()){
-//         cout<< "InventoryWidget is visible, hiding..."<<endl;
-//         // InventoryWidget->hide();
-//     }
-//     else{
-//         cout<< "InventoryWidget is not visible, showing..."<<endl;
-//         // InventoryWidget->show();
-//     }
-// }
 
 void mainGameWindow::on_NORTH_clicked()
 {
@@ -157,7 +145,6 @@ void mainGameWindow::on_NORTH_clicked()
 
 void mainGameWindow::on_WEST_clicked()
 {
-    //call go() function with parameter "WEST"
     gameSetup ->move ("west");
     updateBackgroundImage();
 }
@@ -314,4 +301,15 @@ void mainGameWindow::on_EnemyPlace_clicked()
     }
 
 
+
+
+void mainGameWindow::on_AlisonGoesHere_clicked()
+{
+    if (ui->alisonSays->text()=="" && alisonTimeFlag){
+        ui->alisonSays->setText(QString::fromStdString(alison->talk()));
+    }
+    else{
+        ui->alisonSays->setText("");
+    }
+}
 

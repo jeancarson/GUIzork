@@ -235,19 +235,6 @@ background-color: rgba(255, 255, 255, 0); border: none;
      <string>Enemy</string>
     </property>
    </widget>
-   <widget class="QLabel" name="AlisonGoesHere">
-    <property name="geometry">
-     <rect>
-      <x>30</x>
-      <y>40</y>
-      <width>81</width>
-      <height>81</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Alison</string>
-    </property>
-   </widget>
    <widget class="QLabel" name="enemySpeech">
     <property name="geometry">
      <rect>
@@ -259,6 +246,32 @@ background-color: rgba(255, 255, 255, 0); border: none;
     </property>
     <property name="text">
      <string>charTalk</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="alisonSays">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>50</y>
+      <width>101</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>alison says</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="AlisonGoesHere">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>90</y>
+      <width>91</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Alison</string>
     </property>
    </widget>
   </widget>
