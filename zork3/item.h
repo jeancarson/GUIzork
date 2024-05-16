@@ -14,7 +14,7 @@ public:
         return this->name == other.name;
     }
 
-    string getName();
+    string getName() const;
     void setNameAndPathToImage(string name, string path);
 
 private:

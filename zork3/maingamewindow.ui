@@ -155,6 +155,11 @@
        <height>101</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel#backgroundSlot1{
+background-color:black;
+}</string>
+     </property>
      <property name="text">
       <string/>
      </property>
@@ -167,6 +172,11 @@
        <width>91</width>
        <height>141</height>
       </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel#backgroundSlot2{
+background-color:black;;
+}</string>
      </property>
      <property name="text">
       <string/>

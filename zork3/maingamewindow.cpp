@@ -47,12 +47,12 @@ mainGameWindow::mainGameWindow(QWidget *parent, GameSetUp *preGameSetup)
 
 }
 void mainGameWindow::handleTimerEnded() {
-    // Hide the main game window
+    if(!gameSetup->isTheGameWon()){
     this->hide();
 
     // Show the end game screen
     end->setScreen(false);
-    end->show();
+    end->show();}
 }
 void mainGameWindow::handleHurryUp(){
     QString imagePath = QString::fromStdString(alison->getPathToImage());
@@ -189,14 +189,14 @@ void mainGameWindow::on_slot1_clicked()
 {
     if(!isSlot1Yellow && !ui->slot1->icon().isNull()){
         ui->backgroundSlot1->setStyleSheet("background-color:yellow;");
-        ui->backgroundSlot2->setStyleSheet("");
+        ui->backgroundSlot2->setStyleSheet("background-color:black;");
         isSlot1Yellow =true;
         isSlot2Yellow = false;
         gameSetup->setCurrentItem(gameSetup->getItemsBackEnd()[0]);
 
     }
     else{
-        ui->backgroundSlot1->setStyleSheet("");
+        ui->backgroundSlot1->setStyleSheet("background-color:black;");
         isSlot1Yellow = false;
 
         gameSetup->setCurrentItem(Item ());
@@ -209,7 +209,7 @@ void mainGameWindow::on_slot2_clicked()
 {
     if((!isSlot2Yellow) && !(ui->slot2->icon().isNull())){
         ui->backgroundSlot2->setStyleSheet("background-color:yellow;");
-        ui->backgroundSlot1->setStyleSheet("");
+        ui->backgroundSlot1->setStyleSheet("background-color:black;");
         isSlot2Yellow =true;
         isSlot1Yellow = false;
         gameSetup->setCurrentItem(gameSetup->getItemsBackEnd()[1]);
@@ -218,7 +218,7 @@ void mainGameWindow::on_slot2_clicked()
     else{
         gameSetup->setCurrentItem(Item ());
 
-        ui->backgroundSlot2->setStyleSheet("");
+        ui->backgroundSlot2->setStyleSheet("background-color:black;");
         isSlot2Yellow = false;
 
     }
@@ -289,10 +289,10 @@ void mainGameWindow::on_EnemyPlace_clicked()
 
             gameSetup->setCurrentItem(Item ());
 
-            ui->backgroundSlot2->setStyleSheet("");
+            ui->backgroundSlot2->setStyleSheet("background-color:black;");
             isSlot2Yellow = false;
 
-            ui->backgroundSlot1->setStyleSheet("");
+            ui->backgroundSlot1->setStyleSheet("background-color:black;");
             isSlot1Yellow = false;
 
             ui->enemySpeech->setText("");

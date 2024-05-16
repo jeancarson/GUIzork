@@ -16,7 +16,7 @@ QString Item::getPathToImage(){
 }
 
 
-string Item:: getName(){
+string Item:: getName() const{
     return name;
 }
 

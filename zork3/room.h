@@ -26,7 +26,7 @@ public:
     Room(string description);
 
     void setExits(Room *north, Room *east, Room *south, Room *west);
-    string getDescription();
+    string getDescription() const;
     string getPathToImage();
     Room* getNextRoom(string direction); // Corrected return type to Room*
     void setPathToImage(string path);

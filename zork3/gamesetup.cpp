@@ -2,8 +2,9 @@
 #include <iostream>
 
 
-GameSetUp::GameSetUp() {
-    cout<<"SETTING UP"<<endl;
+GameSetUp::GameSetUp() :
+    itemLogger(LoggerFile),
+    roomLogger(LoggerFile) {
     timerWidget = new Timer();
     this-> inventory = new inventoryBackEnd();
     createRoomsAndItems();
@@ -82,7 +83,7 @@ Item* GameSetUp::getCurrentItem(){
 
 void GameSetUp::setCurrentItem(Item item){
     *currentItem = item;
-    cout<< "Current item is : " + getCurrentItem()->getName() <<endl;
+    itemLogger.log(*currentItem);
 }
 
 
@@ -90,8 +91,7 @@ void GameSetUp::move(string direction) {
     Room* nextRoomPtr = currentRoom->getNextRoom(direction);
     if (nextRoomPtr != nullptr && !(currentRoom->isEnemyInRoom)) {
         currentRoom = nextRoomPtr;
-        cout << "Moved" << endl;
-        cout << currentRoom->getDescription() << endl;
+        roomLogger.log(*currentRoom);
     } else {
         cout << "You cannot move in that direction." << endl;
     }

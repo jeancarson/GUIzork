@@ -63,6 +63,10 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         curiouscharacter.h curiouscharacter.cpp
         anxiouscharacter.h anxiouscharacter.cpp
         resources.qrc
+        logger.h logger.cpp
+
+
+
 
     )
 # Define target properties for Android with Qt 6 as:

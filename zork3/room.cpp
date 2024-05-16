@@ -22,7 +22,7 @@ void Room::setExits(Room *north, Room *east, Room *south, Room *west) {
     if (west != NULL)
         exits["west"] = west;
 }
-string Room::getDescription() {
+string Room::getDescription() const {
     return description;
 }
 string Room::exitString() {
