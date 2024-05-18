@@ -1,11 +1,8 @@
 #include "maingamewindow.h"
 #include "ui_maingamewindow.h"
-#include <QWidget>
 #include <iostream>
-#include <QLayout>
+#include <QVBoxLayout>
 #include <QPixmap>
-
-#include <cstdlib>
 
 using namespace std;
 using namespace GameSetup;
@@ -14,50 +11,44 @@ mainGameWindow::mainGameWindow(QWidget *parent, GameSetUp *preGameSetup)
     : QMainWindow(parent)
     , ui(new Ui::mainGameWindow)
     , gameSetup(preGameSetup)
-    ,end(new endGameScreen(this))
+    , end(new endGameScreen(this))
     , alison(new anxiousCharacter(":/gameWon.jpg"))
     , flags()
+    , isSlot1Yellow(false)
+    , isSlot2Yellow(false)
+    , guide(nullptr)
 {
     ui->setupUi(this);
-    connect(gameSetup->getTimer(), &Timer::timeEnded, this, &mainGameWindow::handleTimerEnded);
-    connect(gameSetup->getTimer(), &Timer::hurryUp, this, &mainGameWindow::handleHurryUp);
+    timerWidget = new Timer(this);
 
+    connect(timerWidget, &Timer::timeEnded, this, &mainGameWindow::handleTimerEnded);
+    connect(timerWidget, &Timer::hurryUp, this, &mainGameWindow::handleHurryUp);
 
-    if (preGameSetup == nullptr) {
-        cout <<"GAMESET UP IS NULL";
+    if (!preGameSetup) {
+        cout << "GAME SETUP IS NULL" << endl;
     }
-    cout<<"BEFORE INITIALISNG SETUP"<<endl;
+    cout << "BEFORE INITIALIZING SETUP" << endl;
     gameSetup = preGameSetup;
-    cout<<gameSetup->getCurrentRoom()->getPathToImage()<<endl;
-
-    cout<<"AFTER INITIALISING SETUP"<<endl;
-
-    cout<<gameSetup->getCurrentRoom()->getPathToImage()<<endl;
+    cout << gameSetup->getCurrentRoom()->getPathToImage() << endl;
+    cout << "AFTER INITIALIZING SETUP" << endl;
+    cout << gameSetup->getCurrentRoom()->getPathToImage() << endl;
     updateBackgroundImage();
-    timerWidget = gameSetup->getTimer();
-    auto layout= new QVBoxLayout();
+
+    auto layout = new QVBoxLayout();
     layout->addWidget(timerWidget);
     ui->forTheTIMER->setLayout(layout);
-
-
-
-
-    // QPixmap slot1Image("C:/Users/jeanl/College/Blocks/Block 4/C++/GUIzork/zork3/Keycard.png");
-    // ui->slot1->setIcon(slot1Image);
-    // ui->slot1->setIconSize(ui->slot1->size());
-
-
 }
+
 void mainGameWindow::handleTimerEnded() {
-    if(flags.isGameOver() == false){
+    if (!flags.isGameOver()) {
         flags.setGameOver(true);
         this->hide();
-
-    // Show the end game screen
-    end->setScreen(false);
-    end->show();}
+        end->setScreen(false);
+        end->show();
+    }
 }
-void mainGameWindow::handleHurryUp(){
+
+void mainGameWindow::handleHurryUp() {
     flags.setAlisonOnScreen(true);
     QString imagePath = QString::fromStdString(alison->getPathToImage());
     QIcon icon(imagePath);
@@ -65,18 +56,12 @@ void mainGameWindow::handleHurryUp(){
     ui->AlisonGoesHere->setIconSize(ui->AlisonGoesHere->size());
 }
 
-mainGameWindow::~mainGameWindow()
-{
+mainGameWindow::~mainGameWindow() {
     delete ui;
-    //commenting this out for debugging
-    // delete gameSetup;
 }
 
-
-
 void mainGameWindow::updateBackgroundImage() {
-
-    if(gameSetup->isTheGameWon()){
+    if (gameSetup->isTheGameWon()) {
         flags.setGameOver(true);
         end->setScreen(true);
         end->show();
@@ -85,149 +70,38 @@ void mainGameWindow::updateBackgroundImage() {
 
     string path = gameSetup->getCurrentRoom()->getPathToImage();
     QPixmap backgroundImage(QString::fromStdString(path));
-
     ui->label->setPixmap(backgroundImage);
     ui->label->setScaledContents(true);
+
     setButtonColor(ui->NORTH, gameSetup->getCurrentRoom()->getNextRoom("north"));
     setButtonColor(ui->WEST, gameSetup->getCurrentRoom()->getNextRoom("west"));
     setButtonColor(ui->EAST, gameSetup->getCurrentRoom()->getNextRoom("east"));
     setButtonColor(ui->SOUTH, gameSetup->getCurrentRoom()->getNextRoom("south"));
 
-
-    if(gameSetup->getCurrentRoom()->getItemsInRoom().size()>0){
+    if (!gameSetup->getCurrentRoom()->getItemsInRoom().empty()) {
         QPixmap item(gameSetup->getCurrentRoom()->getItemsInRoom()[0].getPathToImage());
         ui->itemInRoom->setIcon(item);
         ui->itemInRoom->setIconSize(ui->itemInRoom->size());
+    } else {
+        ui->itemInRoom->setIcon(QIcon());
     }
-    else{
-        QPixmap item("");
-        ui->itemInRoom->setIcon(item);
-        ui->itemInRoom->setIconSize(ui->itemInRoom->size());
 
-
-    }
-    Enemy* enemyPtr = gameSetup->getCurrentRoom()->getEnemyInRoom();
-    if (enemyPtr != nullptr) {
-        QString imagePath = QString::fromStdString(enemyPtr->getPathToImage());
-        QPixmap enemy(imagePath);
+    if (Enemy* enemyPtr = gameSetup->getCurrentRoom()->getEnemyInRoom()) {
+        QPixmap enemy(QString::fromStdString(enemyPtr->getPathToImage()));
         ui->EnemyPlace->setIcon(enemy);
         ui->EnemyPlace->setIconSize(ui->EnemyPlace->size());
+    } else {
+        ui->EnemyPlace->setIcon(QIcon());
     }
-
-
-
-
-
 }
-void mainGameWindow ::setButtonColor(QPushButton *button, Room *exitRoom) {
-    if (exitRoom == nullptr) {
-        // Set button color to grey
+
+void mainGameWindow::setButtonColor(QPushButton *button, Room *exitRoom) {
+    if (!exitRoom) {
         button->setStyleSheet("background-color: grey;");
     } else {
-        // Set button color to red
         button->setStyleSheet("background-color: red;");
     }
 }
-
-
-
-
-
-
-
-
-void mainGameWindow::on_NORTH_clicked()
-{
-
-    gameSetup->move("north");
-    updateBackgroundImage();
-
-
-
-}
-
-
-void mainGameWindow::on_WEST_clicked()
-{
-    gameSetup ->move ("west");
-    updateBackgroundImage();
-}
-
-
-void mainGameWindow::on_SOUTH_clicked()
-{
-    gameSetup -> move ("south");
-    updateBackgroundImage();
-
-
-}
-
-
-
-void mainGameWindow::on_EAST_clicked()
-{
-    gameSetup -> move ("east");
-    updateBackgroundImage();
-
-}
-
-
-
-
-
-void mainGameWindow::on_OpenGuide_clicked()
-{
-    guide = new Guide(gameSetup, this, timerWidget);
-
-    guide->show();
-    guide->updateBackgroundImage();
-
-    this -> hide();
-}
-
-bool isSlot1Yellow = false;
-bool isSlot2Yellow = false;
-
-
-void mainGameWindow::on_slot1_clicked()
-{
-    if(!isSlot1Yellow && !ui->slot1->icon().isNull()){
-        ui->backgroundSlot1->setStyleSheet("background-color:yellow;");
-        ui->backgroundSlot2->setStyleSheet("background-color:black;");
-        isSlot1Yellow =true;
-        isSlot2Yellow = false;
-        gameSetup->setCurrentItem(gameSetup->getItemsBackEnd()[0]);
-
-    }
-    else{
-        ui->backgroundSlot1->setStyleSheet("background-color:black;");
-        isSlot1Yellow = false;
-
-        gameSetup->setCurrentItem(Item ());
-
-    }
-}
-
-
-void mainGameWindow::on_slot2_clicked()
-{
-    if((!isSlot2Yellow) && !(ui->slot2->icon().isNull())){
-        ui->backgroundSlot2->setStyleSheet("background-color:yellow;");
-        ui->backgroundSlot1->setStyleSheet("background-color:black;");
-        isSlot2Yellow =true;
-        isSlot1Yellow = false;
-        gameSetup->setCurrentItem(gameSetup->getItemsBackEnd()[1]);
-
-    }
-    else{
-        gameSetup->setCurrentItem(Item ());
-
-        ui->backgroundSlot2->setStyleSheet("background-color:black;");
-        isSlot2Yellow = false;
-
-    }
-}
-
 
 void mainGameWindow::updateInventory() {
     vector<Item> inventory = gameSetup->getItemsBackEnd();
@@ -249,6 +123,65 @@ void mainGameWindow::updateInventory() {
     }
 }
 
+
+void mainGameWindow::on_NORTH_clicked() {
+    gameSetup->move("north");
+    updateBackgroundImage();
+}
+
+void mainGameWindow::on_WEST_clicked() {
+    gameSetup->move("west");
+    updateBackgroundImage();
+}
+
+void mainGameWindow::on_SOUTH_clicked() {
+    gameSetup->move("south");
+    updateBackgroundImage();
+}
+
+void mainGameWindow::on_EAST_clicked() {
+    gameSetup->move("east");
+    updateBackgroundImage();
+}
+
+void mainGameWindow::on_OpenGuide_clicked() {
+    guide = new Guide(gameSetup, this, timerWidget);
+    guide->show();
+    guide->updateBackgroundImage();
+    this->hide();
+}
+
+void mainGameWindow::on_slot1_clicked() {
+    if (!isSlot1Yellow && !ui->slot1->icon().isNull()) {
+        ui->backgroundSlot1->setStyleSheet("background-color: yellow;");
+        ui->backgroundSlot2->setStyleSheet("background-color: black;");
+        isSlot1Yellow = true;
+        isSlot2Yellow = false;
+        gameSetup->setCurrentItem(gameSetup->getItemsBackEnd()[0]);
+    } else {
+        ui->backgroundSlot1->setStyleSheet("background-color: black;");
+        isSlot1Yellow = false;
+        gameSetup->setCurrentItem(Item());
+    }
+}
+void mainGameWindow::on_slot2_clicked()
+{
+    if((!isSlot2Yellow) && !(ui->slot2->icon().isNull())){
+        ui->backgroundSlot2->setStyleSheet("background-color:yellow;");
+        ui->backgroundSlot1->setStyleSheet("background-color:black;");
+        isSlot2Yellow =true;
+        isSlot1Yellow = false;
+        gameSetup->setCurrentItem(gameSetup->getItemsBackEnd()[1]);
+
+    }
+    else{
+        gameSetup->setCurrentItem(Item ());
+
+        ui->backgroundSlot2->setStyleSheet("background-color:black;");
+        isSlot2Yellow = false;
+
+    }
+}
 
 void mainGameWindow::on_itemInRoom_clicked()
 {
@@ -274,7 +207,7 @@ void mainGameWindow::on_itemInRoom_clicked()
 
 void mainGameWindow::on_EnemyPlace_clicked()
 {
-//TODO this should probabl be a method in the gamesetup class and just be called here??
+    //TODO this should probabl be a method in the gamesetup class and just be called here??
     if(gameSetup->getCurrentRoom()->isEnemyInRoom){
         Enemy* enemy = gameSetup->getCurrentRoom()->getEnemyInRoom();
         Character* characterEnemy = dynamic_cast<Character*>(enemy);
@@ -301,8 +234,8 @@ void mainGameWindow::on_EnemyPlace_clicked()
 
             ui->enemySpeech->setText("");
         }
-        }
     }
+}
 
 
 
@@ -316,4 +249,3 @@ void mainGameWindow::on_AlisonGoesHere_clicked()
         ui->alisonSays->setText("");
     }
 }
-

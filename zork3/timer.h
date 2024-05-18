@@ -21,15 +21,19 @@ public:
 signals:
     void timeEnded();
     void hurryUp();
+
+private slots:
+    void updateTimer();
+
 private:
     Ui::Timer *ui;
     int noMinutes;
     void updateDisplay(int seconds);
-    void updateTimer();
     int remainingTime;
     QTimer *timer;
-    // endGameScreen *endScreen;
 
+    // Declare mainGameWindow as a friend
+    friend class mainGameWindow;
 };
 
 #endif // TIMER_H

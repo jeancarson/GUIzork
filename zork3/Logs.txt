@@ -26,3 +26,13 @@ You see a set of stairs and a lift
 Sat May 18 23:50:11 2024 - Entered into a new room: Front Door
 Sun May 19 00:06:35 2024 Current item set to keycard
 Sun May 19 00:06:35 2024 Current item set to 
+Sun May 19 00:26:18 2024 Current item set to keycard
+Sun May 19 00:26:19 2024 Current item set to 
+Sun May 19 00:26:20 2024 - Entered into a new room: You go through the front door. 
+You see a set of stairs and a lift
+Sun May 19 00:26:24 2024 - Entered into a new room: You have entered the lift. North is first floor, west is second floor
+Sun May 19 00:26:28 2024 Current item set to umbrella
+Sun May 19 00:26:28 2024 Current item set to 
+Sun May 19 00:26:29 2024 - Entered into a new room: You go through the front door. 
+You see a set of stairs and a lift
+Sun May 19 00:26:29 2024 - Entered into a new room: Front Door

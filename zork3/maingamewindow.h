@@ -3,20 +3,15 @@
 
 #include <QMainWindow>
 #include "gamesetup.h"
-#include <QLabel>
-#include <QPushButton>
-#include "guide.h"
-#include "item.h"
-#include "guide.h"
 #include "endgamescreen.h"
 #include "anxiouscharacter.h"
-
-using namespace GameSetup;
+#include "timer.h"
+#include <QPushButton>
+#include "guide.h"
 
 namespace Ui {
-class mainGameWindow;
-}
 
+class mainGameWindow;}
 struct GameFlags {
     unsigned short flags : 2; // Allocate 2 bits for flags
 
@@ -33,55 +28,39 @@ struct GameFlags {
 
 class mainGameWindow : public QMainWindow {
     Q_OBJECT
-private:
-    QMainWindow* parentWindow;
-    Timer* timerWidget;
-    GameSetUp* gameSetup;
-    endGameScreen *end;
-    anxiousCharacter *alison;
-    // bool alisonTimeFlag;
-    GameFlags flags;
 
 public:
-    explicit mainGameWindow(QWidget *parent, GameSetUp *preGameSetup);
+    explicit mainGameWindow(QWidget *parent = nullptr, GameSetup::GameSetUp *preGameSetup = nullptr);
     ~mainGameWindow();
-    void updateInventory();
-
 
 private slots:
+    void handleTimerEnded();
+    void handleHurryUp();
     void on_NORTH_clicked();
     void on_WEST_clicked();
     void on_SOUTH_clicked();
     void on_EAST_clicked();
-    void updateBackgroundImage();
-    void setButtonColor(QPushButton *button, Room *exitRoom);
     void on_OpenGuide_clicked();
     void on_slot1_clicked();
     void on_slot2_clicked();
     void on_itemInRoom_clicked();
-    void handleTimerEnded();
-    void handleHurryUp();
-
     void on_EnemyPlace_clicked();
-
     void on_AlisonGoesHere_clicked();
 
 private:
     Ui::mainGameWindow *ui;
-    QWidget *InventoryWidget;
+    GameSetup::GameSetUp *gameSetup;
+    endGameScreen *end;
+    anxiousCharacter *alison;
+    GameFlags flags;
+    Timer *timerWidget;
+    bool isSlot1Yellow;
+    bool isSlot2Yellow;
     Guide *guide;
-    void addToSlot(Item item);
-    void removeFromSlot(Item item);
-    Item* selectedItem;
-
-    // GameSetUp *preGameSetup;
-
-
+    void updateBackgroundImage();
+    //dont need gamesetup::room here bc namespace
+    void setButtonColor(QPushButton *button, Room *exitRoom);
+    void updateInventory();
 };
 
 #endif // MAINGAMEWINDOW_H
-
-
-
-
-
