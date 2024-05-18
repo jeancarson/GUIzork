@@ -11,6 +11,8 @@ using namespace std;
 #include <QObject> // Include QObject for signal-slot mechanism
 #include "Timer.h"
 #include "inventorybackend.h"
+namespace GameSetup {
+
 class GameSetUp
 {
 private:
@@ -32,6 +34,7 @@ public:
     void createRoomsAndItems();
     Timer* getTimer();
     GameSetUp();
+    ~GameSetUp();
     void play();
     void move(string direction);
     Room* getCurrentRoom();
@@ -44,6 +47,6 @@ public:
 
 
 
-};
+};}
 
 #endif // GAMESETUP_H

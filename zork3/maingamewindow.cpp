@@ -8,6 +8,8 @@
 #include <cstdlib>
 
 using namespace std;
+using namespace GameSetup;
+
 mainGameWindow::mainGameWindow(QWidget *parent, GameSetUp *preGameSetup)
     : QMainWindow(parent)
     , ui(new Ui::mainGameWindow)

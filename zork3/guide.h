@@ -3,6 +3,8 @@
 #include "gamesetup.h"
 #include <QMainWindow>
 #include "Timer.h"
+using namespace GameSetup;
+
 namespace Ui {
 class Guide;
 }

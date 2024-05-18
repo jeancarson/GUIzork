@@ -1,6 +1,7 @@
 #include "gamesetup.h"
 #include <iostream>
 
+namespace GameSetup {
 
 GameSetUp::GameSetUp() :
     itemLogger(LoggerFile),
@@ -128,4 +129,4 @@ inventoryBackEnd* GameSetUp:: getInventory(){
     return this->inventory;
 }
 
-
+}

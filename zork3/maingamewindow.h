@@ -11,6 +11,7 @@
 #include "endgamescreen.h"
 #include "anxiouscharacter.h"
 
+using namespace GameSetup;
 
 namespace Ui {
 class mainGameWindow;
