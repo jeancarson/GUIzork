@@ -14,12 +14,12 @@ mainGameWindow::mainGameWindow(QWidget *parent, GameSetUp *preGameSetup)
     , gameSetup(preGameSetup)
     ,end(new endGameScreen(this))
     , alison(new anxiousCharacter(":/gameWon.jpg"))
+    , flags()
 {
     ui->setupUi(this);
     connect(gameSetup->getTimer(), &Timer::timeEnded, this, &mainGameWindow::handleTimerEnded);
     connect(gameSetup->getTimer(), &Timer::hurryUp, this, &mainGameWindow::handleHurryUp);
 
-    alisonTimeFlag = false;
 
     if (preGameSetup == nullptr) {
         cout <<"GAMESET UP IS NULL";
@@ -47,19 +47,20 @@ mainGameWindow::mainGameWindow(QWidget *parent, GameSetUp *preGameSetup)
 
 }
 void mainGameWindow::handleTimerEnded() {
-    if(!gameSetup->isTheGameWon()){
-    this->hide();
+    if(flags.isGameOver() == false){
+        flags.setGameOver(true);
+        this->hide();
 
     // Show the end game screen
     end->setScreen(false);
     end->show();}
 }
 void mainGameWindow::handleHurryUp(){
+    flags.setAlisonOnScreen(true);
     QString imagePath = QString::fromStdString(alison->getPathToImage());
     QIcon icon(imagePath);
     ui->AlisonGoesHere->setIcon(icon);
     ui->AlisonGoesHere->setIconSize(ui->AlisonGoesHere->size());
-    alisonTimeFlag = true;
 }
 
 mainGameWindow::~mainGameWindow()
@@ -74,6 +75,7 @@ mainGameWindow::~mainGameWindow()
 void mainGameWindow::updateBackgroundImage() {
 
     if(gameSetup->isTheGameWon()){
+        flags.setGameOver(true);
         end->setScreen(true);
         end->show();
         this->hide();
@@ -305,7 +307,7 @@ void mainGameWindow::on_EnemyPlace_clicked()
 
 void mainGameWindow::on_AlisonGoesHere_clicked()
 {
-    if (ui->alisonSays->text()=="" && alisonTimeFlag){
+    if (ui->alisonSays->text()=="" && flags.isAlisonOnScreen()){
         ui->alisonSays->setText(QString::fromStdString(alison->talk()));
     }
     else{
