@@ -3,7 +3,8 @@
 
 #include <QWidget>
 #include <QTimer>
-
+#include <QString>
+using namespace std;
 namespace Ui {
 class Timer;
 }
@@ -21,6 +22,7 @@ public:
 signals:
     void timeEnded();
     void hurryUp();
+    void timeUpdated();
 
 private slots:
     void updateTimer();
@@ -28,12 +30,14 @@ private slots:
 private:
     Ui::Timer *ui;
     int noMinutes;
-    void updateDisplay(int seconds);
+    QString timeToString(int seconds);
     int remainingTime;
     QTimer *timer;
+    QString timeLeft;
 
     // Declare mainGameWindow as a friend
     friend class mainGameWindow;
+    friend class Guide;
 };
 
 #endif // TIMER_H

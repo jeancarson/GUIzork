@@ -87,10 +87,10 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>170</x>
-      <y>60</y>
-      <width>351</width>
-      <height>291</height>
+      <x>130</x>
+      <y>80</y>
+      <width>501</width>
+      <height>331</height>
      </rect>
     </property>
     <property name="text">
@@ -113,8 +113,8 @@
    <widget class="QFrame" name="forTheTIMER">
     <property name="geometry">
      <rect>
-      <x>650</x>
-      <y>0</y>
+      <x>640</x>
+      <y>10</y>
       <width>141</width>
       <height>51</height>
      </rect>
@@ -130,6 +130,16 @@
     <property name="frameShadow">
      <enum>QFrame::Raised</enum>
     </property>
+    <widget class="QLCDNumber" name="TimerDisplay">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>141</width>
+       <height>51</height>
+      </rect>
+     </property>
+    </widget>
    </widget>
    <widget class="QFrame" name="frame">
     <property name="geometry">
@@ -235,11 +245,16 @@ background-color: rgba(255, 255, 255, 0); border: none;
    <widget class="QPushButton" name="EnemyPlace">
     <property name="geometry">
      <rect>
-      <x>640</x>
-      <y>120</y>
+      <x>330</x>
+      <y>130</y>
       <width>121</width>
       <height>231</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton#EnemyPlace{
+    background-color: transparent;
+    border: none;}</string>
     </property>
     <property name="text">
      <string>Enemy</string>
@@ -248,8 +263,8 @@ background-color: rgba(255, 255, 255, 0); border: none;
    <widget class="QLabel" name="enemySpeech">
     <property name="geometry">
      <rect>
-      <x>520</x>
-      <y>230</y>
+      <x>310</x>
+      <y>170</y>
       <width>121</width>
       <height>16</height>
      </rect>

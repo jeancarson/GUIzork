@@ -12,17 +12,16 @@ mainGameWindow::mainGameWindow(QWidget *parent, GameSetUp *preGameSetup)
     , ui(new Ui::mainGameWindow)
     , gameSetup(preGameSetup)
     , end(new endGameScreen(this))
-    , alison(new anxiousCharacter(":/gameWon.jpg"))
+    , alison(new anxiousCharacter(":/ALISON.png"))
     , flags()
     , isSlot1Yellow(false)
     , isSlot2Yellow(false)
     , guide(nullptr)
 {
     ui->setupUi(this);
-    timerWidget = new Timer(this);
+    // timerWidget = new Timer(this);
 
-    connect(timerWidget, &Timer::timeEnded, this, &mainGameWindow::handleTimerEnded);
-    connect(timerWidget, &Timer::hurryUp, this, &mainGameWindow::handleHurryUp);
+
 
     if (!preGameSetup) {
         cout << "GAME SETUP IS NULL" << endl;
@@ -34,9 +33,19 @@ mainGameWindow::mainGameWindow(QWidget *parent, GameSetUp *preGameSetup)
     cout << gameSetup->getCurrentRoom()->getPathToImage() << endl;
     updateBackgroundImage();
 
-    auto layout = new QVBoxLayout();
-    layout->addWidget(timerWidget);
-    ui->forTheTIMER->setLayout(layout);
+    timerWidget = gameSetup->getTimer();
+    // auto layout= new QVBoxLayout();
+    // layout->addWidget(timerWidget);
+    // ui->forTheTIMER->setLayout(layout);
+//     auto layout = new QVBoxLayout();
+//     layout->addWidget(timerWidget);
+//     ui->forTheTIMER->setLayout(layout);
+//TODO could this be an example of preprocesser directives? Connect has to come after? IDK
+    connect(timerWidget, &Timer::timeEnded, this, &mainGameWindow::handleTimerEnded);
+    connect(timerWidget, &Timer::hurryUp, this, &mainGameWindow::handleHurryUp);
+    connect(timerWidget, &Timer::timeUpdated, this, &mainGameWindow::updateTimerDisplay);
+
+    updateTimerDisplay();
 }
 
 void mainGameWindow::handleTimerEnded() {
@@ -49,12 +58,18 @@ void mainGameWindow::handleTimerEnded() {
 }
 
 void mainGameWindow::handleHurryUp() {
+    cout<<"HURRYING UP"<<endl;
     flags.setAlisonOnScreen(true);
     QString imagePath = QString::fromStdString(alison->getPathToImage());
     QIcon icon(imagePath);
     ui->AlisonGoesHere->setIcon(icon);
     ui->AlisonGoesHere->setIconSize(ui->AlisonGoesHere->size());
 }
+void mainGameWindow::updateTimerDisplay() {
+    ui->TimerDisplay->display(timerWidget->timeLeft);
+    cout<<timerWidget->timeLeft.toStdString()<<endl;
+}
+
 
 mainGameWindow::~mainGameWindow() {
     delete ui;
@@ -145,7 +160,7 @@ void mainGameWindow::on_EAST_clicked() {
 }
 
 void mainGameWindow::on_OpenGuide_clicked() {
-    guide = new Guide(gameSetup, this, timerWidget);
+    guide = new Guide(gameSetup, this);
     guide->show();
     guide->updateBackgroundImage();
     this->hide();

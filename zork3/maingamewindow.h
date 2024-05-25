@@ -61,6 +61,7 @@ private:
     //dont need gamesetup::room here bc namespace
     void setButtonColor(QPushButton *button, Room *exitRoom);
     void updateInventory();
+    void updateTimerDisplay();
 };
 
 #endif // MAINGAMEWINDOW_H

@@ -32,7 +32,7 @@ void MainWindow::on_pushButton_clicked()
     // Pass the Timer object to the constructors of both windows
     timer = gameSetup->getTimer();
     game = new mainGameWindow(nullptr, gameSetup);
-    guide = new Guide(gameSetup, nullptr, timer);
+    guide = new Guide(gameSetup, nullptr);
 
 
 

@@ -51,7 +51,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
 
         Keycard.png
         inventorybackend.h inventorybackend.cpp
-        timer.h timer.cpp timer.ui
+        timer.h timer.cpp
         umbrella.png
         lunchbox.png
         endgamescreen.h endgamescreen.cpp endgamescreen.ui
@@ -64,6 +64,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         anxiouscharacter.h anxiouscharacter.cpp
         resources.qrc
         logger.h logger.cpp
+        ALISON.png MIA.png
 
 
 

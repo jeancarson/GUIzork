@@ -36,3 +36,57 @@ Sun May 19 00:26:28 2024 Current item set to
 Sun May 19 00:26:29 2024 - Entered into a new room: You go through the front door. 
 You see a set of stairs and a lift
 Sun May 19 00:26:29 2024 - Entered into a new room: Front Door
+Fri May 24 21:20:57 2024 Current item set to keycard
+Fri May 24 21:20:57 2024 Current item set to 
+Fri May 24 21:20:58 2024 - Entered into a new room: You go through the front door. 
+You see a set of stairs and a lift
+Fri May 24 21:21:00 2024 - Entered into a new room: You have entered the lift. North is first floor, west is second floor
+Fri May 24 21:21:05 2024 Current item set to umbrella
+Fri May 24 21:21:33 2024 Current item set to keycard
+Fri May 24 21:21:33 2024 Current item set to 
+Fri May 24 21:21:34 2024 - Entered into a new room: You go through the front door. 
+You see a set of stairs and a lift
+Fri May 24 21:21:37 2024 - Entered into a new room: You have entered the lift. North is first floor, west is second floor
+Fri May 24 21:21:39 2024 Current item set to umbrella
+Fri May 24 21:21:39 2024 Current item set to 
+Fri May 24 21:21:40 2024 - Entered into a new room: You go through the front door. 
+You see a set of stairs and a lift
+Fri May 24 21:22:57 2024 Current item set to keycard
+Fri May 24 21:22:58 2024 Current item set to 
+Fri May 24 21:22:58 2024 - Entered into a new room: You go through the front door. 
+You see a set of stairs and a lift
+Fri May 24 21:23:01 2024 - Entered into a new room: You have entered the lift. North is first floor, west is second floor
+Fri May 24 21:23:02 2024 Current item set to umbrella
+Fri May 24 21:23:03 2024 Current item set to 
+Sat May 25 22:24:27 2024 Current item set to keycard
+Sat May 25 22:24:28 2024 Current item set to 
+Sat May 25 22:24:30 2024 - Entered into a new room: You go through the front door. 
+You see a set of stairs and a lift
+Sat May 25 22:25:02 2024 Current item set to keycard
+Sat May 25 22:25:03 2024 Current item set to 
+Sat May 25 22:25:07 2024 - Entered into a new room: You go through the front door. 
+You see a set of stairs and a lift
+Sat May 25 22:25:09 2024 - Entered into a new room: You have entered the lift. North is first floor, west is second floor
+Sat May 25 22:25:12 2024 Current item set to umbrella
+Sat May 25 22:25:12 2024 Current item set to 
+Sat May 25 22:25:15 2024 - Entered into a new room: You go through the front door. 
+You see a set of stairs and a lift
+Sat May 25 22:25:17 2024 - Entered into a new room: Front Door
+Sat May 25 22:32:21 2024 Current item set to keycard
+Sat May 25 22:33:19 2024 Current item set to keycard
+Sat May 25 22:33:22 2024 Current item set to 
+Sat May 25 22:33:23 2024 - Entered into a new room: You go through the front door. 
+You see a set of stairs and a lift
+Sat May 25 22:33:43 2024 Current item set to keycard
+Sat May 25 22:33:43 2024 Current item set to 
+Sat May 25 22:33:44 2024 - Entered into a new room: You go through the front door. 
+You see a set of stairs and a lift
+Sat May 25 22:34:14 2024 Current item set to keycard
+Sat May 25 22:34:15 2024 Current item set to 
+Sat May 25 22:34:19 2024 - Entered into a new room: You go through the front door. 
+You see a set of stairs and a lift
+Sat May 25 22:34:20 2024 - Entered into a new room: You have entered the lift. North is first floor, west is second floor
+Sat May 25 23:26:52 2024 Current item set to keycard
+Sat May 25 23:26:53 2024 Current item set to 
+Sat May 25 23:26:54 2024 - Entered into a new room: You go through the front door. 
+You see a set of stairs and a lift

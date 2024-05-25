@@ -59,8 +59,8 @@ void GameSetUp::createRoomsAndItems()  {
 
 
 
-    threateningCharacter *LockedDoor = new threateningCharacter("Locked Door", *keycard,":/Keycard.png", 400, 300);
-    CuriousCharacter *Mia = new CuriousCharacter("Mia", *umbrella,":Keycard.png", 200, 500);
+    threateningCharacter *LockedDoor = new threateningCharacter("Locked Door", *keycard,":/MIA.png", 400, 300);
+    CuriousCharacter *Mia = new CuriousCharacter("Mia", *umbrella,":/MIA.png", 200, 500);
     CuriousCharacter *Ruan = new CuriousCharacter("Ruan", *bat, ":/Keycard.png",400, 700);
 
     frontDoor->setEnemyInRoom(LockedDoor);

@@ -15,7 +15,7 @@ class Guide : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit Guide(GameSetUp *gameSetup, QWidget *parent = nullptr, Timer* timer = nullptr);
+    explicit Guide(GameSetUp *gameSetup, QWidget *parent = nullptr);
 
     ~Guide();
     void setLocationYOUareHERE();
@@ -26,9 +26,11 @@ private slots:
 
 private:
     GameSetUp* m_gameSetup;
-    Timer* timerGuide;
+    Timer *timerText;
     QWidget *parent;
     Ui::Guide *ui;
+    void updateTimerDisplay();
+
 
 
 

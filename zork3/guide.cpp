@@ -6,23 +6,25 @@
 
 //In time will probably make maingamewindow do the same, and game set up is instansiated form mainwindow
 
-Guide::Guide(GameSetUp *gameSetup, QWidget *parent, Timer* timer)
+Guide::Guide(GameSetUp *gameSetup, QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::Guide)
     , m_gameSetup(gameSetup)
-    , timerGuide(timer)
     , parent(parent)
 {
     ui->setupUi(this);
     setLocationYOUareHERE();
 
-    timerGuide = timer;
+    timerText = gameSetup->getTimer();
 
-    auto layout2= new QVBoxLayout();
-    layout2->addWidget(timerGuide);
+    // auto layout2= new QVBoxLayout();
+    // layout2->addWidget(timerGuide);
 
     //TODO friendship function here to make a time class and a time widget
     // ui->forTimerGuide->setLayout(layout2);
+    connect(timerText, &Timer::timeUpdated, this, &Guide::updateTimerDisplay);
+
+    updateTimerDisplay();
 }
 
 
@@ -31,6 +33,10 @@ Guide::Guide(GameSetUp *gameSetup, QWidget *parent, Timer* timer)
 Guide::~Guide()
 {
     delete ui;
+}
+void Guide::updateTimerDisplay() {
+    ui->TimerDisplay->display(timerText->timeLeft);
+    cout<<timerText->timeLeft.toStdString()<<endl;
 }
 
 void Guide::updateBackgroundImage(){
