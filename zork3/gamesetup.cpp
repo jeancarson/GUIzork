@@ -19,16 +19,18 @@ GameSetUp::GameSetUp() :
 
 
 void GameSetUp::createRoomsAndItems()  {
-    Room *frontDoor, *foyer, *insideLift;
+    Room *frontDoor, *foyer, *insideLift, *upstairsFoyer;
     frontDoor = (new Room("Front Door"));
-    frontDoor->setPathToImage(":/conor.jpg");
+    frontDoor->setPathToImage(":/ISEFrontDoor.jpg");
 
     foyer = (new Room("You go through the front door. \nYou see a set of stairs and a lift"));
-    foyer->setPathToImage(":/frontDoorGeneric.jpg");
+    foyer->setPathToImage(":/ISEFoyer.jpg");
 
     insideLift = (new Room("You have entered the lift. North is first floor, west is second floor"));
-    insideLift->setPathToImage(":/taylor.jpg");
-    cout<<"Rooms are made"<<endl;
+    insideLift->setPathToImage(":/ISEInsideLift.jpg");
+
+    upstairsFoyer = new Room ("You have reached upstairs");
+    upstairsFoyer->setPathToImage(":/ISEUpstairsFoyer.jpg");
 
     Item *keycard = new Item();
     Item *umbrella = new Item();
@@ -50,8 +52,8 @@ void GameSetUp::createRoomsAndItems()  {
 //             (N, E, S, W)
     frontDoor->setExits(foyer, NULL, NULL, NULL);
     foyer->setExits(NULL, NULL, frontDoor, insideLift);
-    insideLift->setExits(NULL, foyer, NULL, NULL);
-
+    insideLift->setExits(upstairsFoyer, NULL, foyer, NULL);
+    upstairsFoyer->setExits(NULL, NULL, insideLift, NULL);
     frontDoor->setCoordinates(100, 100, 0);
     foyer -> setCoordinates(150, 150, 0);
     insideLift -> setCoordinates(150, 150, 1);
