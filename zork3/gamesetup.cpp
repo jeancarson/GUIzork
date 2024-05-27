@@ -19,7 +19,8 @@ GameSetUp::GameSetUp() :
 
 
 void GameSetUp::createRoomsAndItems()  {
-    Room *frontDoor, *foyer, *insideLift, *upstairsFoyer;
+    Room *frontDoor, *foyer, *insideLift, *upstairsFoyer, *coworkingSpace1, *kitchen, *coworkingSpace2;
+    Room *coworkingSpace3a, *coworkingSpace3b, *forestRoom, *studio2;
     frontDoor = (new Room("Front Door"));
     frontDoor->setPathToImage(":/ISEFrontDoor.jpg");
 
@@ -31,6 +32,46 @@ void GameSetUp::createRoomsAndItems()  {
 
     upstairsFoyer = new Room ("You have reached upstairs");
     upstairsFoyer->setPathToImage(":/ISEUpstairsFoyer.jpg");
+
+    coworkingSpace1 = new Room("In the coworking space outside TA office");
+    coworkingSpace1->setPathToImage(":/ISECoworkingSpace1.jpg");
+
+    coworkingSpace2 = new Room("By the coworking booths");
+    coworkingSpace2->setPathToImage(":/ISECoworkingSpace.jpg");
+
+    kitchen = new Room("In the kitchen");
+    kitchen->setPathToImage(":/ISEKitchen.jpg");
+
+    coworkingSpace3a = new Room ("At that tall table outside Ian and Marks office");
+    coworkingSpace3a->setPathToImage(":/ISECoworkingSpace3a.jpg");
+
+    coworkingSpace3b = new Room ("Outside Alison's office");
+    coworkingSpace3b->setPathToImage(":/ISECoworkingSpace3b.jpg");
+
+    forestRoom = new Room ("The forest room..duh");
+    forestRoom ->setPathToImage(":/ISEForestRoom.jpg");
+
+    studio2 = new Room ("Studio off the forest room");
+    studio2->setPathToImage(":/ISEStudio.jpg");
+
+
+    //             (N, E, S, W)
+
+    frontDoor->setExits(foyer, NULL, NULL, NULL);
+    foyer->setExits(NULL, NULL, frontDoor, insideLift);
+    insideLift->setExits(upstairsFoyer, NULL, foyer, NULL);
+    upstairsFoyer->setExits(NULL, studio2, insideLift, coworkingSpace1);
+    coworkingSpace1->setExits(NULL, kitchen, upstairsFoyer, coworkingSpace2);
+    coworkingSpace2->setExits(NULL, coworkingSpace3a, NULL, coworkingSpace1);
+    kitchen->setExits(studio2, NULL, coworkingSpace1, NULL);
+    coworkingSpace3a->setExits(NULL, NULL, coworkingSpace2, coworkingSpace3b);
+    coworkingSpace3b->setExits(NULL, coworkingSpace3a, NULL, forestRoom);
+    forestRoom->setExits(NULL, studio2, NULL, coworkingSpace3b);
+    studio2->setExits(NULL, NULL, forestRoom, kitchen);
+
+
+
+
 
     Item *keycard = new Item();
     Item *umbrella = new Item();
@@ -49,11 +90,7 @@ void GameSetUp::createRoomsAndItems()  {
     insideLift->addItemToRoom(*lunchbox);
     cout<<"items added to rooms"<<endl;
 
-//             (N, E, S, W)
-    frontDoor->setExits(foyer, NULL, NULL, NULL);
-    foyer->setExits(NULL, NULL, frontDoor, insideLift);
-    insideLift->setExits(upstairsFoyer, NULL, foyer, NULL);
-    upstairsFoyer->setExits(NULL, NULL, insideLift, NULL);
+
     frontDoor->setCoordinates(100, 100, 0);
     foyer -> setCoordinates(150, 150, 0);
     insideLift -> setCoordinates(150, 150, 1);
@@ -71,7 +108,6 @@ void GameSetUp::createRoomsAndItems()  {
 
     this->currentRoom = frontDoor;
     cout<<currentRoom->getDescription();
-
 }
 
 
@@ -106,18 +142,6 @@ bool GameSetUp::isTheGameWon(){
 
     return (correctItem && correctRoom);
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 Timer* GameSetUp::getTimer(){
     return timerWidget;
