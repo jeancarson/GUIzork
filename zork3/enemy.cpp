@@ -23,8 +23,7 @@ int Enemy::getYLoc(){
 }
 
 string Enemy::getPathToImage(){
-    // return pathToImage;
-    return "";
+    return pathToImage;
 }
 
 

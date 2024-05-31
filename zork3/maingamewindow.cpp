@@ -10,7 +10,7 @@ using namespace GameSetup;
 mainGameWindow::mainGameWindow(QWidget *parent, GameSetUp *preGameSetup)
     : QMainWindow(parent)
     , ui(new Ui::mainGameWindow)
-    , gameSetup(preGameSetup)  // Initialize gameSetup with preGameSetup
+    , gameSetup(preGameSetup)
     , end(new endGameScreen(this))
     , alison(new anxiousCharacter(":/ALISON.png"))
     , flags()
@@ -77,6 +77,7 @@ mainGameWindow::~mainGameWindow() {
 }
 
 void mainGameWindow::updateBackgroundImage() {
+    //checking if the game is over
     if (gameSetup->isTheGameWon()) {
         flags.setGameOver(true);
         timerWidget->timer->stop();
@@ -85,17 +86,19 @@ void mainGameWindow::updateBackgroundImage() {
         this->hide();
 
     }
-
+    //setting the background image
     string path = gameSetup->getCurrentRoom()->getPathToImage();
     QPixmap backgroundImage(QString::fromStdString(path));
     ui->label->setPixmap(backgroundImage);
     ui->label->setScaledContents(true);
 
+    //setting the buttons dependng on whether they are valid or not
     setButtonColor(ui->NORTH, gameSetup->getCurrentRoom()->getNextRoom("north"));
     setButtonColor(ui->WEST, gameSetup->getCurrentRoom()->getNextRoom("west"));
     setButtonColor(ui->EAST, gameSetup->getCurrentRoom()->getNextRoom("east"));
     setButtonColor(ui->SOUTH, gameSetup->getCurrentRoom()->getNextRoom("south"));
 
+    //dealing with items
     if (!gameSetup->getCurrentRoom()->getItemsInRoom().empty()) {
         QPixmap item(gameSetup->getCurrentRoom()->getItemsInRoom()[0].getPathToImage());
         ui->itemInRoom->setIcon(item);
@@ -104,6 +107,7 @@ void mainGameWindow::updateBackgroundImage() {
         ui->itemInRoom->setIcon(QIcon());
     }
 
+    //dealing with enemies/characters
     if (Enemy* enemyPtr = gameSetup->getCurrentRoom()->getEnemyInRoom()) {
         QPixmap enemy(QString::fromStdString(enemyPtr->getPathToImage()));
         ui->EnemyPlace->setIcon(enemy);
