@@ -78,9 +78,11 @@ mainGameWindow::~mainGameWindow() {
 void mainGameWindow::updateBackgroundImage() {
     if (gameSetup->isTheGameWon()) {
         flags.setGameOver(true);
+        timerWidget->timer->stop();
         end->setScreen(true);
         end->show();
         this->hide();
+
     }
 
     string path = gameSetup->getCurrentRoom()->getPathToImage();
