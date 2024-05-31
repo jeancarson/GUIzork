@@ -23,7 +23,6 @@ Timer::~Timer()
 //then check gamesetup does not have access.
 void Timer::start(int duration) {
     remainingTime = duration * 60;
-    cout << remainingTime << endl;
     // updateDisplay(remainingTime);
     timeLeft = timeToString(remainingTime);
     emit timeUpdated();
@@ -38,7 +37,6 @@ void Timer::updateTimer() {
     timeLeft = timeToString(remainingTime);
 
     emit timeUpdated();
-    // cout<<remainingTime<<endl;
     if (remainingTime <= 0) {
         timer->stop();
         emit timeEnded();

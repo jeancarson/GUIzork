@@ -3,5 +3,5 @@
 
 
 string threateningCharacter::talk(){
-    return "OI!!! GIVE THAT BACK!!!!!!!!!!!!!";
+    return "NO WAY I'M \nLETTING YOU \nIN HERE!!!!!!";
 }

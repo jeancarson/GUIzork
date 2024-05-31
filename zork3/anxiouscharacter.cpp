@@ -6,7 +6,7 @@ anxiousCharacter::anxiousCharacter(string pathToImage) {
 
 
 string anxiousCharacter:: talk(){
-    return "OOH Hurry up!! Time is running out!";
+    return "Hurry up\n!!!!!!!";
 }
 
 string anxiousCharacter::getPathToImage(){

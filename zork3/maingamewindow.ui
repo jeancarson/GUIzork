@@ -239,10 +239,10 @@ background-color: rgba(255, 255, 255, 0); border: none;
    <widget class="QPushButton" name="itemInRoom">
     <property name="geometry">
      <rect>
-      <x>60</x>
-      <y>130</y>
-      <width>81</width>
-      <height>81</height>
+      <x>330</x>
+      <y>340</y>
+      <width>121</width>
+      <height>101</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -257,10 +257,10 @@ background-color: rgba(255, 255, 255, 0); border: none;
    <widget class="QPushButton" name="EnemyPlace">
     <property name="geometry">
      <rect>
-      <x>330</x>
-      <y>130</y>
-      <width>121</width>
-      <height>231</height>
+      <x>460</x>
+      <y>70</y>
+      <width>341</width>
+      <height>461</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -269,42 +269,54 @@ background-color: rgba(255, 255, 255, 0); border: none;
     border: none;}</string>
     </property>
     <property name="text">
-     <string>Enemy</string>
+     <string/>
     </property>
    </widget>
    <widget class="QLabel" name="enemySpeech">
     <property name="geometry">
      <rect>
-      <x>310</x>
-      <y>170</y>
-      <width>121</width>
-      <height>16</height>
+      <x>540</x>
+      <y>90</y>
+      <width>101</width>
+      <height>51</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel#enemySpeech{
+color:black;
+font-size: 9pt;
+}</string>
+    </property>
     <property name="text">
-     <string>charTalk</string>
+     <string/>
     </property>
    </widget>
    <widget class="QLabel" name="alisonSays">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>60</y>
-      <width>101</width>
-      <height>41</height>
+      <x>110</x>
+      <y>40</y>
+      <width>91</width>
+      <height>61</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel#alisonSays{
+color:black;
+font-size: 8pt;
+}</string>
+    </property>
     <property name="text">
-     <string>alison says</string>
+     <string/>
     </property>
    </widget>
    <widget class="QPushButton" name="AlisonGoesHere">
     <property name="geometry">
      <rect>
-      <x>100</x>
-      <y>50</y>
-      <width>131</width>
-      <height>121</height>
+      <x>0</x>
+      <y>40</y>
+      <width>191</width>
+      <height>141</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -313,10 +325,12 @@ background-color: rgba(255, 255, 255, 0); border: none;
     border: none;}</string>
     </property>
     <property name="text">
-     <string>Alison goes here</string>
+     <string/>
     </property>
    </widget>
    <zorder>label</zorder>
+   <zorder>EnemyPlace</zorder>
+   <zorder>AlisonGoesHere</zorder>
    <zorder>NORTH</zorder>
    <zorder>WEST</zorder>
    <zorder>EAST</zorder>
@@ -325,10 +339,8 @@ background-color: rgba(255, 255, 255, 0); border: none;
    <zorder>forTheTIMER</zorder>
    <zorder>frame</zorder>
    <zorder>itemInRoom</zorder>
-   <zorder>EnemyPlace</zorder>
    <zorder>enemySpeech</zorder>
    <zorder>alisonSays</zorder>
-   <zorder>AlisonGoesHere</zorder>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>

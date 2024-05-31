@@ -17,11 +17,6 @@ Guide::Guide(GameSetUp *gameSetup, QWidget *parent)
 
     timerText = gameSetup->getTimer();
 
-    // auto layout2= new QVBoxLayout();
-    // layout2->addWidget(timerGuide);
-
-    //TODO friendship function here to make a time class and a time widget
-    // ui->forTimerGuide->setLayout(layout2);
     connect(timerText, &Timer::timeUpdated, this, &Guide::updateTimerDisplay);
 
     updateTimerDisplay();
@@ -36,7 +31,6 @@ Guide::~Guide()
 }
 void Guide::updateTimerDisplay() {
     ui->TimerDisplay->display(timerText->timeLeft);
-    cout<<timerText->timeLeft.toStdString()<<endl;
 }
 
 void Guide::updateBackgroundImage(){
@@ -45,14 +39,12 @@ void Guide::updateBackgroundImage(){
 
     switch (floor[2]){
     case 0:
-        backgroundImage = QPixmap(QString::fromStdString("C:/Users/jeanl/College/Blocks/Block 4/C++/GUIzork/zork3/guideLevel1.jpg")); // Load image into QPixmap
+        backgroundImage = QPixmap(QString::fromStdString(":/groundfloormap.png")); // Load image into QPixmap
         break;
     case 1:
-        backgroundImage = QPixmap(QString::fromStdString("C:/Users/jeanl/College/Blocks/Block 4/C++/GUIzork/zork3/guideLevel2.png")); // Load image into QPixmap
+        backgroundImage = QPixmap(QString::fromStdString(":/ISEFloor1Map.png")); // Load image into QPixmap
         break;
     case 2:
-        backgroundImage = QPixmap(QString::fromStdString("path to floor 2")); // Load image into QPixmap
-        break;
     default:
         // Handle default case if necessary
         break;

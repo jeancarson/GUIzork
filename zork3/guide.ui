@@ -17,23 +17,23 @@
    <widget class="QLabel" name="BackgroundImage">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>30</y>
-      <width>301</width>
-      <height>161</height>
+      <x>110</x>
+      <y>120</y>
+      <width>601</width>
+      <height>451</height>
      </rect>
     </property>
     <property name="text">
-     <string>Background</string>
+     <string/>
     </property>
    </widget>
    <widget class="QLabel" name="DOT">
     <property name="geometry">
      <rect>
-      <x>160</x>
-      <y>260</y>
-      <width>41</width>
-      <height>31</height>
+      <x>700</x>
+      <y>520</y>
+      <width>16</width>
+      <height>16</height>
      </rect>
     </property>
     <property name="font">
@@ -44,39 +44,30 @@
     <property name="styleSheet">
      <string notr="true">QWidget#DOT {
     background-color: red;
+    border-radius: 4px;
 }</string>
     </property>
     <property name="text">
-     <string>DOT</string>
+     <string/>
     </property>
    </widget>
    <widget class="QPushButton" name="CloseGuide">
     <property name="geometry">
      <rect>
-      <x>410</x>
-      <y>190</y>
-      <width>80</width>
-      <height>18</height>
+      <x>540</x>
+      <y>30</y>
+      <width>81</width>
+      <height>41</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton#CloseGuide
+{
+	background-color: red;
+}</string>
     </property>
     <property name="text">
      <string>Close Map</string>
-    </property>
-   </widget>
-   <widget class="QFrame" name="forTimerGuide">
-    <property name="geometry">
-     <rect>
-      <x>350</x>
-      <y>450</y>
-      <width>120</width>
-      <height>80</height>
-     </rect>
-    </property>
-    <property name="frameShape">
-     <enum>QFrame::StyledPanel</enum>
-    </property>
-    <property name="frameShadow">
-     <enum>QFrame::Raised</enum>
     </property>
    </widget>
    <widget class="QLCDNumber" name="TimerDisplay">
@@ -87,6 +78,25 @@
       <width>131</width>
       <height>51</height>
      </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="infolabel">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>30</y>
+      <width>321</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel#infolabel
+{
+	background-color: black;
+}</string>
+    </property>
+    <property name="text">
+     <string> The red dot indicates where you currently are</string>
     </property>
    </widget>
   </widget>

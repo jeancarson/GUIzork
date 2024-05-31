@@ -3,19 +3,23 @@
 
 namespace GameSetup {
 
-GameSetUp::GameSetUp() :
-    itemLogger(LoggerFile),
-    roomLogger(LoggerFile) {
+GameSetUp::GameSetUp()
+    : itemLogger(LoggerFile)
+    , roomLogger(LoggerFile)
+    , currentItem(nullptr)
+{
     timerWidget = new Timer();
-    this-> inventory = new inventoryBackEnd();
+    inventory = new inventoryBackEnd();
     createRoomsAndItems();
     currentItem = new Item();
 }
 
-// }
-// GameSetUp::~GameSetUp() {
-//     delete currentItem;
-// }
+
+GameSetUp::~GameSetUp() {
+    delete currentItem;
+    delete inventory;
+    delete timerWidget;
+}
 
 
 void GameSetUp::createRoomsAndItems()  {
@@ -60,7 +64,7 @@ void GameSetUp::createRoomsAndItems()  {
     foyer->setExits(NULL, NULL, frontDoor, insideLift);
     insideLift->setExits(upstairsFoyer, NULL, foyer, NULL);
     upstairsFoyer->setExits(NULL, studio2, insideLift, coworkingSpace1);
-    coworkingSpace1->setExits(NULL, kitchen, coworkingSpace2, upstairsFoyer);
+    coworkingSpace1->setExits(kitchen, upstairsFoyer, coworkingSpace2, NULL);
     coworkingSpace2->setExits(coworkingSpace3a, NULL, coworkingSpace1, NULL);
     kitchen->setExits(studio2, NULL, coworkingSpace1, NULL);
     coworkingSpace3a->setExits(NULL, NULL, coworkingSpace2, coworkingSpace3b);
@@ -68,42 +72,52 @@ void GameSetUp::createRoomsAndItems()  {
     forestRoom->setExits(NULL, studio2, NULL, coworkingSpace3b);
     studio2->setExits(NULL, NULL, forestRoom, kitchen);
 
+    //coordinates are X, Y, Floor (0 or 1)
+    frontDoor->setCoordinates(415, 430, 0);
+    foyer -> setCoordinates(415, 360, 0);
+    insideLift -> setCoordinates(365, 330, 0);
+    upstairsFoyer -> setCoordinates(470, 350, 1);
+    coworkingSpace1 -> setCoordinates(515, 350, 1);
+    coworkingSpace2 -> setCoordinates(470, 300, 1);
+    kitchen -> setCoordinates(460, 410, 1);
+    coworkingSpace3a -> setCoordinates(430, 250, 1);
+    coworkingSpace3b -> setCoordinates(350, 250, 1);
+    forestRoom -> setCoordinates(300, 300, 1);
+    studio2 -> setCoordinates(200, 350, 1);
 
-
-
-
-    Item *keycard = new Item();
-    Item *umbrella = new Item();
-    Item *lunchbox = new Item();
-    Item *bat = new Item();
-    keycard->setNameAndPathToImage("keycard", ":/Keycard.png");
-
-    umbrella->setNameAndPathToImage("umbrella",":/umbrella.png" );
-
-    lunchbox->setNameAndPathToImage("lunchbox",":/lunchbox.png" );
-    bat->setNameAndPathToImage("bat", "");
-    cout<<"Items are made"<<endl;
-
-    frontDoor->addItemToRoom(*keycard);
-    foyer->addItemToRoom(*umbrella);
-    insideLift->addItemToRoom(*lunchbox);
-    cout<<"items added to rooms"<<endl;
-
-
-    frontDoor->setCoordinates(100, 100, 0);
-    foyer -> setCoordinates(150, 150, 0);
-    insideLift -> setCoordinates(150, 150, 1);
     cout<<"coordinates set"<<endl;
 
 
+//remvoing from here
+    Item *keycard = new Item();
+    Item *umbrella = new Item();
+    Item *lunchbox = new Item();
+    Item *fish = new Item();
+    keycard->setNameAndPathToImage("keycard", ":/Keycard.png");
+    umbrella->setNameAndPathToImage("umbrella",":/umbrella.png" );
+    lunchbox->setNameAndPathToImage("lunchbox",":/lunchbox.png" );
+    fish->setNameAndPathToImage("fish", ":/RuansFish.png");
+    cout<<"Items are made"<<endl;
 
-    threateningCharacter *LockedDoor = new threateningCharacter("Locked Door", *keycard,":/MIA.png", 400, 300);
+    frontDoor->addItemToRoom(*keycard);
+    coworkingSpace1->addItemToRoom(*umbrella);
+    coworkingSpace3a->addItemToRoom(*fish);
+    forestRoom->addItemToRoom(*lunchbox);
+    cout<<"items added to rooms"<<endl;
+
+
+
+
+
+    threateningCharacter *LockedDoor = new threateningCharacter("Locked Door", *keycard,":/SecurityGuard.png", 400, 300);
     CuriousCharacter *Mia = new CuriousCharacter("Mia", *umbrella,":/MIA.png", 200, 500);
-    CuriousCharacter *Ruan = new CuriousCharacter("Ruan", *bat, ":/Keycard.png",400, 700);
+    CuriousCharacter *Ruan = new CuriousCharacter("Ruan", *fish, ":/RUAN.png",400, 700);
 
     frontDoor->setEnemyInRoom(LockedDoor);
-    insideLift->setEnemyInRoom(Mia);
+    coworkingSpace1->setEnemyInRoom(Mia);
+    coworkingSpace3a->setEnemyInRoom(Ruan);
 
+//removing to here
 
     this->currentRoom = frontDoor;
     cout<<currentRoom->getDescription();

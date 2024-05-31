@@ -10,7 +10,7 @@ using namespace GameSetup;
 mainGameWindow::mainGameWindow(QWidget *parent, GameSetUp *preGameSetup)
     : QMainWindow(parent)
     , ui(new Ui::mainGameWindow)
-    , gameSetup(preGameSetup)
+    , gameSetup(preGameSetup)  // Initialize gameSetup with preGameSetup
     , end(new endGameScreen(this))
     , alison(new anxiousCharacter(":/ALISON.png"))
     , flags()
@@ -58,7 +58,6 @@ void mainGameWindow::handleTimerEnded() {
 }
 
 void mainGameWindow::handleHurryUp() {
-    cout<<"HURRYING UP"<<endl;
     flags.setAlisonOnScreen(true);
     QString imagePath = QString::fromStdString(alison->getPathToImage());
     QIcon icon(imagePath);
@@ -67,11 +66,13 @@ void mainGameWindow::handleHurryUp() {
 }
 void mainGameWindow::updateTimerDisplay() {
     ui->TimerDisplay->display(timerWidget->timeLeft);
-    cout<<timerWidget->timeLeft.toStdString()<<endl;
 }
 
 
 mainGameWindow::~mainGameWindow() {
+    delete end;
+    delete alison;
+    // delete guide;
     delete ui;
 }
 
@@ -211,12 +212,12 @@ void mainGameWindow::on_itemInRoom_clicked()
         updateInventory();
 
         //change location of next object
-        int lowerBound = 50;
-        int upperBound = 500;
+        int lowerBound = 160;
+        int upperBound = 420;
 
         int randomNumber1 = lowerBound + std::rand() % (upperBound - lowerBound + 1);
         int randomNumber2 = lowerBound + std::rand() % (upperBound - lowerBound + 1);
-        ui->itemInRoom->setGeometry(randomNumber1, randomNumber2, 50, 50);
+        ui->itemInRoom->setGeometry(randomNumber1, randomNumber2, 70, 70);
     }
 
 }

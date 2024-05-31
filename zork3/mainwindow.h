@@ -33,5 +33,6 @@ private:
     Guide *guide;
     mainGameWindow *game;
 
+
 };
 #endif // MAINWINDOW_H

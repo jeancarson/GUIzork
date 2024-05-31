@@ -8,21 +8,22 @@ using namespace std;
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
+    , game(nullptr)
+    , guide(nullptr)
+    , gameSetup(nullptr)
+    , timer(nullptr)
 {
     ui->setupUi(this);
 
-    QPixmap backgroundImage;
     ui->label->setPixmap(QString::fromStdString(":/ISEWelcome.png"));
     ui->label->setScaledContents(true);
-
-
-
-
 }
-
 
 MainWindow::~MainWindow()
 {
+    delete game;
+    delete guide;
+    delete gameSetup;
     delete ui;
 }
 

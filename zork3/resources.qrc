@@ -28,5 +28,10 @@
         <file>ISEDishwasher.png</file>
         <file>ISEFreedom.png</file>
         <file>ISEWelcome.png</file>
+        <file>groundfloormap.png</file>
+        <file>ISEFloor1Map.png</file>
+        <file>RUAN.png</file>
+        <file>RuansFish.png</file>
+        <file>SecurityGuard.png</file>
     </qresource>
 </RCC>

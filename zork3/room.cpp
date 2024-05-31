@@ -25,13 +25,13 @@ void Room::setExits(Room *north, Room *east, Room *south, Room *west) {
 string Room::getDescription() const {
     return description;
 }
-string Room::exitString() {
-    string returnString = "\nexits =";
-    for (map<string, Room*>::iterator i = exits.begin(); i != exits.end(); i++)
-        // Loop through map
-        returnString += "  " + i->first;	// access the "first" element of the pair (direction as a string)
-    return returnString;
-}
+// string Room::exitString() {
+//     string returnString = "\nexits =";
+//     for (map<string, Room*>::iterator i = exits.begin(); i != exits.end(); i++)
+//         // Loop through map
+//         returnString += "  " + i->first;	// access the "first" element of the pair (direction as a string)
+//     return returnString;
+// }
 
 Room* Room::getNextRoom(string direction) {
     if (exits.find(direction) != exits.end()) {
@@ -47,7 +47,8 @@ void Room:: setCoordinates(int x, int y, int z){
     //AHHHHHHHHHHHH why can't c++ do arrays like normal things silly silly language
     coordinates[0] = x;
     coordinates[1] = y;
-    coordinates[2] = z;
+    if ( z ==0 || z==1){
+        coordinates[2] = z;}
 }
 
 
