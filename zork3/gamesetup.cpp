@@ -56,13 +56,12 @@ void GameSetUp::createRoomsAndItems()  {
 
 
     //             (N, E, S, W)
-
     frontDoor->setExits(foyer, NULL, NULL, NULL);
     foyer->setExits(NULL, NULL, frontDoor, insideLift);
     insideLift->setExits(upstairsFoyer, NULL, foyer, NULL);
     upstairsFoyer->setExits(NULL, studio2, insideLift, coworkingSpace1);
-    coworkingSpace1->setExits(NULL, kitchen, upstairsFoyer, coworkingSpace2);
-    coworkingSpace2->setExits(NULL, coworkingSpace3a, NULL, coworkingSpace1);
+    coworkingSpace1->setExits(NULL, kitchen, coworkingSpace2, upstairsFoyer);
+    coworkingSpace2->setExits(coworkingSpace3a, NULL, coworkingSpace1, NULL);
     kitchen->setExits(studio2, NULL, coworkingSpace1, NULL);
     coworkingSpace3a->setExits(NULL, NULL, coworkingSpace2, coworkingSpace3b);
     coworkingSpace3b->setExits(NULL, coworkingSpace3a, NULL, forestRoom);

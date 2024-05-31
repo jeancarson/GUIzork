@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
+    <width>809</width>
     <height>600</height>
    </rect>
   </property>
@@ -17,8 +17,8 @@
    <widget class="QPushButton" name="NORTH">
     <property name="geometry">
      <rect>
-      <x>710</x>
-      <y>410</y>
+      <x>700</x>
+      <y>440</y>
       <width>40</width>
       <height>40</height>
      </rect>
@@ -30,8 +30,8 @@
    <widget class="QPushButton" name="WEST">
     <property name="geometry">
      <rect>
-      <x>660</x>
-      <y>460</y>
+      <x>650</x>
+      <y>490</y>
       <width>40</width>
       <height>40</height>
      </rect>
@@ -43,8 +43,8 @@
    <widget class="QPushButton" name="EAST">
     <property name="geometry">
      <rect>
-      <x>760</x>
-      <y>460</y>
+      <x>750</x>
+      <y>490</y>
       <width>40</width>
       <height>40</height>
      </rect>
@@ -74,8 +74,8 @@
    <widget class="QPushButton" name="SOUTH">
     <property name="geometry">
      <rect>
-      <x>710</x>
-      <y>510</y>
+      <x>700</x>
+      <y>540</y>
       <width>40</width>
       <height>40</height>
      </rect>
@@ -88,9 +88,9 @@
     <property name="geometry">
      <rect>
       <x>130</x>
-      <y>80</y>
-      <width>501</width>
-      <height>331</height>
+      <y>70</y>
+      <width>621</width>
+      <height>361</height>
      </rect>
     </property>
     <property name="text">
@@ -100,8 +100,8 @@
    <widget class="QPushButton" name="OpenGuide">
     <property name="geometry">
      <rect>
-      <x>710</x>
-      <y>460</y>
+      <x>700</x>
+      <y>490</y>
       <width>40</width>
       <height>40</height>
      </rect>
@@ -144,11 +144,16 @@
    <widget class="QFrame" name="frame">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>430</y>
-      <width>541</width>
+      <x>130</x>
+      <y>450</y>
+      <width>431</width>
       <height>121</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QFrame#frame{
+    background-color: Black;
+    border: none;}</string>
     </property>
     <property name="frameShape">
      <enum>QFrame::StyledPanel</enum>
@@ -159,15 +164,16 @@
     <widget class="QLabel" name="backgroundSlot1">
      <property name="geometry">
       <rect>
-       <x>30</x>
-       <y>0</y>
-       <width>161</width>
+       <x>40</x>
+       <y>10</y>
+       <width>141</width>
        <height>101</height>
       </rect>
      </property>
      <property name="styleSheet">
       <string notr="true">QLabel#backgroundSlot1{
-background-color:black;
+background-color:black
+;
 }</string>
      </property>
      <property name="text">
@@ -177,15 +183,34 @@ background-color:black;
     <widget class="QLabel" name="backgroundSlot2">
      <property name="geometry">
       <rect>
-       <x>230</x>
-       <y>0</y>
-       <width>91</width>
-       <height>141</height>
+       <x>240</x>
+       <y>10</y>
+       <width>141</width>
+       <height>101</height>
       </rect>
      </property>
      <property name="styleSheet">
       <string notr="true">QLabel#backgroundSlot2{
-background-color:black;;
+background-color:black
+;
+}</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="slot1">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>20</y>
+       <width>121</width>
+       <height>91</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton#slot1{
+background-color: rgba(255, 255, 255, 0); border: none;
 }</string>
      </property>
      <property name="text">
@@ -195,29 +220,16 @@ background-color:black;;
     <widget class="QPushButton" name="slot2">
      <property name="geometry">
       <rect>
-       <x>240</x>
+       <x>250</x>
        <y>20</y>
-       <width>51</width>
-       <height>111</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>slot2</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="slot1">
-     <property name="geometry">
-      <rect>
-       <x>40</x>
-       <y>10</y>
-       <width>140</width>
-       <height>80</height>
+       <width>121</width>
+       <height>81</height>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">QPushButton#slot1{
-background-color: rgba(255, 255, 255, 0); border: none;
-}</string>
+      <string notr="true">QPushButton#slot2{
+    background-color: transparent;
+    border: none;}</string>
      </property>
      <property name="text">
       <string/>
@@ -276,8 +288,8 @@ background-color: rgba(255, 255, 255, 0); border: none;
    <widget class="QLabel" name="alisonSays">
     <property name="geometry">
      <rect>
-      <x>70</x>
-      <y>50</y>
+      <x>50</x>
+      <y>60</y>
       <width>101</width>
       <height>41</height>
      </rect>
@@ -289,32 +301,21 @@ background-color: rgba(255, 255, 255, 0); border: none;
    <widget class="QPushButton" name="AlisonGoesHere">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>90</y>
-      <width>91</width>
-      <height>91</height>
+      <x>100</x>
+      <y>50</y>
+      <width>131</width>
+      <height>121</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton#AlisonGoesHere{
+    background-color: transparent;
+    border: none;}</string>
+    </property>
     <property name="text">
-     <string>Alison</string>
+     <string>Alison goes here</string>
     </property>
    </widget>
-  </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>800</width>
-     <height>17</height>
-    </rect>
-   </property>
-   <widget class="QMenu" name="U">
-    <property name="title">
-     <string>This is the gameplay window, we will have a timer and inventory always and different arrows in each case</string>
-    </property>
-   </widget>
-   <addaction name="U"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>

@@ -34,7 +34,7 @@ void endGameScreen:: setScreen(bool won)
         // ui->label->setStyleSheet("{background-color:red}");
         //QPixmap backgroundImage("C:/Users/jeanl/College/Blocks/Block 4/C++/GUIzork/zork3/Keycard.png");
 
-        QPixmap backgroundImage("C:/Users/jeanl/College/Blocks/Block 4/C++/GUIzork/zork3/gameWon.jpg");
+        QPixmap backgroundImage(":/ISEFreedom.png");
         ui->label->setPixmap(backgroundImage);
         ui->label->setScaledContents(true);
         isGameOver = true;
@@ -43,7 +43,7 @@ void endGameScreen:: setScreen(bool won)
     }
     else{
 
-        QPixmap backgroundImage("C:/Users/jeanl/College/Blocks/Block 4/C++/GUIzork/zork3/gameLost.jpg");
+        QPixmap backgroundImage(":/ISEDishwasher.png");
         ui->label->setPixmap(backgroundImage);
         ui->label->setScaledContents(true);
         isGameOver = true;

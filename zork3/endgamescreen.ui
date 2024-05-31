@@ -19,12 +19,12 @@
      <rect>
       <x>50</x>
       <y>30</y>
-      <width>351</width>
-      <height>261</height>
+      <width>711</width>
+      <height>531</height>
      </rect>
     </property>
     <property name="text">
-     <string>DONE</string>
+     <string/>
     </property>
    </widget>
   </widget>

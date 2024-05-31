@@ -185,3 +185,123 @@ Mon May 27 22:12:04 2024 Current item set to umbrella
 Mon May 27 22:12:05 2024 Current item set to 
 Mon May 27 22:12:08 2024 - Entered into a new room: You have reached upstairs
 Mon May 27 22:12:10 2024 - Entered into a new room: In the coworking space outside TA office
+Fri May 31 11:22:31 2024 Current item set to keycard
+Fri May 31 11:22:32 2024 Current item set to 
+Fri May 31 11:22:34 2024 - Entered into a new room: You go through the front door. 
+You see a set of stairs and a lift
+Fri May 31 11:22:36 2024 - Entered into a new room: You have entered the lift. North is first floor, west is second floor
+Fri May 31 11:22:39 2024 Current item set to umbrella
+Fri May 31 11:22:41 2024 Current item set to 
+Fri May 31 11:22:42 2024 - Entered into a new room: You have reached upstairs
+Fri May 31 11:22:44 2024 - Entered into a new room: Studio off the forest room
+Fri May 31 11:22:48 2024 - Entered into a new room: The forest room..duh
+Fri May 31 11:22:50 2024 - Entered into a new room: Outside Alison's office
+Fri May 31 11:22:53 2024 - Entered into a new room: The forest room..duh
+Fri May 31 11:22:55 2024 - Entered into a new room: Studio off the forest room
+Fri May 31 11:22:57 2024 - Entered into a new room: In the kitchen
+Fri May 31 11:22:59 2024 - Entered into a new room: Studio off the forest room
+Fri May 31 11:23:02 2024 - Entered into a new room: The forest room..duh
+Fri May 31 11:23:03 2024 - Entered into a new room: Outside Alison's office
+Fri May 31 11:23:05 2024 - Entered into a new room: At that tall table outside Ian and Marks office
+Fri May 31 11:23:10 2024 - Entered into a new room: By the coworking booths
+Fri May 31 11:23:12 2024 - Entered into a new room: In the coworking space outside TA office
+Fri May 31 11:24:12 2024 Current item set to keycard
+Fri May 31 11:24:13 2024 Current item set to 
+Fri May 31 11:24:13 2024 - Entered into a new room: You go through the front door. 
+You see a set of stairs and a lift
+Fri May 31 11:24:16 2024 - Entered into a new room: You have entered the lift. North is first floor, west is second floor
+Fri May 31 11:24:21 2024 Current item set to umbrella
+Fri May 31 11:24:22 2024 Current item set to 
+Fri May 31 11:24:24 2024 - Entered into a new room: You have reached upstairs
+Fri May 31 11:25:04 2024 Current item set to keycard
+Fri May 31 11:25:05 2024 Current item set to 
+Fri May 31 11:25:06 2024 - Entered into a new room: You go through the front door. 
+You see a set of stairs and a lift
+Fri May 31 11:25:49 2024 Current item set to keycard
+Fri May 31 11:25:49 2024 Current item set to 
+Fri May 31 11:25:50 2024 - Entered into a new room: You go through the front door. 
+You see a set of stairs and a lift
+Fri May 31 11:25:52 2024 - Entered into a new room: You have entered the lift. North is first floor, west is second floor
+Fri May 31 11:25:54 2024 Current item set to umbrella
+Fri May 31 11:25:55 2024 Current item set to 
+Fri May 31 11:25:56 2024 - Entered into a new room: You have reached upstairs
+Fri May 31 11:25:58 2024 - Entered into a new room: In the coworking space outside TA office
+Fri May 31 11:26:00 2024 - Entered into a new room: In the kitchen
+Fri May 31 11:26:03 2024 - Entered into a new room: In the coworking space outside TA office
+Fri May 31 11:26:05 2024 - Entered into a new room: By the coworking booths
+Fri May 31 11:26:07 2024 - Entered into a new room: At that tall table outside Ian and Marks office
+Fri May 31 11:26:09 2024 - Entered into a new room: By the coworking booths
+Fri May 31 11:26:13 2024 - Entered into a new room: In the coworking space outside TA office
+Fri May 31 11:26:17 2024 - Entered into a new room: In the kitchen
+Fri May 31 11:26:20 2024 - Entered into a new room: In the coworking space outside TA office
+Fri May 31 11:26:26 2024 - Entered into a new room: You have reached upstairs
+Fri May 31 11:26:29 2024 - Entered into a new room: In the coworking space outside TA office
+Fri May 31 11:29:15 2024 Current item set to keycard
+Fri May 31 11:29:16 2024 Current item set to 
+Fri May 31 11:29:16 2024 - Entered into a new room: You go through the front door. 
+You see a set of stairs and a lift
+Fri May 31 11:29:18 2024 - Entered into a new room: You have entered the lift. North is first floor, west is second floor
+Fri May 31 11:29:20 2024 Current item set to umbrella
+Fri May 31 11:29:21 2024 Current item set to 
+Fri May 31 11:29:23 2024 - Entered into a new room: You have reached upstairs
+Fri May 31 11:29:25 2024 - Entered into a new room: In the coworking space outside TA office
+Fri May 31 11:29:26 2024 - Entered into a new room: By the coworking booths
+Fri May 31 11:29:33 2024 - Entered into a new room: At that tall table outside Ian and Marks office
+Fri May 31 11:29:38 2024 - Entered into a new room: Outside Alison's office
+Fri May 31 11:56:54 2024 Current item set to keycard
+Fri May 31 11:56:55 2024 Current item set to 
+Fri May 31 11:56:56 2024 - Entered into a new room: You go through the front door. 
+You see a set of stairs and a lift
+Fri May 31 11:56:59 2024 - Entered into a new room: You have entered the lift. North is first floor, west is second floor
+Fri May 31 11:57:20 2024 Current item set to umbrella
+Fri May 31 11:57:20 2024 Current item set to 
+Fri May 31 11:57:21 2024 - Entered into a new room: You have reached upstairs
+Fri May 31 11:57:23 2024 - Entered into a new room: In the coworking space outside TA office
+Fri May 31 11:58:25 2024 Current item set to keycard
+Fri May 31 11:58:26 2024 Current item set to 
+Fri May 31 11:58:28 2024 - Entered into a new room: You go through the front door. 
+You see a set of stairs and a lift
+Fri May 31 11:59:09 2024 Current item set to keycard
+Fri May 31 11:59:10 2024 Current item set to 
+Fri May 31 11:59:11 2024 - Entered into a new room: You go through the front door. 
+You see a set of stairs and a lift
+Fri May 31 11:59:14 2024 - Entered into a new room: You have entered the lift. North is first floor, west is second floor
+Fri May 31 11:59:16 2024 Current item set to umbrella
+Fri May 31 11:59:17 2024 Current item set to 
+Fri May 31 11:59:22 2024 - Entered into a new room: You have reached upstairs
+Fri May 31 11:59:24 2024 - Entered into a new room: In the coworking space outside TA office
+Fri May 31 11:59:26 2024 - Entered into a new room: By the coworking booths
+Fri May 31 11:59:27 2024 - Entered into a new room: At that tall table outside Ian and Marks office
+Fri May 31 11:59:29 2024 - Entered into a new room: Outside Alison's office
+Fri May 31 11:59:31 2024 - Entered into a new room: At that tall table outside Ian and Marks office
+Fri May 31 11:59:32 2024 - Entered into a new room: By the coworking booths
+Fri May 31 11:59:33 2024 - Entered into a new room: In the coworking space outside TA office
+Fri May 31 11:59:35 2024 - Entered into a new room: In the kitchen
+Fri May 31 11:59:36 2024 - Entered into a new room: In the coworking space outside TA office
+Fri May 31 11:59:36 2024 - Entered into a new room: By the coworking booths
+Fri May 31 11:59:38 2024 - Entered into a new room: In the coworking space outside TA office
+Fri May 31 11:59:41 2024 - Entered into a new room: In the kitchen
+Fri May 31 11:59:42 2024 - Entered into a new room: In the coworking space outside TA office
+Fri May 31 11:59:43 2024 - Entered into a new room: You have reached upstairs
+Fri May 31 11:59:44 2024 - Entered into a new room: In the coworking space outside TA office
+Fri May 31 11:59:46 2024 - Entered into a new room: You have reached upstairs
+Fri May 31 11:59:47 2024 - Entered into a new room: You have entered the lift. North is first floor, west is second floor
+Fri May 31 11:59:49 2024 - Entered into a new room: You go through the front door. 
+You see a set of stairs and a lift
+Fri May 31 11:59:50 2024 - Entered into a new room: Front Door
+Fri May 31 12:32:19 2024 Current item set to keycard
+Fri May 31 12:32:20 2024 Current item set to 
+Fri May 31 12:32:21 2024 - Entered into a new room: You go through the front door. 
+You see a set of stairs and a lift
+Fri May 31 12:33:11 2024 Current item set to keycard
+Fri May 31 12:33:12 2024 Current item set to 
+Fri May 31 12:33:13 2024 - Entered into a new room: You go through the front door. 
+You see a set of stairs and a lift
+Fri May 31 12:33:17 2024 - Entered into a new room: You have entered the lift. North is first floor, west is second floor
+Fri May 31 12:34:08 2024 Current item set to keycard
+Fri May 31 12:34:09 2024 Current item set to 
+Fri May 31 12:34:10 2024 - Entered into a new room: You go through the front door. 
+You see a set of stairs and a lift
+Fri May 31 12:34:12 2024 - Entered into a new room: You have entered the lift. North is first floor, west is second floor
+Fri May 31 12:34:15 2024 Current item set to umbrella
+Fri May 31 12:34:16 2024 Current item set to 

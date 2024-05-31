@@ -18,7 +18,6 @@
         <file>ISECoworkingSpace1.jpg</file>
         <file>ISECoworkingSpace3a.jpg</file>
         <file>ISECoworkingSpace3b.jpg</file>
-        <file>ISEDishwasher.jpg</file>
         <file>ISEForestRoom.jpg</file>
         <file>ISEFoyer.jpg</file>
         <file>ISEFrontDoor.jpg</file>
@@ -26,5 +25,8 @@
         <file>ISEKitchen.jpg</file>
         <file>ISEStudio.jpg</file>
         <file>ISEUpstairsFoyer.jpg</file>
+        <file>ISEDishwasher.png</file>
+        <file>ISEFreedom.png</file>
+        <file>ISEWelcome.png</file>
     </qresource>
 </RCC>
