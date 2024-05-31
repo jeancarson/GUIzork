@@ -23,9 +23,8 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
     Timer *getTimer() const { return timer; }
-    void setImage(string path);
 private slots:
-    void on_pushButton_clicked();
+    void on_start_clicked();
 
 private:
     Ui::MainWindow *ui;

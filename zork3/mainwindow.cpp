@@ -11,7 +11,9 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-
+    QPixmap backgroundImage;
+    ui->label->setPixmap(QString::fromStdString(":/ISEWelcome.png"));
+    ui->label->setScaledContents(true);
 
 
 
@@ -24,7 +26,7 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::on_pushButton_clicked()
+void MainWindow::on_start_clicked()
 {    // mainGameWindow *game = new mainGameWindow(nullptr, gameSetup, getTimer());
 
     gameSetup = new GameSetUp();
@@ -41,7 +43,4 @@ void MainWindow::on_pushButton_clicked()
     this->hide();
 }
 
-void MainWindow::setImage(string path){
-    QPixmap backgroundImage;
-    ui->label->setPixmap(QString::fromStdString(path));
-}
+
