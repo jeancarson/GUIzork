@@ -18,28 +18,28 @@ namespace GameSetup {
 
 class GameSetUp
 {
+#ifdef DEBUG_MODE
+public:
+    void moveDEBUG(string direction);
+
+#else
+public:
+    void move(string direction);
+
+#endif
+
 private:
     Room *currentRoom;
     Item *currentItem;
-    void printWelcome();
-    void showMap();
     Timer* timerWidget;
     inventoryBackEnd *inventory;
-    // string LoggerFile = "C:/Users/jeanl/College/Blocks/Block 4/C++/GUIzork/zork3/Logs.txt";
-    // Logger<Item> itemLogger;
-    // Logger<Room> roomLogger;
 
 
-// signals:
-//     // void backgroundImageChanged();
 
 public:
-    void createRoomsAndItems();
     Timer* getTimer();
     GameSetUp();
     ~GameSetUp();
-    void play();
-    void move(string direction);
     Room* getCurrentRoom();
     Item* getCurrentItem();
     void setCurrentItem(const Item& item);
@@ -47,6 +47,8 @@ public:
     vector<Item> getItemsBackEnd();
     inventoryBackEnd* getInventory();
     bool isTheGameWon();
+    void createRoomsAndItems();
+
 
 };}
 

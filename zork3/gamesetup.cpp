@@ -6,7 +6,7 @@ namespace GameSetup {
 GameSetUp::GameSetUp():
     // : itemLogger(LoggerFile)
     // , roomLogger(LoggerFile)
-    currentItem(nullptr)
+     currentItem(nullptr)
 {
     timerWidget = new Timer();
     inventory = new inventoryBackEnd();
@@ -140,6 +140,58 @@ void GameSetUp::setCurrentItem(const Item& item) {
 
 
 
+
+
+bool GameSetUp::isTheGameWon(){
+    bool correctItem = inventory->isThisInTheInventory("lunchbox");
+    bool correctRoom = currentRoom->getDescription() == "Front Door";
+
+    return (correctItem && correctRoom);
+}
+
+Timer* GameSetUp::getTimer(){
+    return timerWidget;
+}
+
+vector<Item> GameSetUp:: getItemsBackEnd(){
+    return inventory->getInventory();
+}
+
+inventoryBackEnd* GameSetUp:: getInventory(){
+    return this->inventory;
+}
+
+
+
+
+
+
+
+#ifdef DEBUG_MODE
+void GameSetUp::moveDEBUG(std::string direction) {
+    try {
+        Room* nextRoomPtr = currentRoom->getNextRoom(direction);
+        if (nextRoomPtr == nullptr) {
+            cout<<"No Move occcured - No room in that direction"<<endl;
+            throw invalidRoomMoveException();
+        }
+        if (currentRoom->isEnemyInRoom) {
+            cout<<"No move occured - enemy present in room"<<endl;
+            throw UndefeatedEnemyInRoomException();
+        }
+        currentRoom = nextRoomPtr;
+        cout<<currentRoom asigned: "+ currentRoom->getDescription();
+        roomLogger.log(*currentRoom);
+    } catch (const invalidRoomMoveException& e) {
+        std::cerr << "Invalid room move: " << e.what() << std::endl;
+    } catch (const UndefeatedEnemyInRoomException& e) {
+        std::cerr << "Cannot move to the next room: " << e.what() << std::endl;
+    } catch (const std::exception& e) {
+        std::cerr << "An unexpected error occurred: " << e.what() << std::endl;
+    }
+}
+
+#else
 //programmer defined exceptions handling
 void GameSetUp::move(std::string direction) {
     try {
@@ -161,23 +213,14 @@ void GameSetUp::move(std::string direction) {
     }
 }
 
-bool GameSetUp::isTheGameWon(){
-    bool correctItem = inventory->isThisInTheInventory("lunchbox");
-    bool correctRoom = currentRoom->getDescription() == "Front Door";
+#endif
 
-    return (correctItem && correctRoom);
-}
 
-Timer* GameSetUp::getTimer(){
-    return timerWidget;
-}
 
-vector<Item> GameSetUp:: getItemsBackEnd(){
-    return inventory->getInventory();
-}
 
-inventoryBackEnd* GameSetUp:: getInventory(){
-    return this->inventory;
-}
+
+
+
+
 
 }

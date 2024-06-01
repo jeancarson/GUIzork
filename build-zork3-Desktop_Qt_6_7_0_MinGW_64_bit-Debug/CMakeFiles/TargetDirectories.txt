@@ -1,0 +1,9 @@
+C:/Users/jeanl/College/Blocks/Block 4/C++/GUIzork/build-zork3-Desktop_Qt_6_7_0_MinGW_64_bit-Debug/CMakeFiles/zork3.dir
+C:/Users/jeanl/College/Blocks/Block 4/C++/GUIzork/build-zork3-Desktop_Qt_6_7_0_MinGW_64_bit-Debug/CMakeFiles/edit_cache.dir
+C:/Users/jeanl/College/Blocks/Block 4/C++/GUIzork/build-zork3-Desktop_Qt_6_7_0_MinGW_64_bit-Debug/CMakeFiles/rebuild_cache.dir
+C:/Users/jeanl/College/Blocks/Block 4/C++/GUIzork/build-zork3-Desktop_Qt_6_7_0_MinGW_64_bit-Debug/CMakeFiles/list_install_components.dir
+C:/Users/jeanl/College/Blocks/Block 4/C++/GUIzork/build-zork3-Desktop_Qt_6_7_0_MinGW_64_bit-Debug/CMakeFiles/install.dir
+C:/Users/jeanl/College/Blocks/Block 4/C++/GUIzork/build-zork3-Desktop_Qt_6_7_0_MinGW_64_bit-Debug/CMakeFiles/install/local.dir
+C:/Users/jeanl/College/Blocks/Block 4/C++/GUIzork/build-zork3-Desktop_Qt_6_7_0_MinGW_64_bit-Debug/CMakeFiles/install/strip.dir
+C:/Users/jeanl/College/Blocks/Block 4/C++/GUIzork/build-zork3-Desktop_Qt_6_7_0_MinGW_64_bit-Debug/CMakeFiles/zork3_autogen_timestamp_deps.dir
+C:/Users/jeanl/College/Blocks/Block 4/C++/GUIzork/build-zork3-Desktop_Qt_6_7_0_MinGW_64_bit-Debug/CMakeFiles/zork3_autogen.dir
