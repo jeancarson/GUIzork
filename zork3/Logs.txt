@@ -1,0 +1,9 @@
+Sat Jun 01 16:09:37 2024 Current item set to keycard
+Sat Jun 01 16:09:38 2024 Current item set to 
+Sat Jun 01 16:14:57 2024 Current item set to keycard
+Sat Jun 01 16:14:57 2024 - Enemy in room! Item needed to overcome: keycard
+Sat Jun 01 16:14:57 2024 Current item set to 
+Sat Jun 01 16:14:59 2024 - Entered into a new room: You go through the front door. 
+You see a set of stairs and a lift
+Sat Jun 01 16:15:00 2024 - Entered into a new room: You have entered the lift. North is first floor, west is second floor
+Sat Jun 01 16:15:00 2024 - Entered into a new room: You have reached upstairs

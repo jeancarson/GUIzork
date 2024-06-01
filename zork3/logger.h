@@ -16,7 +16,7 @@ public:
 
     void log(const T& thing);
 private:
-    std::string filename; // Member variable declaration
+    std::string filename = "C:/Users/jeanl/College/Blocks/Block 4/C++/GUIzork/zork3/Logs.txt";
 
 };
 

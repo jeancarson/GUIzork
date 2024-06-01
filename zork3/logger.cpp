@@ -2,9 +2,9 @@
 
 using namespace std;
 
-Logger<Item> itemLogger("item_logs.txt");
-Logger<Room> roomLogger("room_logs.txt");
-Logger<Enemy> enemyLogger("enemy_logs.txt");
+Logger<Item> itemLogger("C:/Users/jeanl/College/Blocks/Block 4/C++/GUIzork/zork3/Logs.txt");
+Logger<Room> roomLogger("C:/Users/jeanl/College/Blocks/Block 4/C++/GUIzork/zork3/Logs.txt");
+Logger<Enemy> enemyLogger("C:/Users/jeanl/College/Blocks/Block 4/C++/GUIzork/zork3/Logs.txt");
 
 //template classes
 template<>

@@ -242,7 +242,7 @@ void mainGameWindow::on_EnemyPlace_clicked()
         if (characterEnemy !=nullptr) {
             cout<<characterEnemy->talk()<<endl;
             ui->enemySpeech->setText(QString::fromStdString(characterEnemy->talk()));
-            enemyLogger.log(*enemy);
+           enemyLogger.log(*enemy);
         }
 
 

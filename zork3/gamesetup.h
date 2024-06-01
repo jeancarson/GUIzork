@@ -25,7 +25,7 @@ private:
     void showMap();
     Timer* timerWidget;
     inventoryBackEnd *inventory;
-    string LoggerFile = "C:/Users/jeanl/College/Blocks/Block 4/C++/GUIzork/zork3/Logs.txt";
+    // string LoggerFile = "C:/Users/jeanl/College/Blocks/Block 4/C++/GUIzork/zork3/Logs.txt";
     // Logger<Item> itemLogger;
     // Logger<Room> roomLogger;
 
