@@ -242,26 +242,17 @@ void mainGameWindow::on_EnemyPlace_clicked()
         if (characterEnemy !=nullptr) {
             cout<<characterEnemy->talk()<<endl;
             ui->enemySpeech->setText(QString::fromStdString(characterEnemy->talk()));
-           enemyLogger.log(*enemy);
+           // enemyLogger.log(*enemy);
         }
-
-
-
 //using my overloaded operator (derreerence pointer first)
         if(enemy->getItemToOvercome() == *gameSetup->getCurrentItem()){
-            gameSetup->getCurrentRoom()->removeEnemyFromRoom();
-            gameSetup->getInventory()->removeFromInventory(*gameSetup->getCurrentItem());
+            gameSetup->tryKillEnemy();
             updateInventory();
             updateBackgroundImage();
-
-            gameSetup->setCurrentItem(Item ());
-
             ui->backgroundSlot2->setStyleSheet("background-color:black;");
             isSlot2Yellow = false;
-
             ui->backgroundSlot1->setStyleSheet("background-color:black;");
             isSlot1Yellow = false;
-
             ui->enemySpeech->setText("");
         }
     }

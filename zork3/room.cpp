@@ -1,19 +1,17 @@
 #include "room.h"
 //sorry chris i stole a lot of your code here but no point doing it twice
-Room::Room(string description) {
-    this->description = description;
-    this->isEnemyInRoom = false;
-}
-//copy constructor
-Room::Room(const Room& other) {
-    this->description = other.description;
-    this->enemyInRoom = other.enemyInRoom;
-    this->isEnemyInRoom = other.enemyInRoom;
-    this->itemsInRoom = other.itemsInRoom;
-    this->coordinates = other.coordinates;
-    this->exits = other.exits;
-    this->pathToImage = other.pathToImage;
-}
+Room::Room(string description)
+    : description(description), isEnemyInRoom(false), enemyInRoom(nullptr) {}
+
+// Copy constructor using initializer list
+Room::Room(const Room& other)
+    : description(other.description),
+    enemyInRoom(other.enemyInRoom),
+    isEnemyInRoom(other.isEnemyInRoom),
+    itemsInRoom(other.itemsInRoom),
+    coordinates(other.coordinates),
+    exits(other.exits),
+    pathToImage(other.pathToImage) {}
 
 void Room::setPathToImage(string path){
     this->pathToImage = path;

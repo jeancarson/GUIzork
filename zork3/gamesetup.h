@@ -48,6 +48,7 @@ public:
     inventoryBackEnd* getInventory();
     bool isTheGameWon();
     void createRoomsAndItems();
+    void tryKillEnemy();
 
 
 };}

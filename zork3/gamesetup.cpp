@@ -217,7 +217,11 @@ void GameSetUp::move(std::string direction) {
 
 
 
-
+void GameSetUp::tryKillEnemy(){
+    getCurrentRoom()->removeEnemyFromRoom();
+    getInventory()->removeFromInventory(*getCurrentItem());
+    setCurrentItem(Item ());
+}
 
 
 
