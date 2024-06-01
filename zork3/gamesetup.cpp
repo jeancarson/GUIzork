@@ -3,10 +3,10 @@
 
 namespace GameSetup {
 
-GameSetUp::GameSetUp()
-    : itemLogger(LoggerFile)
-    , roomLogger(LoggerFile)
-    , currentItem(nullptr)
+GameSetUp::GameSetUp():
+    // : itemLogger(LoggerFile)
+    // , roomLogger(LoggerFile)
+    currentItem(nullptr)
 {
     timerWidget = new Timer();
     inventory = new inventoryBackEnd();
@@ -133,19 +133,31 @@ Item* GameSetUp::getCurrentItem(){
     return currentItem;
 }
 
-void GameSetUp::setCurrentItem(Item item){
-    *currentItem = item;
+void GameSetUp::setCurrentItem(const Item& item) {
+    *currentItem = item; // Uses the custom copy constructor
     itemLogger.log(*currentItem);
 }
 
 
-void GameSetUp::move(string direction) {
-    Room* nextRoomPtr = currentRoom->getNextRoom(direction);
-    if (nextRoomPtr != nullptr && !(currentRoom->isEnemyInRoom)) {
+
+//programmer defined exceptions handling
+void GameSetUp::move(std::string direction) {
+    try {
+        Room* nextRoomPtr = currentRoom->getNextRoom(direction);
+        if (nextRoomPtr == nullptr) {
+            throw invalidRoomMoveException();
+        }
+        if (currentRoom->isEnemyInRoom) {
+            throw UndefeatedEnemyInRoomException();
+        }
         currentRoom = nextRoomPtr;
         roomLogger.log(*currentRoom);
-    } else {
-        cout << "You cannot move in that direction." << endl;
+    } catch (const invalidRoomMoveException& e) {
+        std::cerr << "Invalid room move: " << e.what() << std::endl;
+    } catch (const UndefeatedEnemyInRoomException& e) {
+        std::cerr << "Cannot move to the next room: " << e.what() << std::endl;
+    } catch (const std::exception& e) {
+        std::cerr << "An unexpected error occurred: " << e.what() << std::endl;
     }
 }
 

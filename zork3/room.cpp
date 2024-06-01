@@ -4,6 +4,16 @@ Room::Room(string description) {
     this->description = description;
     this->isEnemyInRoom = false;
 }
+//copy constructor
+Room::Room(const Room& other) {
+    this->description = other.description;
+    this->enemyInRoom = other.enemyInRoom;
+    this->isEnemyInRoom = other.enemyInRoom;
+    this->itemsInRoom = other.itemsInRoom;
+    this->coordinates = other.coordinates;
+    this->exits = other.exits;
+    this->pathToImage = other.pathToImage;
+}
 
 void Room::setPathToImage(string path){
     this->pathToImage = path;
@@ -84,6 +94,12 @@ void Room::setEnemyInRoom(Enemy *enemy){
 void Room:: removeEnemyFromRoom(){
     enemyInRoom = new Enemy();
     this->isEnemyInRoom = false;
+}
+
+
+//operator overloading
+bool Room::operator==(const Room& other) const {
+    return this->getDescription() == other.getDescription();
 }
 
 

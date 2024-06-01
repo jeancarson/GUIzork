@@ -1,13 +1,13 @@
 #include "character.h"
 
+
 Character::Character() {}
 
+Character::~Character() {}
 
-string Character::talk(){
-    return "Hello!";
+std::string Character::getPathToImage() const {
+    return pathToImage;
 }
-
-
 
 
 

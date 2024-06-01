@@ -3,6 +3,8 @@
 #include "character.h"
 #include "enemy.h"
 
+
+//Multiple Inheritence
 class CuriousCharacter : public Character, public Enemy
 {
 public:

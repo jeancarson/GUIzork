@@ -14,7 +14,7 @@ private:
 
     string description;
     map<string, Room*> exits;
-    string exitString();
+    // string exitString();
     string pathToImage;
     //not sure if this is right idk how to do arrays in c++
     std::array<int, 3> coordinates;
@@ -22,13 +22,16 @@ private:
     Enemy* enemyInRoom;
 
 public:
-    // int numberOfItems();
     Room(string description);
+    //copy contructor
+    Room(const Room& other);
+    //operator overloading
+    bool operator==(const Room& other) const;
 
     void setExits(Room *north, Room *east, Room *south, Room *west);
     string getDescription() const;
     string getPathToImage();
-    Room* getNextRoom(string direction); // Corrected return type to Room*
+    Room* getNextRoom(string direction);
     void setPathToImage(string path);
     void setCoordinates(int x, int y, int z);
     const std::array<int, 3>& getCoordinates();

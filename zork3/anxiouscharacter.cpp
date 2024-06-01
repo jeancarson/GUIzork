@@ -1,14 +1,9 @@
 #include "anxiouscharacter.h"
 
-anxiousCharacter::anxiousCharacter(string pathToImage) {
+AnxiousCharacter::AnxiousCharacter(std::string pathToImage) {
     this->pathToImage = pathToImage;
 }
 
-
-string anxiousCharacter:: talk(){
+std::string AnxiousCharacter::talk() {
     return "Hurry up\n!!!!!!!";
-}
-
-string anxiousCharacter::getPathToImage(){
-    return pathToImage;
 }

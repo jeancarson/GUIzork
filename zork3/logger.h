@@ -8,6 +8,7 @@
 #include "room.h"
 #include "item.h"
 
+//Template classes
 template<typename T>
 class Logger {
 public:
@@ -28,4 +29,10 @@ void Logger<Item>::log(const Item& item);
 template<>
 void Logger<Room>::log(const Room& room);
 
+template<>
+void Logger<Enemy>::log(const Enemy& enemy);
+
+extern Logger<Item> itemLogger;
+extern Logger<Room> roomLogger;
+extern Logger<Enemy> enemyLogger;
 #endif // LOGGER_H

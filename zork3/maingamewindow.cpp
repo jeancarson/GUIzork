@@ -12,7 +12,7 @@ mainGameWindow::mainGameWindow(QWidget *parent, GameSetUp *preGameSetup)
     , ui(new Ui::mainGameWindow)
     , gameSetup(preGameSetup)
     , end(new endGameScreen(this))
-    , alison(new anxiousCharacter(":/ALISON.png"))
+    , alison(new AnxiousCharacter(":/ALISON.png"))
     , flags()
     , isSlot1Yellow(false)
     , isSlot2Yellow(false)
@@ -47,7 +47,7 @@ mainGameWindow::mainGameWindow(QWidget *parent, GameSetUp *preGameSetup)
 
     updateTimerDisplay();
 }
-
+//Application of bit structures
 void mainGameWindow::handleTimerEnded() {
     if (!flags.isGameOver()) {
         flags.setGameOver(true);
@@ -58,6 +58,7 @@ void mainGameWindow::handleTimerEnded() {
 }
 
 void mainGameWindow::handleHurryUp() {
+    //Application of bit structures
     flags.setAlisonOnScreen(true);
     QString imagePath = QString::fromStdString(alison->getPathToImage());
     QIcon icon(imagePath);
@@ -77,7 +78,12 @@ mainGameWindow::~mainGameWindow() {
 }
 
 void mainGameWindow::updateBackgroundImage() {
+
+    if (gameSetup == nullptr) {
+        throw myNullPointerException();
+    }
     //checking if the game is over
+    //Application of bit structures
     if (gameSetup->isTheGameWon()) {
         flags.setGameOver(true);
         timerWidget->timer->stop();
@@ -236,11 +242,13 @@ void mainGameWindow::on_EnemyPlace_clicked()
         if (characterEnemy !=nullptr) {
             cout<<characterEnemy->talk()<<endl;
             ui->enemySpeech->setText(QString::fromStdString(characterEnemy->talk()));
+            enemyLogger.log(*enemy);
         }
 
 
 
-        if(enemy->getItemToOvercome().getName() == gameSetup->getCurrentItem()->getName()){
+//using my overloaded operator (derreerence pointer first)
+        if(enemy->getItemToOvercome() == *gameSetup->getCurrentItem()){
             gameSetup->getCurrentRoom()->removeEnemyFromRoom();
             gameSetup->getInventory()->removeFromInventory(*gameSetup->getCurrentItem());
             updateInventory();
@@ -263,7 +271,8 @@ void mainGameWindow::on_EnemyPlace_clicked()
 
 
 void mainGameWindow::on_AlisonGoesHere_clicked()
-{
+{//Application of bit structures
+
     if (ui->alisonSays->text()=="" && flags.isAlisonOnScreen()){
         ui->alisonSays->setText(QString::fromStdString(alison->talk()));
     }

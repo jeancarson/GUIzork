@@ -35,7 +35,7 @@ private:
     QTimer *timer;
     QString timeLeft;
 
-    // Declare mainGameWindow as a friend
+    // Friendship
     friend class mainGameWindow;
     friend class Guide;
 };

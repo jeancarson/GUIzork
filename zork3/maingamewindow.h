@@ -8,21 +8,30 @@
 #include "timer.h"
 #include <QPushButton>
 #include "guide.h"
+#include "logger.h"
 
 namespace Ui {
 
 class mainGameWindow;}
+//Bit Fields/ Bit Structures
 struct GameFlags {
-    unsigned short flags : 2; // Allocate 2 bits for flags
+    //2 flags = 2 bits (3 flags = 3 bits)
+    unsigned short flags : 2;
 
     GameFlags() : flags(0) {} // Initialize flags to 0 (not game over, Alison not on screen)
 
-    // Access and modify flags using bitwise operators
+    //BITWISE and with flags and 01
     bool isGameOver() const { return (flags & 1) != 0; }
+    //BITWISE and with flags and NOT 1 (10) to clear
+    //condition ? value_if_true : value_if_false
+    //then BITWISE or to 'add' relevent bit to the flag if true.
     void setGameOver(bool gameOver) { flags = (flags & ~1) | (gameOver ? 1 : 0); }
 
+    //bitwise and with 10, then with not2 ie 01
     bool isAlisonOnScreen() const { return (flags & 2) != 0; }
     void setAlisonOnScreen(bool onScreen) { flags = (flags & ~2) | (onScreen ? 2 : 0); }
+
+    // A third flag would have the above operations done with 4 (100)
 };
 
 
@@ -51,7 +60,7 @@ private:
     Ui::mainGameWindow *ui;
     GameSetup::GameSetUp *gameSetup;
     endGameScreen *end;
-    anxiousCharacter *alison;
+    AnxiousCharacter *alison;
     GameFlags flags;
     Timer *timerWidget;
     bool isSlot1Yellow;

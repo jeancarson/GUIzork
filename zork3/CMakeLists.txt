@@ -65,6 +65,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         resources.qrc
         logger.h logger.cpp
         ALISON.png MIA.png
+        customexceptions.h customexceptions.cpp
 
 
 

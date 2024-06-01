@@ -5,6 +5,7 @@
 #include "enemy.h"
 #include <string>
 using namespace std;
+//Multiple Inheritence
 class threateningCharacter : public Character, public Enemy
 {
 public:

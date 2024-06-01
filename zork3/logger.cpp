@@ -2,7 +2,11 @@
 
 using namespace std;
 
+Logger<Item> itemLogger("item_logs.txt");
+Logger<Room> roomLogger("room_logs.txt");
+Logger<Enemy> enemyLogger("enemy_logs.txt");
 
+//template classes
 template<>
 void Logger<Item>::log(const Item& item) {
     ofstream file(filename, ios_base::app);
@@ -27,6 +31,19 @@ void Logger<Room>::log(const Room& room) {
         timeString.pop_back();
 
         file << timeString << " - Entered into a new room: "  << room.getDescription() << std::endl;
+    } else {
+        cerr << "Failed to open log file." << endl;
+    }
+}
+template<>
+void Logger<Enemy>::log(const Enemy& enemy) {
+    ofstream file(filename, ios_base::app);
+    if (file.is_open()) {
+        time_t currentTime = time(nullptr);
+        string timeString = ctime(&currentTime);
+        timeString.pop_back();
+
+        file << timeString << " - Enemy in room! Item needed to overcome: " << enemy.getItemToOvercome().getName() << std::endl;
     } else {
         cerr << "Failed to open log file." << endl;
     }

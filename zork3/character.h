@@ -7,14 +7,17 @@ using namespace std;
 
 
 
-class Character
-
-{
+class Character {
 public:
     Character();
-    virtual string talk();
+    virtual ~Character();
 
-    virtual ~Character() {};
+    // Pure virtual function because of =0, therefore an abstract class
+    virtual std::string talk() = 0;
+
+    std::string getPathToImage() const;
+    //uisng protected ACCESS SPECIFIER
+protected:
+    std::string pathToImage;
 };
-
 #endif // CHARACTER_H

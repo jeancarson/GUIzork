@@ -5,12 +5,12 @@ Enemy::Enemy(std::string name, Item itemToOvercome,string pathToImage, int xLoc,
     : name(name), itemToOvercome(itemToOvercome),pathToImage(pathToImage), xLoc(xLoc), yLoc(yLoc) {
 }
 
-
-Item Enemy::getItemToOvercome(){
+//getters will not modify the enemy attribute
+Item Enemy::getItemToOvercome() const{
     return itemToOvercome;
 }
 
-string Enemy::getName(){
+string Enemy::getName() const{
     return name;
 }
 

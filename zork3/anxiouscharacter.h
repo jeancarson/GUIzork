@@ -3,15 +3,11 @@
 #include "character.h"
 
 
-class anxiousCharacter : public Character
-{
+class AnxiousCharacter : public Character {
 public:
-    anxiousCharacter(string pathToImage);
-    string talk() override;
-    string getPathToImage();
+    AnxiousCharacter(std::string pathToImage);
 
-private:
-    string pathToImage;
+    std::string talk() override;
 };
 
 #endif // ANXIOUSCHARACTER_H

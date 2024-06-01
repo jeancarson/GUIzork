@@ -9,10 +9,13 @@ class Item
 public:
 
     Item();
+    //copy contructor
+    Item(const Item& other);
     QString getPathToImage();
-    bool operator==(const Item& other) const {
-        return this->name == other.name;
-    }
+
+    //operator overloading
+    bool operator==(const Item& other) const;
+
 
     string getName() const;
     void setNameAndPathToImage(string name, string path);

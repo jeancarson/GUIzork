@@ -6,11 +6,14 @@
 #include "threateningcharacter.h"
 #include "curiouscharacter.h"
 #include "logger.h"
+#include "customexceptions.h"
 using namespace std;
 
-#include <QObject> // Include QObject for signal-slot mechanism
+// #include <QObject>
 #include "Timer.h"
 #include "inventorybackend.h"
+
+//Namespaces
 namespace GameSetup {
 
 class GameSetUp
@@ -23,12 +26,12 @@ private:
     Timer* timerWidget;
     inventoryBackEnd *inventory;
     string LoggerFile = "C:/Users/jeanl/College/Blocks/Block 4/C++/GUIzork/zork3/Logs.txt";
-    Logger<Item> itemLogger;
-    Logger<Room> roomLogger;
+    // Logger<Item> itemLogger;
+    // Logger<Room> roomLogger;
 
 
-signals:
-    void backgroundImageChanged();
+// signals:
+//     // void backgroundImageChanged();
 
 public:
     void createRoomsAndItems();
@@ -39,13 +42,11 @@ public:
     void move(string direction);
     Room* getCurrentRoom();
     Item* getCurrentItem();
-    void setCurrentItem(Item item);
+    void setCurrentItem(const Item& item);
     void initialiseTimerWidget();
     vector<Item> getItemsBackEnd();
     inventoryBackEnd* getInventory();
     bool isTheGameWon();
-
-
 
 };}
 
