@@ -114,15 +114,21 @@ void mainGameWindow::updateBackgroundImage() {
     }
 
     //dealing with enemies/characters
+    cout<<"CHK3.0"<<endl;
     if (Enemy* enemyInRoom = gameSetup->getCurrentRoom()->getEnemyInRoom()) {
-        // Enemy* enemy = gameSetup->getCurrentRoom()->getEnemyInRoom();
+        if (enemyInRoom != nullptr) {
+        cout<<"CHK3.1"<<endl;
         Character* charEnemy = dynamic_cast<Character*>(enemyInRoom);
+        cout<<"CHK3.2"<<endl;
         QPixmap charEnemyPM(QString::fromStdString(charEnemy->getPathToImage()));
-
+        cout<<"CHK3.3"<<endl;
         ui->EnemyPlace->setIcon(charEnemyPM);
+        cout<<"CHK3.4"<<endl;
         ui->EnemyPlace->setIconSize(ui->EnemyPlace->size());
-    } else {
+        cout<<"CHK3.5"<<endl;
+        }} else {
         ui->EnemyPlace->setIcon(QIcon());
+
     }
 }
 
@@ -249,14 +255,23 @@ void mainGameWindow::on_EnemyPlace_clicked()
         }
 //using my overloaded operator (derreerence pointer first)
         if(enemy->getItemToOvercome() == *gameSetup->getCurrentItem()){
+            cout<<"CHK1"<<endl;
             gameSetup->tryKillEnemy();
+            cout<<"CHK2"<<endl;
+
             updateInventory();
+            cout<<"CHK2.5"<<endl;
+
             updateBackgroundImage();
+            cout<<"CHK4"<<endl;
+
             ui->backgroundSlot2->setStyleSheet("background-color:black;");
             isSlot2Yellow = false;
             ui->backgroundSlot1->setStyleSheet("background-color:black;");
             isSlot1Yellow = false;
             ui->enemySpeech->setText("");
+            cout<<"CHK5"<<endl;
+
         }
     }
 }

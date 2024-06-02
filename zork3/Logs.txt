@@ -112,3 +112,61 @@ Sun Jun 02 13:12:40 2024 Current item set to keycard
 Sun Jun 02 13:12:42 2024 Current item set to 
 Sun Jun 02 13:15:53 2024 Current item set to keycard
 Sun Jun 02 13:15:54 2024 Current item set to 
+Sun Jun 02 13:18:40 2024 Current item set to keycard
+Sun Jun 02 13:18:40 2024 Current item set to 
+Sun Jun 02 13:18:41 2024 Current item set to keycard
+Sun Jun 02 13:18:41 2024 Current item set to 
+Sun Jun 02 13:18:45 2024 Current item set to keycard
+Sun Jun 02 13:18:46 2024 Current item set to 
+Sun Jun 02 13:20:12 2024 Current item set to keycard
+Sun Jun 02 13:20:13 2024 Current item set to 
+Sun Jun 02 13:22:04 2024 Current item set to keycard
+Sun Jun 02 13:22:05 2024 Current item set to 
+Sun Jun 02 13:23:32 2024 Current item set to keycard
+Sun Jun 02 13:23:32 2024 Current item set to 
+Sun Jun 02 13:26:01 2024 Current item set to keycard
+Sun Jun 02 13:26:02 2024 Current item set to 
+Sun Jun 02 13:37:26 2024 Current item set to keycard
+Sun Jun 02 13:37:26 2024 Current item set to 
+Sun Jun 02 13:39:59 2024 Current item set to keycard
+Sun Jun 02 13:40:00 2024 Current item set to 
+Sun Jun 02 13:41:38 2024 Current item set to keycard
+Sun Jun 02 13:41:38 2024 Current item set to 
+Sun Jun 02 13:41:43 2024 - Entered into a new room: You go through the front door. 
+You see a set of stairs and a lift
+Sun Jun 02 13:41:44 2024 - Entered into a new room: You have entered the lift. North is first floor, west is second floor
+Sun Jun 02 13:41:45 2024 - Entered into a new room: You have reached upstairs
+Sun Jun 02 13:41:45 2024 - Entered into a new room: In the coworking space outside TA office
+Sun Jun 02 13:41:47 2024 Current item set to umbrella
+Sun Jun 02 13:41:48 2024 Current item set to 
+Sun Jun 02 13:41:49 2024 - Entered into a new room: In the kitchen
+Sun Jun 02 13:41:50 2024 - Entered into a new room: Studio off the forest room
+Sun Jun 02 13:41:50 2024 - Entered into a new room: In the kitchen
+Sun Jun 02 13:41:51 2024 - Entered into a new room: In the coworking space outside TA office
+Sun Jun 02 13:41:52 2024 - Entered into a new room: By the coworking booths
+Sun Jun 02 13:41:53 2024 - Entered into a new room: At that tall table outside Ian and Marks office
+Sun Jun 02 13:41:55 2024 Current item set to fish
+Sun Jun 02 13:41:56 2024 Current item set to 
+Sun Jun 02 13:41:57 2024 - Entered into a new room: Outside Alison's office
+Sun Jun 02 13:41:58 2024 - Entered into a new room: At that tall table outside Ian and Marks office
+Sun Jun 02 13:41:58 2024 - Entered into a new room: By the coworking booths
+Sun Jun 02 13:42:00 2024 - Entered into a new room: In the coworking space outside TA office
+Sun Jun 02 13:42:01 2024 - Entered into a new room: You have reached upstairs
+Sun Jun 02 13:42:03 2024 - Entered into a new room: You have entered the lift. North is first floor, west is second floor
+Sun Jun 02 13:42:04 2024 - Entered into a new room: You go through the front door. 
+You see a set of stairs and a lift
+Sun Jun 02 13:42:04 2024 - Entered into a new room: Front Door
+Sun Jun 02 13:42:09 2024 - Entered into a new room: You go through the front door. 
+You see a set of stairs and a lift
+Sun Jun 02 13:42:10 2024 - Entered into a new room: You have entered the lift. North is first floor, west is second floor
+Sun Jun 02 13:42:11 2024 - Entered into a new room: You have reached upstairs
+Sun Jun 02 13:42:12 2024 - Entered into a new room: Studio off the forest room
+Sun Jun 02 13:42:13 2024 - Entered into a new room: The forest room..duh
+Sun Jun 02 13:42:15 2024 - Entered into a new room: Studio off the forest room
+Sun Jun 02 13:42:16 2024 - Entered into a new room: In the kitchen
+Sun Jun 02 13:42:17 2024 - Entered into a new room: In the coworking space outside TA office
+Sun Jun 02 13:42:17 2024 - Entered into a new room: You have reached upstairs
+Sun Jun 02 13:42:18 2024 - Entered into a new room: You have entered the lift. North is first floor, west is second floor
+Sun Jun 02 13:42:19 2024 - Entered into a new room: You go through the front door. 
+You see a set of stairs and a lift
+Sun Jun 02 13:42:19 2024 - Entered into a new room: Front Door

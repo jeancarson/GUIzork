@@ -90,7 +90,7 @@ void Room::setEnemyInRoom(Enemy *enemy){
 
 //TODO make this a null ptr check on all shit
 void Room:: removeEnemyFromRoom(){
-    enemyInRoom = new Enemy();
+    enemyInRoom = nullptr;
     this->isEnemyInRoom = false;
 }
 

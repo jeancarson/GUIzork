@@ -109,7 +109,7 @@ void GameSetUp::createRoomsAndItems()  {
 
 
 
-    threateningCharacter *LockedDoor = new threateningCharacter("Locked Door", *keycard,":/SecurityGuard.png");
+    threateningCharacter *LockedDoor = new threateningCharacter("Security Guard", *keycard,":/SecurityGuard.png");
     CuriousCharacter *Mia = new CuriousCharacter("Mia", *umbrella,":/MIA.png");
     CuriousCharacter *Ruan = new CuriousCharacter("Ruan", *fish, ":/RUAN.png");
 
@@ -218,7 +218,10 @@ void GameSetUp::move(std::string direction) {
 
 
 void GameSetUp::tryKillEnemy(){
+    cout<<"CHK1.1"<<endl;
     getCurrentRoom()->removeEnemyFromRoom();
+    cout<<"CHK1.2"<<endl;
+
     getInventory()->removeFromInventory(*getCurrentItem());
     setCurrentItem(Item ());
 }
