@@ -93,11 +93,19 @@ void GameSetUp::createRoomsAndItems()  {
     Item *umbrella = new Item();
     Item *lunchbox = new Item();
     Item *fish = new Item();
+    cout<<"Check 1"<<endl;
     keycard->setNameAndPathToImage("keycard", ":/Keycard.png");
+    cout<<"Check 2"<<endl;
     umbrella->setNameAndPathToImage("umbrella",":/umbrella.png" );
     lunchbox->setNameAndPathToImage("lunchbox",":/lunchbox.png" );
     fish->setNameAndPathToImage("fish", ":/RuansFish.png");
-    cout<<"Items are made"<<endl;
+    cout<<"Check 3"<<endl;
+    keycard->setItemData("Green");
+    cout<<"Check 4"<<endl;
+    umbrella->setItemData("Multicoloured");
+    fish->setItemData(4);
+    keycard->setItemData(50);
+
 
     frontDoor->addItemToRoom(*keycard);
     coworkingSpace1->addItemToRoom(*umbrella);
@@ -134,7 +142,7 @@ Item* GameSetUp::getCurrentItem(){
 }
 
 void GameSetUp::setCurrentItem(const Item& item) {
-    *currentItem = item; // Uses the custom copy constructor
+    *currentItem = item;
     itemLogger.log(*currentItem);
 }
 

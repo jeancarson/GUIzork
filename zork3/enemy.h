@@ -2,7 +2,7 @@
 #define ENEMY_H
 #include <string>
 #include "item.h"
-
+using namespace std;
 class Enemy
 {
 public:

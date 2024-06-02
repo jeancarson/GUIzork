@@ -1,35 +1,43 @@
+// item.h
 #ifndef ITEM_H
 #define ITEM_H
-
+#include <string>
+#include <iostream>
 #include <QString>
 
-using namespace std;
-class Item
-{
+class Item {
 public:
-
     Item();
-    //copy contructor
     Item(const Item& other);
-    QString getPathToImage();
-
-    //operator overloading
+    Item& operator=(const Item& other);
     bool operator==(const Item& other) const;
 
-
-    string getName() const;
-    void setNameAndPathToImage(string name, string path);
+    QString getPathToImage();
+    std::string getName() const;
+    void setNameAndPathToImage(std::string newName, std::string path);
+    void setItemData(std::string colour);
+    void setItemData(int price);
+    void printItemData();
 
 private:
-    string pathToImage;
-    bool collected;
-    bool inUse;
+    std::string name;
+    std::string pathToImage;
     bool inIventory;
-    string name;
+
+    enum class DataType {
+        None,
+        Colour,
+        Price
+    } dataType;
+
+    union ItemData {
+        std::string colour;
+        int price;
+
+        ItemData() { new (&colour) std::string(); }
+        ~ItemData() {}
+    } itemData;
+
+    void destroyData();
 };
-
-
-
-
-
 #endif // ITEM_H

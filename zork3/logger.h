@@ -26,6 +26,7 @@ template<>
 void Logger<Item>::log(const Item& item);
 
 // Declaration of function template specialization for Room
+//use of references
 template<>
 void Logger<Room>::log(const Room& room);
 

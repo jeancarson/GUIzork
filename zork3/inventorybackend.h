@@ -11,6 +11,7 @@ class inventoryBackEnd
 {
 public:
     inventoryBackEnd();
+    //more references
     void addToInventory(Item& item);
     void removeFromInventory(const Item& item);
     vector<Item> getInventory();

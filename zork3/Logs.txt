@@ -170,3 +170,11 @@ Sun Jun 02 13:42:18 2024 - Entered into a new room: You have entered the lift. N
 Sun Jun 02 13:42:19 2024 - Entered into a new room: You go through the front door. 
 You see a set of stairs and a lift
 Sun Jun 02 13:42:19 2024 - Entered into a new room: Front Door
+Sun Jun 02 21:04:07 2024 Current item set to 
+Sun Jun 02 21:04:08 2024 Current item set to 
+Sun Jun 02 21:04:08 2024 Current item set to 
+Sun Jun 02 21:04:16 2024 Current item set to 
+Sun Jun 02 21:04:17 2024 Current item set to 
+Sun Jun 02 21:04:17 2024 Current item set to 
+Sun Jun 02 21:04:19 2024 Current item set to 
+Sun Jun 02 21:04:22 2024 Current item set to 
