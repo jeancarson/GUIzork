@@ -109,9 +109,9 @@ void GameSetUp::createRoomsAndItems()  {
 
 
 
-    threateningCharacter *LockedDoor = new threateningCharacter("Locked Door", *keycard,":/SecurityGuard.png", 400, 300);
-    CuriousCharacter *Mia = new CuriousCharacter("Mia", *umbrella,":/MIA.png", 200, 500);
-    CuriousCharacter *Ruan = new CuriousCharacter("Ruan", *fish, ":/RUAN.png",400, 700);
+    threateningCharacter *LockedDoor = new threateningCharacter("Locked Door", *keycard,":/SecurityGuard.png");
+    CuriousCharacter *Mia = new CuriousCharacter("Mia", *umbrella,":/MIA.png");
+    CuriousCharacter *Ruan = new CuriousCharacter("Ruan", *fish, ":/RUAN.png");
 
     frontDoor->setEnemyInRoom(LockedDoor);
     coworkingSpace1->setEnemyInRoom(Mia);
@@ -180,7 +180,7 @@ void GameSetUp::moveDEBUG(std::string direction) {
             throw UndefeatedEnemyInRoomException();
         }
         currentRoom = nextRoomPtr;
-        cout<<currentRoom asigned: "+ currentRoom->getDescription();
+        cout<<"currentRoom asigned: "+ currentRoom->getDescription();
         roomLogger.log(*currentRoom);
     } catch (const invalidRoomMoveException& e) {
         std::cerr << "Invalid room move: " << e.what() << std::endl;

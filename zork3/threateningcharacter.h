@@ -9,7 +9,7 @@ using namespace std;
 class threateningCharacter : public Character, public Enemy
 {
 public:
-    // threateningCharacter();
+    threateningCharacter(string name, Item ItemToOvercome, string pathToImage);
     using Enemy::Enemy;
     string talk() override;
 };

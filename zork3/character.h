@@ -9,7 +9,7 @@ using namespace std;
 
 class Character {
 public:
-    Character();
+    Character(string PathToImage);
     virtual ~Character();
 
     // Pure virtual function because of =0, therefore an abstract class

@@ -1,8 +1,11 @@
 #include "enemy.h"
 #include <string>
+#include <iostream>
 using namespace std;
-Enemy::Enemy(std::string name, Item itemToOvercome,string pathToImage, int xLoc, int yLoc)
-    : name(name), itemToOvercome(itemToOvercome),pathToImage(pathToImage), xLoc(xLoc), yLoc(yLoc) {
+Enemy::Enemy(std::string name, Item itemToOvercome)
+    //initialiser list
+    : name(name), itemToOvercome(itemToOvercome) {
+    cout<<("Demonstration of the object construction sequence: This (Enemy " + name + " ) will print second")<<endl;
 }
 
 //getters will not modify the enemy attribute
@@ -14,16 +17,8 @@ string Enemy::getName() const{
     return name;
 }
 
-int Enemy:: getXLoc(){
-    return xLoc;
-}
 
-int Enemy::getYLoc(){
-    return yLoc;
-}
 
-string Enemy::getPathToImage(){
-    return pathToImage;
-}
+
 
 

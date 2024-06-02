@@ -114,9 +114,12 @@ void mainGameWindow::updateBackgroundImage() {
     }
 
     //dealing with enemies/characters
-    if (Enemy* enemyPtr = gameSetup->getCurrentRoom()->getEnemyInRoom()) {
-        QPixmap enemy(QString::fromStdString(enemyPtr->getPathToImage()));
-        ui->EnemyPlace->setIcon(enemy);
+    if (Enemy* enemyInRoom = gameSetup->getCurrentRoom()->getEnemyInRoom()) {
+        // Enemy* enemy = gameSetup->getCurrentRoom()->getEnemyInRoom();
+        Character* charEnemy = dynamic_cast<Character*>(enemyInRoom);
+        QPixmap charEnemyPM(QString::fromStdString(charEnemy->getPathToImage()));
+
+        ui->EnemyPlace->setIcon(charEnemyPM);
         ui->EnemyPlace->setIconSize(ui->EnemyPlace->size());
     } else {
         ui->EnemyPlace->setIcon(QIcon());

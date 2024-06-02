@@ -8,11 +8,11 @@
 class CuriousCharacter : public Character, public Enemy
 {
 public:
-    CuriousCharacter();
+    CuriousCharacter(string name, Item itemToOvercome, string pathToImage);
     string talk() override;
 
 
-    using Enemy::Enemy;
+    // using Enemy::Enemy;
 };
 
 #endif // CURIOUSCHARACTER_H
