@@ -1,6 +1,7 @@
 #include "guide.h"
 #include "ui_guide.h"
 #include <QLayout>
+#include "endgamescreen.h"
 //this is done like this so the map is using the same Gamesetup object as the main game window, ie, it has access to current room
 
 
@@ -18,6 +19,7 @@ Guide::Guide(GameSetUp *gameSetup, QWidget *parent)
     timerText = gameSetup->getTimer();
 
     connect(timerText, &Timer::timeUpdated, this, &Guide::updateTimerDisplay);
+    connect(timerText, &Timer::timeEnded, this, &Guide::handleTimerEnded);
 
     updateTimerDisplay();
 }
@@ -32,6 +34,19 @@ Guide::~Guide()
 void Guide::updateTimerDisplay() {
     ui->TimerDisplay->display(timerText->timeLeft);
 }
+
+
+
+void Guide::handleTimerEnded(){
+
+
+    // endGameScreen *end = new endGameScreen(this);
+    // end->setScreen(false);
+
+    // end->show();
+    this->hide();
+
+    }
 
 void Guide::updateBackgroundImage(){
     std::array<int, 3> floor = m_gameSetup->getCurrentRoom()->getCoordinates();

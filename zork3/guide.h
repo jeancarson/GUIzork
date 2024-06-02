@@ -30,6 +30,7 @@ private:
     QWidget *parent;
     Ui::Guide *ui;
     void updateTimerDisplay();
+    void handleTimerEnded();
 
 
 
