@@ -9,7 +9,6 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
     , game(nullptr)
-    , guide(nullptr)
     , gameSetup(nullptr)
     , timer(nullptr)
 {
@@ -22,7 +21,6 @@ MainWindow::MainWindow(QWidget *parent)
 MainWindow::~MainWindow()
 {
     delete game;
-    delete guide;
     delete gameSetup;
     delete ui;
 }
@@ -35,7 +33,6 @@ void MainWindow::on_start_clicked()
     // Pass the Timer object to the constructors of both windows
     timer = gameSetup->getTimer();
     game = new mainGameWindow(nullptr, gameSetup);
-    guide = new Guide(gameSetup, nullptr);
 
 
 

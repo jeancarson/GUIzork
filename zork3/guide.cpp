@@ -71,5 +71,6 @@ void Guide::on_CloseGuide_clicked()
 {
     parent->show();
     this->hide();
+    delete this;
 }
 

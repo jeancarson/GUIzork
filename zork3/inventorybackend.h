@@ -19,9 +19,9 @@ public:
 
 
 private:
-    //TODO
+    //can be evaluated at compile time
     static constexpr int MAX_ITEMS = 2;
-
+    //vector = dynamic list, std::list = double linked list
     vector<Item> items;
 
 };

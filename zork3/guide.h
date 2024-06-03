@@ -15,9 +15,10 @@ class Guide : public QMainWindow
 
 public:
     explicit Guide(GameSetUp *gameSetup, QWidget *parent = nullptr);
-
     ~Guide();
+    //moving the red dot on map
     void setLocationYOUareHERE();
+    //setting which map depending on floor
     void updateBackgroundImage();
 
 private slots:

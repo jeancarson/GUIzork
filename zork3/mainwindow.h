@@ -29,7 +29,6 @@ private:
     Ui::MainWindow *ui;
     GameSetUp *gameSetup;
     Timer *timer;
-    Guide *guide;
     mainGameWindow *game;
 
 

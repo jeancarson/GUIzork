@@ -36,7 +36,7 @@ private:
     QTimer *timer;
     QString timeLeft;
 
-    // Friendship
+    // Friendship, so it is possible to have the same time show in two different windows
     friend class mainGameWindow;
     friend class Guide;
 };
