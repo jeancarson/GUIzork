@@ -2,7 +2,7 @@ github repo: https://github.com/jeancarson/GUIzork.git
 
 *****
 *****
-GAME INSTRUCTIONS
+==GAME INSTRUCTIONS==
 You have three minutes to enter the ISE building, find a pink lunchbox, add it to your inventory and get back out the front door.
 Along the way there will be 'enemies', each which can be defeated by adding the unusual item on screen to the inventory, selecting it (it will be yellow), then clicking on the enemy. The enemy disapears and you can now move. You can click on any character at any time to see what they have to say.
 Moves in valid directions are shown in red, invalid are greyed out.
@@ -10,7 +10,7 @@ You can view the map by clicking the central map button. There is a red dot on t
 
 *****
 
-CHEAT CODES
+==CHEAT CODES==
 * After start, click on green keycard to add to invenetory. Click again to select, then click on security guard.
 * Execute the following moves: NORTH, WEST, NORTH, WEST
 * Click on the umbrella to pick up, again to select and then on the enemy (MIA)
@@ -23,7 +23,7 @@ CHEAT CODES
 *****
 *****
 
-
+==Requirements==
 
 
 Virtual functions:                                    talk() function in the abstract Character class
