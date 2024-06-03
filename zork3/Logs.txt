@@ -517,3 +517,74 @@ Mon Jun 03 20:26:59 2024 - Entered into a new room: You have entered the lift. N
 Mon Jun 03 20:27:00 2024 - Entered into a new room: You go through the front door. 
 You see a set of stairs and a lift
 Mon Jun 03 20:27:00 2024 - Entered into a new room: Front Door
+Mon Jun 03 20:31:56 2024 Current item set to keycard
+Mon Jun 03 20:31:57 2024 Current item set to 
+Mon Jun 03 20:31:58 2024 - Entered into a new room: You go through the front door. 
+You see a set of stairs and a lift
+Mon Jun 03 20:31:59 2024 - Entered into a new room: You have entered the lift. North is first floor, west is second floor
+Mon Jun 03 20:31:59 2024 - Entered into a new room: You have reached upstairs
+Mon Jun 03 20:32:01 2024 - Entered into a new room: Studio off the forest room
+Mon Jun 03 20:32:02 2024 - Entered into a new room: The forest room..duh
+Mon Jun 03 20:32:04 2024 - Entered into a new room: Outside Alison's office
+Mon Jun 03 20:32:05 2024 - Entered into a new room: The forest room..duh
+Mon Jun 03 20:32:06 2024 - Entered into a new room: Studio off the forest room
+Mon Jun 03 20:32:07 2024 - Entered into a new room: In the kitchen
+Mon Jun 03 20:32:08 2024 - Entered into a new room: In the coworking space outside TA office
+Mon Jun 03 20:32:11 2024 Current item set to umbrella
+Mon Jun 03 20:32:11 2024 Current item set to 
+Mon Jun 03 20:32:12 2024 - Entered into a new room: You have reached upstairs
+Mon Jun 03 20:32:13 2024 - Entered into a new room: You have entered the lift. North is first floor, west is second floor
+Mon Jun 03 20:32:13 2024 - Entered into a new room: You go through the front door. 
+You see a set of stairs and a lift
+Mon Jun 03 20:32:14 2024 - Entered into a new room: Front Door
+Mon Jun 03 20:33:13 2024 Current item set to keycard
+Mon Jun 03 20:33:13 2024 Current item set to 
+Mon Jun 03 20:33:14 2024 - Entered into a new room: You go through the front door. 
+You see a set of stairs and a lift
+Mon Jun 03 20:33:15 2024 - Entered into a new room: You have entered the lift. North is first floor, west is second floor
+Mon Jun 03 20:33:16 2024 - Entered into a new room: You have reached upstairs
+Mon Jun 03 20:33:17 2024 - Entered into a new room: Studio off the forest room
+Mon Jun 03 20:33:18 2024 - Entered into a new room: The forest room..duh
+Mon Jun 03 20:33:20 2024 - Entered into a new room: Outside Alison's office
+Mon Jun 03 20:33:20 2024 - Entered into a new room: The forest room..duh
+Mon Jun 03 20:33:21 2024 - Entered into a new room: Outside Alison's office
+Mon Jun 03 20:33:22 2024 - Entered into a new room: The forest room..duh
+Mon Jun 03 20:33:23 2024 - Entered into a new room: Studio off the forest room
+Mon Jun 03 20:33:24 2024 - Entered into a new room: In the kitchen
+Mon Jun 03 20:33:25 2024 - Entered into a new room: In the coworking space outside TA office
+Mon Jun 03 20:33:27 2024 Current item set to umbrella
+Mon Jun 03 20:33:28 2024 Current item set to 
+Mon Jun 03 20:33:29 2024 - Entered into a new room: You have reached upstairs
+Mon Jun 03 20:33:29 2024 - Entered into a new room: You have entered the lift. North is first floor, west is second floor
+Mon Jun 03 20:33:29 2024 - Entered into a new room: You go through the front door. 
+You see a set of stairs and a lift
+Mon Jun 03 20:33:30 2024 - Entered into a new room: Front Door
+Mon Jun 03 20:35:49 2024 Current item set to keycard
+Mon Jun 03 20:35:49 2024 Current item set to 
+Mon Jun 03 20:35:50 2024 - Entered into a new room: You go through the front door. 
+You see a set of stairs and a lift
+Mon Jun 03 20:42:51 2024 Current item set to keycard
+Mon Jun 03 20:42:51 2024 Current item set to 
+Mon Jun 03 20:42:52 2024 - Entered into a new room: You go through the front door. 
+You see a set of stairs and a lift
+Mon Jun 03 20:42:53 2024 - Entered into a new room: You have entered the lift. North is first floor, west is second floor
+Mon Jun 03 20:42:53 2024 - Entered into a new room: You have reached upstairs
+Mon Jun 03 20:42:54 2024 - Entered into a new room: Studio off the forest room
+Mon Jun 03 20:42:55 2024 - Entered into a new room: The forest room..duh
+Mon Jun 03 20:42:58 2024 - Entered into a new room: Studio off the forest room
+Mon Jun 03 20:42:58 2024 - Entered into a new room: In the kitchen
+Mon Jun 03 20:42:59 2024 - Entered into a new room: In the coworking space outside TA office
+Mon Jun 03 20:43:01 2024 Current item set to umbrella
+Mon Jun 03 20:43:02 2024 Current item set to 
+Mon Jun 03 20:43:02 2024 - Entered into a new room: You have reached upstairs
+Mon Jun 03 20:43:03 2024 - Entered into a new room: You have entered the lift. North is first floor, west is second floor
+Mon Jun 03 20:43:03 2024 - Entered into a new room: You go through the front door. 
+You see a set of stairs and a lift
+Mon Jun 03 20:43:04 2024 - Entered into a new room: Front Door
+Mon Jun 03 20:46:11 2024 Current item set to keycard
+Mon Jun 03 20:46:12 2024 Current item set to 
+Mon Jun 03 20:46:12 2024 - Entered into a new room: You go through the front door. 
+You see a set of stairs and a lift
+Mon Jun 03 20:46:13 2024 - Entered into a new room: You have entered the lift. North is first floor, west is second floor
+Mon Jun 03 20:46:14 2024 - Entered into a new room: You have reached upstairs
+Mon Jun 03 20:46:16 2024 - Entered into a new room: In the coworking space outside TA office

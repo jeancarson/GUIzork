@@ -83,22 +83,17 @@ void GameSetUp::createRoomsAndItems()  {
     forestRoom -> setCoordinates(300, 300, 1);
     studio2 -> setCoordinates(200, 350, 1);
 
-    cout<<"coordinates set"<<endl;
 
 
     Item *keycard = new Item();
     Item *umbrella = new Item();
     Item *lunchbox = new Item();
     Item *fish = new Item();
-    cout<<"Check 1"<<endl;
     keycard->setNameAndPathToImage("keycard", ":/Keycard.png");
-    cout<<"Check 2"<<endl;
     umbrella->setNameAndPathToImage("umbrella",":/umbrella.png" );
     lunchbox->setNameAndPathToImage("lunchbox",":/lunchbox.png" );
     fish->setNameAndPathToImage("fish", ":/RuansFish.png");
-    cout<<"Check 3"<<endl;
     keycard->setItemData("Green");
-    cout<<"Check 4"<<endl;
     umbrella->setItemData("Multicoloured");
     fish->setItemData(4);
     keycard->setItemData(50);
@@ -108,7 +103,6 @@ void GameSetUp::createRoomsAndItems()  {
     coworkingSpace1->addItemToRoom(*umbrella);
     coworkingSpace3a->addItemToRoom(*fish);
     forestRoom->addItemToRoom(*lunchbox);
-    cout<<"items added to rooms"<<endl;
 
 
 
@@ -124,7 +118,6 @@ void GameSetUp::createRoomsAndItems()  {
 
 
     this->currentRoom = frontDoor;
-    cout<<currentRoom->getDescription();
 }
 
 
@@ -222,14 +215,12 @@ void GameSetUp::move(Direction direction) {
 
 
 void GameSetUp::tryKillEnemy(){
-    cout<<"CHK1.1"<<endl;
     getCurrentRoom()->removeEnemyFromRoom();
-    cout<<"CHK1.2"<<endl;
 
     getInventory()->removeFromInventory(*getCurrentItem());
     setCurrentItem(Item ());
 }
 
-void GameSetUp::stopGame() {
-    QApplication::exit();}
+// void GameSetUp::stopGame() {
+//     QApplication::exit();}
 }

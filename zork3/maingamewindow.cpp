@@ -23,10 +23,7 @@ mainGameWindow::mainGameWindow(QWidget *parent, GameSetUp *preGameSetup)
     if (!preGameSetup) {
         cout << "GAME SETUP IS NULL" << endl;
     }
-    cout << "BEFORE INITIALIZING SETUP" << endl;
-    cout << gameSetup->getCurrentRoom()->getPathToImage() << endl;
-    cout << "AFTER INITIALIZING SETUP" << endl;
-    cout << gameSetup->getCurrentRoom()->getPathToImage() << endl;
+
     updateBackgroundImage();
 
     timerWidget = gameSetup->getTimer();
@@ -49,7 +46,7 @@ void mainGameWindow::handleTimerEnded() {
         this->hide();
         end->setScreen(false);
         end->show();
-        gameSetup->stopGame();
+        //gameSetup->stopGame();
     }
 }
 
@@ -81,7 +78,7 @@ void mainGameWindow::updateBackgroundImage() {
         end->setScreen(true);
         end->show();
         this->hide();
-        gameSetup->stopGame();
+        //gameSetup->stopGame();
 
     }
     //setting the background image
@@ -235,7 +232,6 @@ void mainGameWindow::on_EnemyPlace_clicked()
         Enemy* enemy = gameSetup->getCurrentRoom()->getEnemyInRoom();
         Character* characterEnemy = dynamic_cast<Character*>(enemy);
         if (characterEnemy !=nullptr) {
-            cout<<characterEnemy->talk()<<endl;
             ui->enemySpeech->setText(QString::fromStdString(characterEnemy->talk()));
         }
 //using my overloaded operator (derreerence pointer first)

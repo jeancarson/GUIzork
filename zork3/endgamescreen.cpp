@@ -22,7 +22,6 @@ void endGameScreen:: setScreen(bool won)
 {
     if(!isGameOver){
     if(won){
-        cout<<"WON"<<endl;
         QPixmap backgroundImage(":/ISEFreedom.png");
         ui->label->setPixmap(backgroundImage);
         ui->label->setScaledContents(true);
@@ -36,9 +35,17 @@ void endGameScreen:: setScreen(bool won)
         isGameOver = true;
 
     }}
-    // this->show();
-    // mainWindow->game->hide();
+
+
 
 }
+void endGameScreen::closeEvent(QCloseEvent *event) {
+    // Perform any necessary cleanup or state saving here
 
+    // Exit the application
+    QApplication::exit();
+
+    // Call the base class implementation
+    QWidget::closeEvent(event);
+}
 

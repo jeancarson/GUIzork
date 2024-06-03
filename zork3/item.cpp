@@ -53,8 +53,6 @@ void Item::destroyData() {
 }
 
 QString Item::getPathToImage() {
-    cout << "getting path to image" << endl;
-    cout << pathToImage << endl;
     return QString::fromStdString(pathToImage);
 }
 
