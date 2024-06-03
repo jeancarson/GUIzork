@@ -11,14 +11,14 @@ You can view the map by clicking the central map button. There is a red dot on t
 *****
 
 CHEAT CODES
--After start, click on green keycard to add to invenetory. Click again to select, then click on security guard.
--Execute the following moves: NORTH, WEST, NORTH, WEST
--Click on the umbrella to pick up, again to select and then on the enemy (MIA)
--Execute the following commands to get to the forest room: NORTH, NORTH, SOUTH
--Click on the pink lunchbox to pick it up
--Execute the following comands: WEST, EAST
--Click on the fish to pick it up, again in inventory to select, and then on the enemy (RUAN)
--Execute the following commands: SOUTH, SOUTH, EAST, SOUTH, SOUTH, SOUTH to win
+* After start, click on green keycard to add to invenetory. Click again to select, then click on security guard.
+* Execute the following moves: NORTH, WEST, NORTH, WEST
+* Click on the umbrella to pick up, again to select and then on the enemy (MIA)
+* Execute the following commands to get to the forest room: NORTH, NORTH, SOUTH
+* Click on the pink lunchbox to pick it up
+* Execute the following comands: WEST, EAST
+* Click on the fish to pick it up, again in inventory to select, and then on the enemy (RUAN)
+* Execute the following commands: SOUTH, SOUTH, EAST, SOUTH, SOUTH, SOUTH to win
 
 *****
 *****
