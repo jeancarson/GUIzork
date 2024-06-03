@@ -54,3 +54,8 @@ QString Timer::timeToString(int seconds) {
     QString newTime = stringMinutes + ":" + stringSeconds;
     return newTime;
 }
+
+
+QTimer* Timer::getTimer(){
+    return timer;
+}

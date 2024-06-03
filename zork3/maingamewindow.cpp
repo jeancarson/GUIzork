@@ -27,7 +27,6 @@ mainGameWindow::mainGameWindow(QWidget *parent, GameSetUp *preGameSetup)
         cout << "GAME SETUP IS NULL" << endl;
     }
     cout << "BEFORE INITIALIZING SETUP" << endl;
-    gameSetup = preGameSetup;
     cout << gameSetup->getCurrentRoom()->getPathToImage() << endl;
     cout << "AFTER INITIALIZING SETUP" << endl;
     cout << gameSetup->getCurrentRoom()->getPathToImage() << endl;
@@ -47,6 +46,12 @@ mainGameWindow::mainGameWindow(QWidget *parent, GameSetUp *preGameSetup)
 
     updateTimerDisplay();
 }
+mainGameWindow::~mainGameWindow() {
+    delete end;
+    delete alison;
+    delete guide;
+    delete ui;
+}
 //Application of bit structures
 void mainGameWindow::handleTimerEnded() {
     if (!flags.isGameOver()) {
@@ -54,6 +59,8 @@ void mainGameWindow::handleTimerEnded() {
         this->hide();
         end->setScreen(false);
         end->show();
+        gameSetup->stopGame();
+        delete this;
     }
 }
 
@@ -70,12 +77,7 @@ void mainGameWindow::updateTimerDisplay() {
 }
 
 
-mainGameWindow::~mainGameWindow() {
-    delete end;
-    delete alison;
-    // delete guide;
-    delete ui;
-}
+
 
 void mainGameWindow::updateBackgroundImage() {
 
@@ -90,6 +92,8 @@ void mainGameWindow::updateBackgroundImage() {
         end->setScreen(true);
         end->show();
         this->hide();
+        gameSetup->stopGame();
+        delete this;
 
     }
     //setting the background image

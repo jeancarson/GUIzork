@@ -18,6 +18,7 @@ public:
     ~Timer();
     void start(int duration);
     void kickPlayer();
+    QTimer* getTimer();
 
 signals:
     void timeEnded();

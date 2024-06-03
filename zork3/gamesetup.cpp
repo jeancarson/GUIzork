@@ -1,6 +1,6 @@
 #include "gamesetup.h"
 #include <iostream>
-
+#include <QApplication>
 namespace GameSetup {
 
 GameSetUp::GameSetUp():
@@ -233,6 +233,16 @@ void GameSetUp::tryKillEnemy(){
     getInventory()->removeFromInventory(*getCurrentItem());
     setCurrentItem(Item ());
 }
+
+void GameSetUp::stopGame() {
+    // Stop any timers or ongoing processes
+    // timerWidget->getTimer()->stop();
+
+    // Clean up dynamically allocated objects
+
+    // Close the main game window
+    QApplication::exit();}
+
 
 
 
