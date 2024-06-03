@@ -20,10 +20,6 @@ Item::Item(const Item& other) : dataType(other.dataType) {
     }
 }
 
-// // Destructor to handle proper cleanup
-// Item::~Item() {
-//     destroyData();
-// }
 
 // Copy assignment operator
 Item& Item::operator=(const Item& other) {

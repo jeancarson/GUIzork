@@ -9,7 +9,6 @@
 #include "customexceptions.h"
 using namespace std;
 
-// #include <QObject>
 #include "Timer.h"
 #include "inventorybackend.h"
 

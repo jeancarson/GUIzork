@@ -41,13 +41,12 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         frontDoorGeneric.jpg
 
 
-        conor.jpg
         taylor.jpg
         guide.h guide.cpp guide.ui
         guideLevel1.jpg
         guideLevel2.png
         item.h item.cpp
-        task.h task.cpp
+
 
         Keycard.png
         inventorybackend.h inventorybackend.cpp

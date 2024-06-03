@@ -1,5 +1,5 @@
 #include "customexceptions.h"
-//rogrammer defined exceptions
+//programmer defined exceptions
 //noexcept - garuntee that funtion will not throw an exception
 const char* invalidRoomMoveException::what() const noexcept {
     return "Attempted to move in a direction where there is no exit.";

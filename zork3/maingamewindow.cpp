@@ -19,9 +19,6 @@ mainGameWindow::mainGameWindow(QWidget *parent, GameSetUp *preGameSetup)
     , guide(nullptr)
 {
     ui->setupUi(this);
-    // timerWidget = new Timer(this);
-
-
 
     if (!preGameSetup) {
         cout << "GAME SETUP IS NULL" << endl;
@@ -33,13 +30,6 @@ mainGameWindow::mainGameWindow(QWidget *parent, GameSetUp *preGameSetup)
     updateBackgroundImage();
 
     timerWidget = gameSetup->getTimer();
-    // auto layout= new QVBoxLayout();
-    // layout->addWidget(timerWidget);
-    // ui->forTheTIMER->setLayout(layout);
-//     auto layout = new QVBoxLayout();
-//     layout->addWidget(timerWidget);
-//     ui->forTheTIMER->setLayout(layout);
-//TODO could this be an example of preprocesser directives? Connect has to come after? IDK
     connect(timerWidget, &Timer::timeEnded, this, &mainGameWindow::handleTimerEnded);
     connect(timerWidget, &Timer::hurryUp, this, &mainGameWindow::handleHurryUp);
     connect(timerWidget, &Timer::timeUpdated, this, &mainGameWindow::updateTimerDisplay);
@@ -60,7 +50,6 @@ void mainGameWindow::handleTimerEnded() {
         end->setScreen(false);
         end->show();
         gameSetup->stopGame();
-        delete this;
     }
 }
 
@@ -93,7 +82,6 @@ void mainGameWindow::updateBackgroundImage() {
         end->show();
         this->hide();
         gameSetup->stopGame();
-        delete this;
 
     }
     //setting the background image
@@ -249,7 +237,6 @@ void mainGameWindow::on_EnemyPlace_clicked()
         if (characterEnemy !=nullptr) {
             cout<<characterEnemy->talk()<<endl;
             ui->enemySpeech->setText(QString::fromStdString(characterEnemy->talk()));
-           // enemyLogger.log(*enemy);
         }
 //using my overloaded operator (derreerence pointer first)
         if(enemy->getItemToOvercome() == *gameSetup->getCurrentItem()){

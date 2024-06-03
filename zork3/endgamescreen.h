@@ -9,7 +9,7 @@ namespace Ui {
 class endGameScreen;
 }
 
-class endGameScreen : public QMainWindow // Inherit from QMainWindow
+class endGameScreen : public QMainWindow
 {
     Q_OBJECT
 

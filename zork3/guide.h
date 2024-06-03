@@ -8,7 +8,6 @@ using namespace GameSetup;
 namespace Ui {
 class Guide;
 }
-// Guide::Guide(GameSetUp *gameSetup, QWidget *parent)
 
 class Guide : public QMainWindow
 {

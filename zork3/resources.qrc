@@ -1,7 +1,6 @@
 <RCC>
     <qresource prefix="/">
         <file>umbrella.png</file>
-        <file>conor.jpg</file>
         <file>frontDoorGeneric.jpg</file>
         <file>gameLost.jpg</file>
         <file>gameWon.jpg</file>

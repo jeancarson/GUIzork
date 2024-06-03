@@ -8,7 +8,7 @@ Enemy::Enemy(std::string name, Item itemToOvercome)
     cout<<("Demonstration of the object construction sequence: This (Enemy " + name + " ) will print second")<<endl;
 }
 
-//getters will not modify the enemy attribute
+//const - getters will not modify the enemy attribute
 Item Enemy::getItemToOvercome() const{
     return itemToOvercome;
 }

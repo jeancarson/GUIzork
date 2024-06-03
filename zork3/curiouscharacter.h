@@ -10,9 +10,6 @@ class CuriousCharacter : public Character, public Enemy
 public:
     CuriousCharacter(string name, Item itemToOvercome, string pathToImage);
     string talk() override;
-
-
-    // using Enemy::Enemy;
 };
 
 #endif // CURIOUSCHARACTER_H

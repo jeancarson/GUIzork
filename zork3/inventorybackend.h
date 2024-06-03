@@ -19,7 +19,8 @@ public:
 
 
 private:
-    static constexpr int MAX_ITEMS = 2; // Example maximum number of items
+    //TODO
+    static constexpr int MAX_ITEMS = 2;
 
     vector<Item> items;
 

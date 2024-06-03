@@ -6,15 +6,10 @@ inventoryBackEnd::inventoryBackEnd() {
     items.reserve(MAX_ITEMS);
 }
 
-
-
-
 void inventoryBackEnd:: addToInventory(Item& item){
     if (items.size() < MAX_ITEMS) {
         items.push_back(item);
     }
-    // inventoryFrontEnd->updateInventoryWidget(items);
-
     return;
 }
 //references
@@ -23,14 +18,11 @@ void inventoryBackEnd::removeFromInventory(const Item& item) {
     if (it != items.end()) {
         items.erase(it);
     }
-    // inventoryFrontEnd->updateInventoryWidget(items);
 }
-
 
 vector<Item> inventoryBackEnd::getInventory(){
     return items;
 }
-
 
 bool inventoryBackEnd::isThisInTheInventory(string itemName){
     //using references

@@ -27,13 +27,13 @@ void Timer::start(int duration) {
     timeLeft = timeToString(remainingTime);
     emit timeUpdated();
     timer = new QTimer(this);
-    connect(timer, &QTimer::timeout, this, &Timer::updateTimer); // Connect timeout signal to updateTimer slot
+    // Connect timeout signal to updateTimer slot
+    connect(timer, &QTimer::timeout, this, &Timer::updateTimer);
     timer->start(1000);
 }
 
 void Timer::updateTimer() {
-    remainingTime--; // Decrease remaining time
-    // updateDisplay(remainingTime); // Update display
+    remainingTime--;
     timeLeft = timeToString(remainingTime);
 
     emit timeUpdated();

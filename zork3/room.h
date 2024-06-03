@@ -17,8 +17,6 @@ private:
 
     string description;
     array<Room*, 4> exits;
-    // map<string, Room*> exits;
-    // string exitString();
     string pathToImage;
     //not sure if this is right idk how to do arrays in c++
     std::array<int, 3> coordinates;
@@ -49,21 +47,6 @@ public:
     void removeEnemyFromRoom();
     bool isEnemyInRoom;
 };
-
-
-    //image
-    //items
-
-
-
-
-
-    // string longDescription();
-    // Room* nextRoom(string direction);
-    // void addItem(Item *inItem);
-    // string displayItem();
-    // int isItemInRoom(string inString);
-    // void removeItemFromRoom(int location);
 
 
 #endif

@@ -4,8 +4,6 @@
 namespace GameSetup {
 
 GameSetUp::GameSetUp():
-    // : itemLogger(LoggerFile)
-    // , roomLogger(LoggerFile)
      currentItem(nullptr)
 {
     timerWidget = new Timer();
@@ -88,7 +86,6 @@ void GameSetUp::createRoomsAndItems()  {
     cout<<"coordinates set"<<endl;
 
 
-//remvoing from here
     Item *keycard = new Item();
     Item *umbrella = new Item();
     Item *lunchbox = new Item();
@@ -125,7 +122,6 @@ void GameSetUp::createRoomsAndItems()  {
     coworkingSpace1->setEnemyInRoom(Mia);
     coworkingSpace3a->setEnemyInRoom(Ruan);
 
-//removing to here
 
     this->currentRoom = frontDoor;
     cout<<currentRoom->getDescription();
@@ -235,17 +231,5 @@ void GameSetUp::tryKillEnemy(){
 }
 
 void GameSetUp::stopGame() {
-    // Stop any timers or ongoing processes
-    // timerWidget->getTimer()->stop();
-
-    // Clean up dynamically allocated objects
-
-    // Close the main game window
     QApplication::exit();}
-
-
-
-
-
-
 }
