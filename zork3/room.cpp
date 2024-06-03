@@ -21,14 +21,10 @@ string Room::getPathToImage(){
 }
 
 void Room::setExits(Room *north, Room *east, Room *south, Room *west) {
-    if (north != NULL)
-        exits["north"] = north;
-    if (east != NULL)
-        exits["east"] = east;
-    if (south != NULL)
-        exits["south"] = south;
-    if (west != NULL)
-        exits["west"] = west;
+        exits[NORTH] = north;
+        exits[EAST] = east;
+        exits[SOUTH] = south;
+        exits[WEST] = west;
 }
 string Room::getDescription() const {
     return description;
@@ -41,15 +37,10 @@ string Room::getDescription() const {
 //     return returnString;
 // }
 
-Room* Room::getNextRoom(string direction) {
-    if (exits.find(direction) != exits.end()) {
-        // Direction exists in exits map, return the pointer to the corresponding room
-        return exits[direction];
-    } else {
-        // Direction does not exist, handle accordingly
-        return nullptr;
+Room* Room::getNextRoom(Direction direction) {
+    return exits[direction];
     }
-}
+
 
 void Room:: setCoordinates(int x, int y, int z){
     //AHHHHHHHHHHHH why can't c++ do arrays like normal things silly silly language

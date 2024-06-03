@@ -201,7 +201,7 @@ void GameSetUp::moveDEBUG(std::string direction) {
 
 #else
 //programmer defined exceptions handling
-void GameSetUp::move(std::string direction) {
+void GameSetUp::move(Direction direction) {
     try {
         Room* nextRoomPtr = currentRoom->getNextRoom(direction);
         if (nextRoomPtr == nullptr) {

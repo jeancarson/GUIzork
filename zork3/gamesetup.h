@@ -24,7 +24,7 @@ public:
 
 #else
 public:
-    void move(string direction);
+    void move(Direction direction);
 
 #endif
 

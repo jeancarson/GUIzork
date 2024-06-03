@@ -8,12 +8,16 @@
 
 using namespace std;
 
+enum Direction { NORTH, EAST, SOUTH, WEST };
+
+
 using std::vector;class Room {
 
 private:
 
     string description;
-    map<string, Room*> exits;
+    array<Room*, 4> exits;
+    // map<string, Room*> exits;
     // string exitString();
     string pathToImage;
     //not sure if this is right idk how to do arrays in c++
@@ -31,7 +35,7 @@ public:
     void setExits(Room *north, Room *east, Room *south, Room *west);
     string getDescription() const;
     string getPathToImage();
-    Room* getNextRoom(string direction);
+    Room* getNextRoom(Direction direction);
     void setPathToImage(string path);
     void setCoordinates(int x, int y, int z);
     const std::array<int, 3>& getCoordinates();

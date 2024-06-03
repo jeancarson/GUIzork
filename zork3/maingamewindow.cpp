@@ -99,10 +99,10 @@ void mainGameWindow::updateBackgroundImage() {
     ui->label->setScaledContents(true);
 
     //setting the buttons dependng on whether they are valid or not
-    setButtonColor(ui->NORTH, gameSetup->getCurrentRoom()->getNextRoom("north"));
-    setButtonColor(ui->WEST, gameSetup->getCurrentRoom()->getNextRoom("west"));
-    setButtonColor(ui->EAST, gameSetup->getCurrentRoom()->getNextRoom("east"));
-    setButtonColor(ui->SOUTH, gameSetup->getCurrentRoom()->getNextRoom("south"));
+    setButtonColor(ui->NORTH, gameSetup->getCurrentRoom()->getNextRoom(NORTH));
+    setButtonColor(ui->WEST, gameSetup->getCurrentRoom()->getNextRoom(WEST));
+    setButtonColor(ui->EAST, gameSetup->getCurrentRoom()->getNextRoom(EAST));
+    setButtonColor(ui->SOUTH, gameSetup->getCurrentRoom()->getNextRoom(SOUTH));
 
     //dealing with items
     if (!gameSetup->getCurrentRoom()->getItemsInRoom().empty()) {
@@ -156,22 +156,22 @@ void mainGameWindow::updateInventory() {
 
 
 void mainGameWindow::on_NORTH_clicked() {
-    gameSetup->move("north");
+    gameSetup->move(NORTH);
     updateBackgroundImage();
 }
 
 void mainGameWindow::on_WEST_clicked() {
-    gameSetup->move("west");
+    gameSetup->move(WEST);
     updateBackgroundImage();
 }
 
 void mainGameWindow::on_SOUTH_clicked() {
-    gameSetup->move("south");
+    gameSetup->move(SOUTH);
     updateBackgroundImage();
 }
 
 void mainGameWindow::on_EAST_clicked() {
-    gameSetup->move("east");
+    gameSetup->move(EAST);
     updateBackgroundImage();
 }
 
