@@ -1,3 +1,31 @@
+github repo: https://github.com/jeancarson/GUIzork.git
+
+*****
+*****
+GAME INSTRUCTIONS
+You have three minutes to enter the ISE building, find a pink lunchbox, add it to your inventory and get back out the front door.
+Along the way there will be 'enemies', each which can be defeated by adding the unusual item on screen to the inventory, selecting it (it will be yellow), then clicking on the enemy. The enemy disapears and you can now move. You can click on any character at any time to see what they have to say.
+Moves in valid directions are shown in red, invalid are greyed out.
+You can view the map by clicking the central map button. There is a red dot on the map screen which shows where you currently are.
+
+*****
+
+CHEAT CODES
+-After start, click on green keycard to add to invenetory. Click again to select, then click on security guard.
+-Execute the following moves: NORTH, WEST, NORTH, WEST
+-Click on the umbrella to pick up, again to select and then on the enemy (MIA)
+-Execute the following commands to get to the forest room: NORTH, NORTH, SOUTH
+-Click on the pink lunchbox to pick it up
+-Execute the following comands: WEST, EAST
+-Click on the fish to pick it up, again in inventory to select, and then on the enemy (RUAN)
+-Execute the following commands: SOUTH, SOUTH, EAST, SOUTH, SOUTH, SOUTH to win
+
+*****
+*****
+
+
+
+
 Virtual functions:                                    talk() function in the abstract Character class
 
 template classes:                                     Logger class -> can work with either Rooms or Items 
