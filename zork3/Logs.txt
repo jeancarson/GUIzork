@@ -588,3 +588,7 @@ You see a set of stairs and a lift
 Mon Jun 03 20:46:13 2024 - Entered into a new room: You have entered the lift. North is first floor, west is second floor
 Mon Jun 03 20:46:14 2024 - Entered into a new room: You have reached upstairs
 Mon Jun 03 20:46:16 2024 - Entered into a new room: In the coworking space outside TA office
+Mon Jun 03 22:36:52 2024 Current item set to keycard
+Mon Jun 03 22:36:53 2024 Current item set to 
+Mon Jun 03 22:36:53 2024 - Entered into a new room: You go through the front door. 
+You see a set of stairs and a lift

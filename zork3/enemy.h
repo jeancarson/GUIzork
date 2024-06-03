@@ -9,7 +9,7 @@ public:
     Enemy(std::string name = "", Item itemToOvercome = Item());
     string getName() const;
     Item getItemToOvercome () const;
-
+//Virtual destructor to ensure the destructors of derived classes are also called when an enemy is deleted
     virtual ~Enemy() {}
 
 private:

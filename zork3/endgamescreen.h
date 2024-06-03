@@ -24,8 +24,6 @@ private:
     Ui::endGameScreen *ui;
     bool isGameOver;
 
-private slots:
-    void handleTimerUp();
 };
 
 #endif // ENDGAMESCREEN_H

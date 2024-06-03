@@ -49,7 +49,6 @@ public:
     bool isTheGameWon();
     void createRoomsAndItems();
     void tryKillEnemy();
-    // void stopGame();
 
 
 };}

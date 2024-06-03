@@ -18,6 +18,7 @@ public:
     std::string getPathToImage() const;
     //uisng protected ACCESS SPECIFIER
 protected:
+    //Note this is not rementioned in enemy or subclasses, demonstrating the use of preotected access modifier
     std::string pathToImage;
 };
 #endif // CHARACTER_H

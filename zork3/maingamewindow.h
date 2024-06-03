@@ -67,7 +67,6 @@ private:
     bool isSlot2Yellow;
     Guide *guide;
     void updateBackgroundImage();
-    //dont need gamesetup::room here bc namespace
     void setButtonColor(QPushButton *button, Room *exitRoom);
     void updateInventory();
     void updateTimerDisplay();
