@@ -20,11 +20,11 @@ struct GameFlags {
 
     GameFlags() : flags(0) {} // Initialize flags to 0 (not game over, Alison not on screen)
 
-    //BITWISE and with flags and 01
+    //BITWISE *and* with flags and 01
     bool isGameOver() const { return (flags & 1) != 0; }
-    //BITWISE and with flags and NOT 1 (10) to clear
+    //BITWISE *and* with flags and NOT 1 (10) to clear
     //condition ? value_if_true : value_if_false
-    //then BITWISE or to 'add' relevent bit to the flag if true.
+    //then BITWISE *or* to 'add' relevent bit to the flag if true.
     void setGameOver(bool gameOver) { flags = (flags & ~1) | (gameOver ? 1 : 0); }
 
     //bitwise and with 10, then with not2 ie 01

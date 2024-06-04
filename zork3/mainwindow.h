@@ -21,7 +21,6 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-    Timer *getTimer() const { return timer; }
 private slots:
     void on_start_clicked();
 

@@ -13,7 +13,6 @@ template<typename T>
 class Logger {
 public:
     Logger(const std::string& filename) : filename(filename) {}
-
     void log(const T& thing);
 private:
     std::string filename = "C:/Users/jeanl/College/Blocks/Block 4/C++/GUIzork/zork3/Logs.txt";
@@ -32,7 +31,7 @@ void Logger<Room>::log(const Room& room);
 
 template<>
 void Logger<Enemy>::log(const Enemy& enemy);
-
+//GLOBAL variables
 extern Logger<Item> itemLogger;
 extern Logger<Room> roomLogger;
 extern Logger<Enemy> enemyLogger;

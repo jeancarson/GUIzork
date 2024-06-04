@@ -17,7 +17,6 @@ public:
     explicit Timer(QWidget *parent = nullptr);
     ~Timer();
     void start(int duration);
-    void kickPlayer();
     QTimer* getTimer();
 
 signals:
@@ -25,8 +24,6 @@ signals:
     void hurryUp();
     void timeUpdated();
 
-private slots:
-    void updateTimer();
 
 private:
     Ui::Timer *ui;
@@ -35,6 +32,8 @@ private:
     int remainingTime;
     QTimer *timer;
     QString timeLeft;
+    void updateTimer();
+
 
     // Friendship, so it is possible to have the same time show in two different windows
     friend class mainGameWindow;

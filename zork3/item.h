@@ -15,6 +15,7 @@ public:
     QString getPathToImage();
     std::string getName() const;
     void setNameAndPathToImage(std::string newName, std::string path);
+    //demonstration of unions
     void setItemData(std::string colour);
     void setItemData(int price);
     void printItemData();
@@ -28,12 +29,13 @@ private:
         None,
         Colour,
         Price
-    } dataType;
+    }
+    dataType;
 
     union ItemData {
         std::string colour;
         int price;
-
+        //constructor needed for *non-trivial* types
         ItemData() { new (&colour) std::string(); }
         ~ItemData() {}
     } itemData;

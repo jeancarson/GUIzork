@@ -18,8 +18,8 @@ private:
     string description;
     array<Room*, 4> exits;
     string pathToImage;
-    //not sure if this is right idk how to do arrays in c++
     std::array<int, 3> coordinates;
+    //If expanded, could have several items in one room (from back end)
     vector <Item> itemsInRoom;
     Enemy* enemyInRoom;
 

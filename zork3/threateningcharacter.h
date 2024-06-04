@@ -10,7 +10,7 @@ class threateningCharacter : public Character, public Enemy
 {
 public:
     threateningCharacter(string name, Item ItemToOvercome, string pathToImage);
-    using Enemy::Enemy;
+    //overriding from character class
     string talk() override;
 };
 
