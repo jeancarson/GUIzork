@@ -26,11 +26,8 @@ MainWindow::~MainWindow()
 }
 
 void MainWindow::on_start_clicked()
-{    // mainGameWindow *game = new mainGameWindow(nullptr, gameSetup, getTimer());
-
+{
     gameSetup = new GameSetUp();
-
-    // Pass the Timer object to the constructors of both windows
     timer = gameSetup->getTimer();
     game = new mainGameWindow(nullptr, gameSetup);
 

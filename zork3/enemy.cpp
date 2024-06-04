@@ -5,6 +5,7 @@ using namespace std;
 Enemy::Enemy(std::string name, Item itemToOvercome)
     //initialiser list
     : name(name), itemToOvercome(itemToOvercome) {
+    //To show the object construction sequence - demonstration purposes only
     cout<<("Demonstration of the object construction sequence: This (Enemy " + name + " ) will print second")<<endl;
 }
 

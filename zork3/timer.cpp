@@ -19,11 +19,8 @@ Timer::~Timer()
 }
 
 
-//have this access the timeleft every secons
-//then check gamesetup does not have access.
 void Timer::start(int duration) {
     remainingTime = duration * 60;
-    // updateDisplay(remainingTime);
     timeLeft = timeToString(remainingTime);
     emit timeUpdated();
     timer = new QTimer(this);
@@ -39,9 +36,12 @@ void Timer::updateTimer() {
     emit timeUpdated();
     if (remainingTime <= 0) {
         timer->stop();
+        //mainGameWindow and Guide can connect a slot to this signal
         emit timeEnded();
     }
     if (remainingTime <= 50) {
+        //mainGameWindow and Guide can connect a slot to this signal
+
         emit hurryUp();
     }
 }

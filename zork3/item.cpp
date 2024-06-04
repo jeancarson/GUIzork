@@ -43,8 +43,8 @@ Item& Item::operator=(const Item& other) {
     return *this;
 }
 
-// Helper function to destroy the active union member
 void Item::destroyData() {
+    //need to provide special implementation for non trivial data types (int is done automatically)
     if (dataType == DataType::Colour) {
         using std::string;
         itemData.colour.~string();

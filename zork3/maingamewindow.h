@@ -1,14 +1,16 @@
 #ifndef MAINGAMEWINDOW_H
 #define MAINGAMEWINDOW_H
 
-#include <QMainWindow>
 #include "gamesetup.h"
 #include "endgamescreen.h"
 #include "anxiouscharacter.h"
 #include "timer.h"
-#include <QPushButton>
 #include "guide.h"
 #include "logger.h"
+#include <QApplication>
+#include <QPushButton>
+#include <QMainWindow>
+
 
 namespace Ui {
 
@@ -70,6 +72,8 @@ private:
     void setButtonColor(QPushButton *button, Room *exitRoom);
     void updateInventory();
     void updateTimerDisplay();
+    void closeEvent(QCloseEvent *event) override;
+
 };
 
 #endif // MAINGAMEWINDOW_H

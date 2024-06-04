@@ -17,12 +17,12 @@ public:
     endGameScreen(QWidget *parent);
     ~endGameScreen();
     void setScreen(bool won);
-    void closeEvent(QCloseEvent *event) override;
 
 
 private:
     Ui::endGameScreen *ui;
     bool isGameOver;
+    void closeEvent(QCloseEvent *event) override;
 
 };
 

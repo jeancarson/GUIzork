@@ -1,6 +1,7 @@
 #include "anxiouscharacter.h"
 
-AnxiousCharacter::AnxiousCharacter(std::string pathToImage) :
+AnxiousCharacter::AnxiousCharacter(string pathToImage) :
+    //inheriting this attribute from character
     Character(pathToImage){}
 
 std::string AnxiousCharacter::talk() {

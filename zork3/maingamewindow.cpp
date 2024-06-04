@@ -78,7 +78,6 @@ void mainGameWindow::updateBackgroundImage() {
         end->setScreen(true);
         end->show();
         this->hide();
-        //gameSetup->stopGame();
 
     }
     //setting the background image
@@ -115,6 +114,7 @@ void mainGameWindow::updateBackgroundImage() {
     }
 }
 
+//So it is clear to the player which moves are valid - if there is no exit, that direction is grayed out
 void mainGameWindow::setButtonColor(QPushButton *button, Room *exitRoom) {
     if (!exitRoom) {
         button->setStyleSheet("background-color: grey;");
@@ -167,7 +167,6 @@ void mainGameWindow::on_EAST_clicked() {
 void mainGameWindow::on_OpenGuide_clicked() {
     guide = new Guide(gameSetup, this);
     guide->show();
-    guide->updateBackgroundImage();
     this->hide();
 }
 
@@ -227,7 +226,6 @@ void mainGameWindow::on_itemInRoom_clicked()
 
 void mainGameWindow::on_EnemyPlace_clicked()
 {
-    //TODO this should probabl be a method in the gamesetup class and just be called here??
     if(gameSetup->getCurrentRoom()->isEnemyInRoom){
         Enemy* enemy = gameSetup->getCurrentRoom()->getEnemyInRoom();
         Character* characterEnemy = dynamic_cast<Character*>(enemy);
@@ -265,3 +263,14 @@ void mainGameWindow::on_AlisonGoesHere_clicked()
         ui->alisonSays->setText("");
     }
 }
+
+//if the game is x'd out of early, the program should stop
+void mainGameWindow::closeEvent(QCloseEvent *event) {
+    //This is automatically called when the won/lost window is x'd out of by the player.
+    // Exit the application
+    QApplication::exit();
+
+    // Call the base class implementation
+    QWidget::closeEvent(event);
+}
+

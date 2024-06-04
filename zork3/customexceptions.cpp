@@ -1,6 +1,7 @@
 #include "customexceptions.h"
 //programmer defined exceptions
 //noexcept - garuntee that funtion will not throw an exception
+//what() must be overriden - gives access to details on the exception
 const char* invalidRoomMoveException::what() const noexcept {
     return "Attempted to move in a direction where there is no exit.";
 }

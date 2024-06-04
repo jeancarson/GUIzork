@@ -4,6 +4,7 @@ using namespace std;
 
 Character::Character(string PathToImage) {
     this->pathToImage = PathToImage;
+    //To show object construction sequence
     cout<<"Demonstration of object construction sequence. This (Character " + getPathToImage() + " will print first"<<endl;
 }
 

@@ -2,9 +2,8 @@
 #include "ui_guide.h"
 #include <QLayout>
 #include "endgamescreen.h"
-//this is done like this so the map is using the same Gamesetup object as the main game window, ie, it has access to current room
-//In time will probably make maingamewindow do the same, and game set up is instansiated form mainwindow
 
+//guide is connected to the gameSetUp(access back end variables) and mainGameWindow (have something to return to when closed)
 Guide::Guide(GameSetUp *gameSetup, QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::Guide)
@@ -12,6 +11,7 @@ Guide::Guide(GameSetUp *gameSetup, QWidget *parent)
     , parent(parent)
 {
     ui->setupUi(this);
+    updateBackgroundImage();
     setLocationYOUareHERE();
 
     timerText = gameSetup->getTimer();

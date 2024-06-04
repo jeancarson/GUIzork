@@ -20,6 +20,7 @@ string Room::getPathToImage(){
     return this->pathToImage;
 }
 
+//indexing the array with the Direction enum
 void Room::setExits(Room *north, Room *east, Room *south, Room *west) {
         exits[NORTH] = north;
         exits[EAST] = east;

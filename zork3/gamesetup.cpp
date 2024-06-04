@@ -19,7 +19,7 @@ GameSetUp::~GameSetUp() {
     delete timerWidget;
 }
 
-
+//Creating rooms, items etc. If further developed, these details would be stored in a json ile or similar, not hard coded
 void GameSetUp::createRoomsAndItems()  {
     Room *frontDoor, *foyer, *insideLift, *upstairsFoyer, *coworkingSpace1, *kitchen, *coworkingSpace2;
     Room *coworkingSpace3a, *coworkingSpace3b, *forestRoom, *studio2;
@@ -93,12 +93,15 @@ void GameSetUp::createRoomsAndItems()  {
     umbrella->setNameAndPathToImage("umbrella",":/umbrella.png" );
     lunchbox->setNameAndPathToImage("lunchbox",":/lunchbox.png" );
     fish->setNameAndPathToImage("fish", ":/RuansFish.png");
+
+    //demonstration unions
+    //In each case the itemData is printed, but only one attribute, price or colour will be stored.
     keycard->setItemData("Green");
     umbrella->setItemData("Multicoloured");
     fish->setItemData(4);
     keycard->setItemData(50);
 
-
+    //put items in relevent rooms
     frontDoor->addItemToRoom(*keycard);
     coworkingSpace1->addItemToRoom(*umbrella);
     coworkingSpace3a->addItemToRoom(*fish);
@@ -107,7 +110,7 @@ void GameSetUp::createRoomsAndItems()  {
 
 
 
-
+    //creating characters
     threateningCharacter *LockedDoor = new threateningCharacter("Security Guard", *keycard,":/SecurityGuard.png");
     CuriousCharacter *Mia = new CuriousCharacter("Mia", *umbrella,":/MIA.png");
     CuriousCharacter *Ruan = new CuriousCharacter("Ruan", *fish, ":/RUAN.png");
@@ -221,6 +224,5 @@ void GameSetUp::tryKillEnemy(){
     setCurrentItem(Item ());
 }
 
-// void GameSetUp::stopGame() {
-//     QApplication::exit();}
+
 }

@@ -40,8 +40,7 @@ void endGameScreen:: setScreen(bool won)
 
 }
 void endGameScreen::closeEvent(QCloseEvent *event) {
-    // Perform any necessary cleanup or state saving here
-
+    //This is automatically called when the won/lost window is x'd out of by the player.
     // Exit the application
     QApplication::exit();
 
